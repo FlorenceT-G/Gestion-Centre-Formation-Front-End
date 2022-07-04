@@ -4,8 +4,7 @@ export class Assistant{
     nom!: string;
 	prenom!: string;
 	adresseMail!: string;
-	username!: string;
-	password!: string;
+	
 
 
 }

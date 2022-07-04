@@ -27,4 +27,18 @@ export class GetAllService {
   insererAssistant(a:Assistant){
     return this.http.post('http://localhost:9090/admin/assistants', a);
   }
+
+
+
+  authentification(username:string,password:string)
+  {
+    return this.http.post<any>('http://localhost:9090/authenticate',
+    {username,password});
+
+  }
+
+  logout(){
+    
+    sessionStorage.removeItem('t')
+  }
 }

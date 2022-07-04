@@ -1,1 +1,55 @@
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2">GESTION DES ASSISTANTS
+                       
+                    </h1>
+                        <br>
+
+
+<table width="100%">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Prenom</th> 
+    <th>Adresse mail</th>
+
+    <td></td>
+    <td></td>
+
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+        <tr *ngFor="let a of assistants">
+        <td>{{a.idUtilisateur}}</td>
+        <td>{{a.nom}}</td>
+        <td>{{a.prenom}}</td>
+        <td>{{a.adresseMail}}</td>
+
+
+        <td><button (click)="supprimer(a.idUtilisateur)">Supprimer l'assistant</button></td>
+        <td><button (click)="modifier(a.idUtilisateur)">Modifier l'assistant</button></td>
+
+        </tr>
+
+    
+    </tbody>
+    </table>
+    <br>  <br>
+
+
+    <button (click)="ajouterAssistant()"><h6>Ajouter un assistant</h6></button><br>
+    <button (click)="accueil()"><h6>Retour &agrave; l'accueil</h6></button>
+
+       
+</div>
+</div>
+</div>
+</div>
+
 
