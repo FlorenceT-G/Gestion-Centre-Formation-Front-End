@@ -23,13 +23,49 @@ export class LoginComponent implements OnInit {
     
     this.AuthService.authentification(this.username, this.password)
         .subscribe(
-          data => {
-            //console.log(data.jwt);
-            sessionStorage.setItem('t','Bearer '+data.jwt)
-            console.log(sessionStorage.getItem('t'));
-            this.router.navigateByUrl('');
-            this.invalidLogin = false      
+          data => 
+            {
+              sessionStorage.setItem('token', 'Bearer ' + data.jwt)
+              this.invalidLogin = false;
+              //console.log(sessionStorage.getItem('token'))
+              this.AuthService.getUtilisateur(this.username).subscribe(
+                reponse => {
+                  sessionStorage.setItem('user', JSON.stringify(reponse));
+                  if(reponse.role.libRole==="admin")
+                  {
+                    this.router.navigateByUrl('admin');
+                  }
+                  if(reponse.role.libRole==="assistant")
+                  {
+                    this.router.navigateByUrl('assistant');
+                  }
+                  if(reponse.role.libRole==="commercial")
+                  {
+                    this.router.navigateByUrl('commercial');
+                  }
+                  if(reponse.role.libRole==="formateur")
+                  {
+                    this.router.navigateByUrl('formateur');
+                  }
+                  if(reponse.role.libRole==="participant")
+                  {
+                    this.router.navigateByUrl('participant');
+                  }
+                }
+              )
           },
+
+                    /*
+
+              var obj = JSON.parse(sessionStorage['user']);
+                if (obj)
+                {
+                  console.log(obj)
+
+                  this.utilisateur=obj;
+              
+
+                  */
           error => {
             console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')
             this.invalidLogin = true
