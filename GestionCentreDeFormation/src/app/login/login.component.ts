@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
           data => {
             sessionStorage.setItem('t','Bearer '+data.jwt)
             console.log(sessionStorage.getItem('t'));
-            this.router.navigateByUrl('');
-            this.invalidLogin = false      
+            this.router.navigateByUrl('afficherAssistants');
+            this.invalidLogin = false     
           },
+
           error => {
             console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')
             this.invalidLogin = true

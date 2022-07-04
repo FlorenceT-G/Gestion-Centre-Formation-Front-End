@@ -28,7 +28,6 @@ export class AssistantsComponent implements OnInit {
   }
 
   supprimer(id:number){
-    
     this.allService.deleteAssistant(id).subscribe(
       response=>{this.recuperer();
                 this.router.navigateByUrl('afficherAssistants');})

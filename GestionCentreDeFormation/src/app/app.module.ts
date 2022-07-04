@@ -20,6 +20,9 @@ import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
+import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
+import { AddAssistantComponent } from './add-assistant/add-assistant.component';
+import { ModifAssistantComponent } from './modif-assistant/modif-assistant.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
     FooterComponent,
     AdminComponent,
     FormateurComponent,
-    AccueilAdminComponent
+    AccueilAdminComponent,
+    AddAssistantComponent,
+    ModifAssistantComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorBasicAuthService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

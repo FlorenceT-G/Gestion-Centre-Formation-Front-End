@@ -1,0 +1,11 @@
+<h4>Nouvel assistant</h4>
+
+<form (ngSubmit)="SaveAssistant()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="assistant.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="assistant.prenom" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="assistant.adresseMail" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>
+
