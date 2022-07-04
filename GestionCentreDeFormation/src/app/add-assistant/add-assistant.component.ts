@@ -17,6 +17,7 @@ export class AddAssistantComponent implements OnInit {
 
   ngOnInit(): void {
     this.assistant = new Assistant();
+    this.assistant.password="1234";
   }
 
   SaveAssistant(){

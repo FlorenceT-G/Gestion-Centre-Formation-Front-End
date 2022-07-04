@@ -1,4 +1,4 @@
-export class Assistant{
+export class Commercial{
 
     idUtilisateur!: number;
     nom!: string;
@@ -6,7 +6,6 @@ export class Assistant{
 	adresseMail!: string;
     username!:string;
     password!:string
-	
 
 
 }

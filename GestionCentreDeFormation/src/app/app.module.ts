@@ -23,6 +23,8 @@ import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
 import { AddAssistantComponent } from './add-assistant/add-assistant.component';
 import { ModifAssistantComponent } from './modif-assistant/modif-assistant.component';
+import { AddCommercialComponent } from './add-commercial/add-commercial.component';
+import { ModifCommercialComponent } from './modif-commercial/modif-commercial.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { ModifAssistantComponent } from './modif-assistant/modif-assistant.compo
     FormateurComponent,
     AccueilAdminComponent,
     AddAssistantComponent,
-    ModifAssistantComponent
+    ModifAssistantComponent,
+    AddCommercialComponent,
+    ModifCommercialComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { ModifAssistantComponent } from './modif-assistant/modif-assistant.compo
     HttpClientModule
   ],
   providers: [
-    {provide:HTTP_INTERCEPTORS,useClass:HttpInterceptorBasicAuthService,multi:true}],
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
