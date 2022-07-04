@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     AdminComponent,
-    FormateurComponent
+    FormateurComponent,
+    AccueilAdminComponent
   ],
   imports: [
     BrowserModule,
