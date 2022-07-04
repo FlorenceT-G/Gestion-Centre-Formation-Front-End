@@ -24,6 +24,12 @@ export class FormateursComponent implements OnInit {
     )
   }
 
+  supprimer(id:number) {
+    this.service.deleteFormateur(id).subscribe(
+      response => this.router.navigateByUrl("afficherFormateurs")
+    )
+  }
+
   retour() {
     this.router.navigateByUrl("")
   }
