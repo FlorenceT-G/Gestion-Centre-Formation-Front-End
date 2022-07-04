@@ -5,15 +5,18 @@ import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
 
 
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
+import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { LoginComponent } from './login/login.component';
+import { FormateurComponent } from './Main/formateur/formateur.component';
 
 
 
 const routes: Routes = [
   {path:'afficherAssistants',component:AssistantsComponent},
+  {path: 'afficherFormateurs', component: FormateursComponent},
+
   { path: 'login', component: LoginComponent},
   { path: '', component: AccueilAdminComponent},
-
 
   { path: '**', redirectTo: 'login'}
 ];

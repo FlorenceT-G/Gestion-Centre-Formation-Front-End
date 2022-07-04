@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Formateur } from 'src/app/models/Formateur';
+import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
   selector: 'app-formateurs',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormateursComponent implements OnInit {
 
-  constructor() { }
+  formateurs!:Formateur[]
+
+  constructor(private service:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
+    this.selectAll()
+  }
+
+  selectAll() {
+    this.service.getAllFormateur().subscribe(
+      response => this.formateurs=response
+    )
+  }
+
+  retour() {
+    this.router.navigateByUrl("")
   }
 
 }

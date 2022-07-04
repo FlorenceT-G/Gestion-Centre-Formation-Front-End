@@ -1,0 +1,32 @@
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2"> Gestion des formateurs </h1>
+<br>
+
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> Nom </th>
+                    <th> Prenom </th> 
+                    <th> Adresse mail </th>
+
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let formateur of formateurs">
+                    <td> {{formateur.idUtilisateur}} </td>
+                    <td> {{formateur.nom}} </td>
+                    <td> {{formateur.prenom}} </td>
+                    <td> {{formateur.adresseMail}} </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button (click)="retour()"><h6>Retour &agrave; l'espace administratif</h6></button>
