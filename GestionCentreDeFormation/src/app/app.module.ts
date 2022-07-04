@@ -16,6 +16,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './Main/admin/admin.component';
+import { FormateurComponent } from './Main/formateur/formateur.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FormsModule } from '@angular/forms';
     RelancesComponent,
     UtilisateursComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    AdminComponent,
+    FormateurComponent
   ],
   imports: [
     BrowserModule,
