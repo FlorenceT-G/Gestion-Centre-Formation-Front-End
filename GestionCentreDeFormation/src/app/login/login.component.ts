@@ -9,27 +9,54 @@ import { GetAllService } from '../services/get-all.service';
 })
 export class LoginComponent implements OnInit {
 
-  credentials = {username:'', password:''}
-  validUser = true
-  errormessage = "identifiant et/ou mot-de-passe incorrect"
+  username!:string 
+  password!:string
+  invalidLogin = false
+  errorMessage = "identifiant et/ou mot-de-passe incorrect"
 
   constructor(private router:Router,private AuthService:GetAllService) { }
 
   ngOnInit(): void {
   }
 
-  auth() {
-    console.log(this.credentials)
-    this.AuthService.authentification(this.credentials.username, this.credentials.password)
-    .subscribe(
-      data => {
-        sessionStorage.setItem('token', 'Bearer' + data.jwt);
-        this.validUser = true;
-      },
-      error => {
-        console.log("c'est une erreur !")
-        this.validUser = false;
-      })
+  auth() { 
+    this.AuthService.authentification(this.username, this.password)
+        .subscribe(
+          data => 
+            {
+              sessionStorage.setItem('token', 'Bearer ' + data.jwt)
+              this.invalidLogin = false;
+              //console.log(sessionStorage.getItem('token'))
+              this.AuthService.getUtilisateur(this.username).subscribe(
+                reponse => {
+                  sessionStorage.setItem('user', JSON.stringify(reponse));
+                  if(reponse.role.libRole==="admin")
+                  {
+                    this.router.navigateByUrl('admin');
+                  }
+                  if(reponse.role.libRole==="assistant")
+                  {
+                    this.router.navigateByUrl('assistant');
+                  }
+                  if(reponse.role.libRole==="commercial")
+                  {
+                    this.router.navigateByUrl('commercial');
+                  }
+                  if(reponse.role.libRole==="formateur")
+                  {
+                    this.router.navigateByUrl('formateur');
+                  }
+                  if(reponse.role.libRole==="participant")
+                  {
+                    this.router.navigateByUrl('participant');
+                  }
+                }
+              )
+          },
+          error => {
+            console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')
+            this.invalidLogin = true
+          }
+        )
   }
-
 }
