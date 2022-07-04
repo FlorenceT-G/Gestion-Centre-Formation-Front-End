@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
     this.AuthService.authentification(this.username, this.password)
         .subscribe(
           data => {
-            //console.log(data.jwt);
             sessionStorage.setItem('t','Bearer '+data.jwt)
             console.log(sessionStorage.getItem('t'));
             this.router.navigateByUrl('');

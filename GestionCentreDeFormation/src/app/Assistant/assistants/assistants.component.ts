@@ -43,7 +43,7 @@ export class AssistantsComponent implements OnInit {
   }
 
   accueil(){
-    this.router.navigateByUrl('accueilAdmin');
+    this.router.navigateByUrl('');
   }
 
 
