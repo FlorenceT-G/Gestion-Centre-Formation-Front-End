@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
+
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
+import { LoginComponent } from './login/login.component';
 
 
 
 const routes: Routes = [
   {path:'afficherAssistants',component:AssistantsComponent},
-  
+  { path: 'login',component: LoginComponent},
   
 
   
   
- 
+  { path: '**', redirectTo: 'login'}
 ];
 
 @NgModule({

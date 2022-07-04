@@ -12,6 +12,10 @@ import { ParticipantsComponent } from './Participant/participants/participants.c
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,14 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
     ParticipantsComponent,
     ProspectsComponent,
     RelancesComponent,
-    UtilisateursComponent
+    UtilisateursComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
