@@ -30,11 +30,8 @@ export class GetAllService {
 
 
 
-  authentification(username:string,password:string)
-  {
-    return this.http.post<any>('http://localhost:9090/authenticate',
-    {username,password});
-
+  authentification(username:string,password:string) {
+    return this.http.post<any>('http://localhost:9090/authenticate', {username, password});
   }
 
   logout(){

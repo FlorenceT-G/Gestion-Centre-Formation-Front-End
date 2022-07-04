@@ -9,10 +9,9 @@ import { GetAllService } from '../services/get-all.service';
 })
 export class LoginComponent implements OnInit {
 
-  username!:string;
-  password!:string;
-  errorMessage = 'login pass incorrect'
-  invalidLogin = false
+  credentials = {username:'', password:''}
+  validUser = true
+  errormessage = "identifiant et/ou mot-de-passe incorrect"
 
   constructor(private router:Router,private AuthService:GetAllService) { }
 
@@ -20,28 +19,17 @@ export class LoginComponent implements OnInit {
   }
 
   auth() {
-    
-    this.AuthService.authentification(this.username, this.password)
-        .subscribe(
-          data => {
-            //console.log(data.jwt);
-            sessionStorage.setItem('t','Bearer '+data.jwt)
-            console.log(sessionStorage.getItem('t'));
-            this.router.navigateByUrl('');
-            this.invalidLogin = false      
-          },
-          error => {
-            console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')
-            this.invalidLogin = true
-          }
-        )
-  }
-
-  createBasicHttpHeader()
-  {
-   
-    let basicchaine='Basic '+window.btoa(this.username+':'+this.password);
-    return basicchaine;
+    console.log(this.credentials)
+    this.AuthService.authentification(this.credentials.username, this.credentials.password)
+    .subscribe(
+      data => {
+        sessionStorage.setItem('token', 'Bearer' + data.jwt);
+        this.validUser = true;
+      },
+      error => {
+        console.log("c'est une erreur !")
+        this.validUser = false;
+      })
   }
 
 }
