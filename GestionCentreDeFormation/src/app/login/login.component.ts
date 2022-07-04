@@ -24,11 +24,14 @@ export class LoginComponent implements OnInit {
         .subscribe(
           data => 
             {
+              console.log("authentification")
               sessionStorage.setItem('token', 'Bearer ' + data.jwt)
               this.invalidLogin = false;
-              //console.log(sessionStorage.getItem('token'))
+              console.log(sessionStorage.getItem('token'))
               this.AuthService.getUtilisateur(this.username).subscribe(
                 reponse => {
+                  console.log("reponse")
+                  console.log(reponse.nom)
                   sessionStorage.setItem('user', JSON.stringify(reponse));
                   if(reponse.role.libRole==="admin")
                   {
