@@ -1,0 +1,11 @@
+<h4>Nouveau formateur</h4>
+
+<form (ngSubmit)="saveFormateur()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="formateur.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="formateur.prenom" /><br>
+    Username : <input type="text" name="username" [(ngModel)]="formateur.username" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="formateur.adresseMail" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>
