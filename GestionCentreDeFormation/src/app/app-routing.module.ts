@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: '', component: AccueilAdminComponent},
   { path: 'admin',component: AdminComponent},
-  { path: 'assistant',component: AdminComponent},
+  { path: 'assistant',component: AccueilAdminComponent},
   { path: 'commercial',component: AdminComponent},
   { path: 'formateur',component: FormateurComponent},
   { path: 'participant',component: AdminComponent},
