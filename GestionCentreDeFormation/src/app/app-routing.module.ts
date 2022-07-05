@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
-import { AddAssistantComponent } from './add-assistant/add-assistant.component';
-import { AddCommercialComponent } from './add-commercial/add-commercial.component';
+import { AddAssistantComponent } from './Assistant/assistants/add-assistant/add-assistant.component';
+import { AddCommercialComponent } from './Commercial/commercials/add-commercial/add-commercial.component';
 
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';

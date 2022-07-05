@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Assistant } from '../models/Assistant.model';
-import { GetAllService } from '../services/get-all.service';
+import { Assistant } from 'src/app/models/Assistant.model';
+import { GetAllService } from '../../../services/get-all.service';
 
 @Component({
   selector: 'app-add-assistant',
