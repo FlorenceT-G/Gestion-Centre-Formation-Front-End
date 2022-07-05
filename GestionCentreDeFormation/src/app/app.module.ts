@@ -15,16 +15,17 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
-import { AddAssistantComponent } from './add-assistant/add-assistant.component';
-import { ModifAssistantComponent } from './modif-assistant/modif-assistant.component';
-import { AddCommercialComponent } from './add-commercial/add-commercial.component';
-import { ModifCommercialComponent } from './modif-commercial/modif-commercial.component';
+import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
+import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
+import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
+import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,8 @@ import { ModifCommercialComponent } from './modif-commercial/modif-commercial.co
     ModifCommercialComponent
   ],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

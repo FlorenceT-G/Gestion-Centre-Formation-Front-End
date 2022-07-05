@@ -15,8 +15,7 @@ export class GetAllService {
 
   //login
   authentification(username: string, password: string) {
-    console.log("authentication : " + username + " " + password)
-    return this.http.post<any>('http://localhost:9090/authenticate', {username: "admin", password: "1234" })
+    return this.http.post<any>('http://localhost:9090/authenticate', {username, password})
   }
 
 
@@ -51,8 +50,6 @@ export class GetAllService {
   }
 
   getUtilisateur(login: string) {
-    console.log(login)
-    console.log("getUtilisateur")
     return this.http.get<any>(`http://localhost:9090/utilisateurs/${login}`);
   }
 
