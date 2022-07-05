@@ -1,0 +1,10 @@
+<h1>Liste des Prospects</h1>
+
+<table class="tabcenter">
+    <thead>
+        <td>Nom</td><td>Prénom</td><td>Adresse Mail</td><td>Numéro de téléphone</td><td>Options</td>
+    </thead>
+    <tr *ngFor="let p of lProspects">
+        <td>{{p.nom}}</td><td>{{p.prenom}}</td><td>{{p.email}}</td><td>{{p.numTel}}</td><td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour inscription</button></td>
+    </tr>
+</table>
