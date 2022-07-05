@@ -1,1 +1,141 @@
-<p>formations works!</p>
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2">NOS FORMATIONS
+                       
+                    </h1>
+                        <br>
+
+
+
+
+<table width="100%">
+    <thead>
+    <caption align="top">En cours</caption>
+    <tr>
+    <th>ID</th>
+    <th>Intitulé</th>
+    <th>Description</th> 
+    <th>Date de début</th>
+    <th>Date de fin</th>
+    <th>Tarif</th>
+
+    <td></td>
+    <td></td>
+
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+        <tr *ngFor="let fc of formationsEncours">
+        <td>{{fc.idFormation}}</td>
+        <td>{{fc.libFormation}}</td>
+        <td>{{fc.description}}</td>
+        <td>{{fc.dateDebut}}</td>
+        <td>{{fc.dateFin}}</td>
+        <td>{{fc.cout}}</td>
+
+
+        <td><button (click)="supprimer(fc.idFormation)">Supprimer la formation</button></td>
+        <td><button (click)="modifier(fc.idFormation)">Modifier la formation</button></td>
+
+        </tr>
+
+    
+    </tbody>
+    </table>
+    <br>  <br>
+
+
+    <table width="100%">
+        <caption align="top">A venir</caption>
+        <thead>
+        <tr>
+        <th>ID</th>
+        <th>Intitulé</th>
+        <th>Description</th> 
+        <th>Date de début</th>
+        <th>Date de fin</th>
+        <th>Tarif</th>
+    
+        <td></td>
+        <td></td>
+    
+        </tr>
+        </thead>
+        
+        <tbody>
+        
+            <tr *ngFor="let fv of formationsVenir">
+            <td>{{fv.idFormation}}</td>
+            <td>{{fv.libFormation}}</td>
+            <td>{{fv.description}}</td>
+            <td>{{fv.dateDebut}}</td>
+            <td>{{fv.dateFin}}</td>
+            <td>{{fv.cout}}</td>
+    
+    
+            <td><button (click)="supprimer(fv.idFormation)">Supprimer la formation</button></td>
+            <td><button (click)="modifier(fv.idFormation)">Modifier la formation</button></td>
+    
+            </tr>
+    
+        
+        </tbody>
+        </table>
+        <br>  <br>
+
+        
+    <table width="100%">
+        <thead>
+        <caption align="top">Passées</caption>
+        <tr>
+        <th>ID</th>
+        <th>Intitulé</th>
+        <th>Description</th> 
+        <th>Date de début</th>
+        <th>Date de fin</th>
+        <th>Tarif</th>
+    
+        <td></td>
+        <td></td>
+    
+        </tr>
+        </thead>
+        
+        <tbody>
+        
+            <tr *ngFor="let fp of formationsPassees">
+            <td>{{fp.idFormation}}</td>
+            <td>{{fp.libFormation}}</td>
+            <td>{{fp.description}}</td>
+            <td>{{fp.dateDebut}}</td>
+            <td>{{fp.dateFin}}</td>
+            <td>{{fp.cout}}</td>
+    
+    
+            <td><button (click)="supprimer(fp.idFormation)">Supprimer la formation</button></td>
+            <td><button (click)="modifier(fp.idFormation)">Modifier la formation</button></td>
+    
+            </tr>
+    
+        
+        </tbody>
+        </table>
+        <br>  <br>
+
+
+    <button (click)="ajouterFormation()"><h6>Ajouter une formation</h6></button><br>
+    <button (click)="accueil()"><h6>Retour &agrave; l'accueil</h6></button>
+
+       
+</div>
+</div>
+</div>
+</div>
+
+
+

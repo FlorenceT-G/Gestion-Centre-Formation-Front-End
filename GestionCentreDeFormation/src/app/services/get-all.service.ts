@@ -82,7 +82,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/admin/assistants/' + id);
   }
   modifierAssistant(a: Assistant) {
-    return this.http.put('http://localhost:9090/admin/assistants', a);
+    return this.http.put<Assistant>('http://localhost:9090/assistant/assistants', a);
   }
   insererAssistant(a: Assistant) {
     return this.http.post('http://localhost:9090/admin/assistants', a)
@@ -192,6 +192,13 @@ export class GetAllService {
   getAllProspect() {
     return this.http.get<Prospect[]>('http://localhost:9090/commercial/prospects');
   }
+  getProspectNonInscrits() {
+    return this.http.get<Prospect[]>('http://localhost:9090/commercial/prospects-non-inscrits');
+  }
+  getProspectAInscrire() {
+    return this.http.get<Prospect[]>('http://localhost:9090/commercial/prospects-a-inscrire');
+  }
+
   getByIdProspect(id:number) {
     return this.http.get<Prospect>('http://localhost:9090/commercial/prospects/' + id);
   }

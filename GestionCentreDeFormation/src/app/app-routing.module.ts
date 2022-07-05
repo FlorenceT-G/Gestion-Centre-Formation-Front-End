@@ -9,18 +9,26 @@ import { AInscriptionParticipantComponent } from './Assistant-side/a-inscription
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
+import { CAccueilComponent } from './Commercial-side/c-accueil/c-accueil.component';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
+import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
+import { FormationsComponent } from './Formation/formations/formations.component';
+import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
+import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -29,7 +37,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   
   { path: 'admin',component: AdminComponent},
-  { path: 'commercial',component: AdminComponent},
+  { path: 'commercial',component: CAccueilComponent},
   { path: 'formateur',component: FormateurComponent},
   { path: 'participant',component: AdminComponent},
   { path: 'modifierAssistant/:id',component: ModifAssistantComponent},
@@ -45,7 +53,15 @@ const routes: Routes = [
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
+  { path: 'a-gestion-compte', component:ACompteComponent}, 
+  { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
+  { path: 'afficherFormations',component: FormationsComponent},
+  { path: 'addFormation',component: AddFormationComponent},
+  { path: 'modifierFormation/:id',component: ModifFormationComponent},
   { path: 'a-gestion-compte', component:ACompteComponent},
+  { path: 'formateur-compte', component:FormateurCompteComponent},
+  { path: 'formateur-formations', component:FormateurFormationsComponent},
+  { path: 'formateur-accueil', component:FormateurAccueilComponent},
   { path: '**', redirectTo: 'login'}
 ];
 
