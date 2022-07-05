@@ -32,8 +32,11 @@ import { HttpInterceptorBasicAuthService } from './services/http-interceptor-bas
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+import { CommonModule } from '@angular/common';
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
+import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 
 
 @NgModule({
@@ -65,13 +68,16 @@ import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-forma
     AddParticipantComponent,
     ModifParticipantComponent,
     AddFormateurComponent,
-    ModifFormateurComponent
+    ModifFormateurComponent,
+    AddFormationComponent,
+    ModifFormationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    CommonModule,
     ReactiveFormsModule
   ],
   providers: [

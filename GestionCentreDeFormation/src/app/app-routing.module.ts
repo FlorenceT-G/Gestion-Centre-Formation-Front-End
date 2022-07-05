@@ -13,6 +13,9 @@ import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-co
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
+import { FormationsComponent } from './Formation/formations/formations.component';
+import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
@@ -38,11 +41,15 @@ const routes: Routes = [
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
+  { path: 'modifierParticipant/:id',component: AInscriptionParticipantComponent},
   { path: 'addFormateur',component: AddFormateurComponent},
   { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
+  { path: 'afficherFormations',component: FormationsComponent},
+  { path: 'addFormation',component: AddFormationComponent},
+  { path: 'modifierFormation/:id',component: ModifFormationComponent},
   { path: '**', redirectTo: 'login'}
 ];
 
