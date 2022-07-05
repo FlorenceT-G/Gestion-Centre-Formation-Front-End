@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
+
+
 import { AAccueilComponent } from './Assistant-side/a-accueil/a-accueil.component';
 import { ACompteComponent } from './Assistant-side/a-compte/a-compte.component';
 import { AGestionPaiementsComponent } from './Assistant-side/a-gestion-paiements/a-gestion-paiements.component';
@@ -12,9 +13,15 @@ import { CAccueilComponent } from './Commercial-side/c-accueil/c-accueil.compone
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
+import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
+import { FormationsComponent } from './Formation/formations/formations.component';
+import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
@@ -28,7 +35,7 @@ const routes: Routes = [
   { path: 'addAssistant',component: AddAssistantComponent},
   { path: 'afficherFormateurs', component: FormateursComponent},
   { path: 'login', component: LoginComponent},
-  { path: '', component: AccueilAdminComponent},
+  
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
   { path: 'formateur',component: FormateurComponent},
@@ -48,6 +55,13 @@ const routes: Routes = [
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
   { path: 'a-gestion-compte', component:ACompteComponent}, 
   { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
+  { path: 'afficherFormations',component: FormationsComponent},
+  { path: 'addFormation',component: AddFormationComponent},
+  { path: 'modifierFormation/:id',component: ModifFormationComponent},
+  { path: 'a-gestion-compte', component:ACompteComponent},
+  { path: 'formateur-compte', component:FormateurCompteComponent},
+  { path: 'formateur-formations', component:FormateurFormationsComponent},
+  { path: 'formateur-accueil', component:FormateurAccueilComponent},
   { path: '**', redirectTo: 'login'}
 ];
 

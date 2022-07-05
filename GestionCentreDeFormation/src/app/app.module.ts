@@ -3,7 +3,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AAccueilComponent } from './Assistant-side/a-accueil/a-accueil.component';
@@ -29,6 +29,8 @@ import { ParticipantsComponent } from './Participant/participants/participants.c
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
+import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
+import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
@@ -37,6 +39,9 @@ import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.c
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { CAccueilComponent } from './Commercial-side/c-accueil/c-accueil.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
+import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
+import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
+import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 
 
 @NgModule({
@@ -56,11 +61,12 @@ import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospect
     FooterComponent,
     AdminComponent,
     FormateurComponent,
-    AccueilAdminComponent,
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
     ModifCommercialComponent,
+    AjoutadminComponent,
+    AccueiladminComponent,
     AGestionPaiementsComponent,
     AInscriptionParticipantComponent,
     ACompteComponent,
@@ -71,6 +77,9 @@ import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospect
     ModifFormateurComponent,
     CAccueilComponent,
     CGestionProspectsComponent
+    AddFormationComponent,
+    ModifFormationComponent,
+    FormateurAccueilComponent,
   ],
   imports: [
     BrowserModule,
