@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
+import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: '', component: AccueilAdminComponent},
   { path: 'admin',component: AdminComponent},
-  { path: 'assistant',component: AdminComponent},
+  { path: 'assistant',component: AccueilAdminComponent},
   { path: 'commercial',component: AdminComponent},
   { path: 'formateur',component: FormateurComponent},
   { path: 'participant',component: AdminComponent},
