@@ -6,7 +6,6 @@ import { LoginComponent } from './login/login.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ContactsComponent } from './Contact/contacts/contacts.component';
-import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { FormationsComponent } from './Formation/formations/formations.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
@@ -26,6 +25,9 @@ import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.c
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
 import { CommonModule } from '@angular/common';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
+import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
+import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { AddCommercialComponent } from './Commercial/add-commercial/add-commerci
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
-    ModifCommercialComponent
+    ModifCommercialComponent,
+    AddFormateurComponent,
+    ModifFormateurComponent
   ],
   imports: [
     CommonModule,
