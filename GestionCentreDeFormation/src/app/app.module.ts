@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ContactsComponent } from './Contact/contacts/contacts.component';
+import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { FormationsComponent } from './Formation/formations/formations.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
@@ -14,20 +15,16 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
-import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
+import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
-import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
-import { CommonModule } from '@angular/common';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
-import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
-import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
-import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
+import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
+import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +47,9 @@ import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
-    ModifCommercialComponent,
-    AddFormateurComponent,
-    ModifFormateurComponent
+    ModifCommercialComponent
   ],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
