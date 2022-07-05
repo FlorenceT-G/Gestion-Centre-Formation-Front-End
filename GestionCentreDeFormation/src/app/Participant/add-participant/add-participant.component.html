@@ -1,0 +1,12 @@
+<h4>Nouveau participant</h4>
+
+<form (ngSubmit)="SaveParticipant()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="participant.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="participant.prenom" /><br>
+    Username : <input type="text" name="username" [(ngModel)]="participant.username" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="participant.adresseMail" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>
+

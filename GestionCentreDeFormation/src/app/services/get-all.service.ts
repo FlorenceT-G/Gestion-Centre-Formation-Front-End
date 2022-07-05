@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Assistant } from '../models/Assistant.model';
 import { Commercial } from '../models/Commercial.model';
 import { Formateur } from '../models/Formateur';
+import { Participant } from '../models/Participant.model';
 import { Utilisateur } from '../models/Utilisateur.model';
 
 @Injectable({
@@ -15,8 +16,7 @@ export class GetAllService {
 
   //login
   authentification(username: string, password: string) {
-    console.log("authentication : " + username + " " + password)
-    return this.http.post<any>('http://localhost:9090/authenticate', {username: "admin", password: "1234" })
+    return this.http.post<any>('http://localhost:9090/authenticate', {username, password})
   }
 
 
@@ -25,6 +25,7 @@ export class GetAllService {
     sessionStorage.removeItem('user');
     this.router.navigateByUrl('login');
   }
+
 
 
 
@@ -51,11 +52,9 @@ export class GetAllService {
   }
 
   getUtilisateur(login: string) {
-    console.log(login)
-    console.log("getUtilisateur")
     return this.http.get<any>(`http://localhost:9090/utilisateurs/${login}`);
   }
-
+ //return this.http.get<Utilisateur>('http://localhost:9090/utilisateurs/'+login);
   deleteUtilisateur(id: number) {
     return this.http.delete('http://localhost:9090/utilisateurs/' + id);
   }
@@ -101,5 +100,24 @@ export class GetAllService {
   }
   insererCommercial(c: Commercial) {
     return this.http.post('http://localhost:9090/admin/commerciaux', c)
+  }
+
+
+
+  // ------------------------------- Participant ------------------------------------
+  getAllParticipant() {
+    return this.http.get<Participant[]>('http://localhost:9090/assistant/participants');
+  }
+  getByIdParticipant(id: number) {
+    return this.http.get<Participant>('http://localhost:9090/assistant/participants/'+id);
+  }
+  deleteParticipant(id: number) {
+    return this.http.delete('http://localhost:9090/assistant/participants/'+id);
+  }
+  modifierParticipant(c: Participant) {
+    return this.http.put('http://localhost:9090/assistant/participants', c);
+  }
+  insererParticipant(c: Participant) {
+    return this.http.post('http://localhost:9090/assistant/participants', c)
   }
 }

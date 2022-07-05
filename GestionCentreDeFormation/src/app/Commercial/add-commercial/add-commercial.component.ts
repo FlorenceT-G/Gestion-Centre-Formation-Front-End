@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Commercial } from '../../models/Commercial.model';
 import { GetAllService } from '../../services/get-all.service';
 
+
 @Component({
   selector: 'app-add-commercial',
   templateUrl: './add-commercial.component.html',

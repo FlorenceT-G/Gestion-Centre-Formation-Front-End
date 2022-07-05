@@ -25,6 +25,9 @@ import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.c
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { CommonModule } from '@angular/common';
+import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 
 
 @NgModule({
@@ -48,9 +51,13 @@ import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-co
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
-    ModifCommercialComponent
+    ModifCommercialComponent,
+    AddParticipantComponent,
+    ModifParticipantComponent
   ],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Assistant } from '../../models/Assistant.model';
 import { GetAllService } from '../../services/get-all.service';
 
+
 @Component({
   selector: 'app-modif-assistant',
   templateUrl: './modif-assistant.component.html',

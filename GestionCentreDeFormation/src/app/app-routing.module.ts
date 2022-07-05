@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
-
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
@@ -12,6 +11,9 @@ import { FormateursComponent } from './Formateur/formateurs/formateurs.component
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
+import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
+import { ParticipantsComponent } from './Participant/participants/participants.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -28,9 +30,11 @@ const routes: Routes = [
   { path: 'afficherCommerciaux',component: CommercialsComponent},
   { path: 'addCommercial',component: AddCommercialComponent},
   { path: 'modifierCommercial/:id',component: ModifCommercialComponent},
+  { path: 'afficherParticipants',component: ParticipantsComponent},
+  { path: 'addParticipant',component: AddParticipantComponent},
+  { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
+
   { path: '**', redirectTo: 'login'}
-  
-  
 ];
 
 @NgModule({
