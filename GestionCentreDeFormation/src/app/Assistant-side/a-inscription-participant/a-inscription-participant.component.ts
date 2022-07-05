@@ -22,4 +22,8 @@ export class AInscriptionParticipantComponent implements OnInit {
     
   }
 
+  inscrire(){
+    
+  }
+
 }

@@ -1,0 +1,16 @@
+<h1>Contact avec M/Mme {{p.nom}}, {{p.prenom}}</h1>
+<form (ngSubmit)="valider()">
+<table>
+    <tr>
+        <td>Date</td><td><input type="date" value="{{auj | date: 'dd-MM-yyyy' }}" name="dateContact" [(ngModel)]="contact.dateContact"/></td>
+    </tr><tr>
+        <td>Commentaire</td><td><textarea name="compteRendu" [(ngModel)]="contact.compteRendu"></textarea></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button type="submit" class="btn btn-dark">Enregistrer</button></td>
+    </tr>
+</table>
+
+</form>
+
+<button (click)="backtrack()" class="btn btn-dark">Retour</button>
