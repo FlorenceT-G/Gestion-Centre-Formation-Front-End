@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Assistant } from '../models/Assistant.model';
+import { Commercial } from '../models/Commercial.model';
 import { Formateur } from '../models/Formateur';
 import { Utilisateur } from '../models/Utilisateur.model';
 
@@ -15,14 +16,16 @@ export class GetAllService {
   //login
   authentification(username: string, password: string) {
     console.log("authentication : " + username + " " + password)
-    return this.http.post<any>('http://localhost:9090/authenticate', { username: "admin", password: "1234" })
+    return this.http.post<any>('http://localhost:9090/authenticate', {username: "admin", password: "1234" })
   }
 
+
   logout() {
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem('t')
     sessionStorage.removeItem('user');
     this.router.navigateByUrl('login');
   }
+
 
 
   // ------------------------------- Formateur ------------------------------------
@@ -62,6 +65,7 @@ export class GetAllService {
   insererUtilisateur(u: Utilisateur) {
     return this.http.post('http://localhost:9090/utilisateurs', u);
   }
+  
 
   // ------------------------------- Assistant ------------------------------------
   getAllAssistant() {
@@ -78,5 +82,24 @@ export class GetAllService {
   }
   insererAssistant(a: Assistant) {
     return this.http.post('http://localhost:9090/admin/assistants', a)
+  }
+
+
+
+  // ------------------------------- Commercial ------------------------------------
+  getAllCommercial() {
+    return this.http.get<Commercial[]>('http://localhost:9090/admin/commerciaux');
+  }
+  getByIdCommercial(id: number) {
+    return this.http.get<Commercial>('http://localhost:9090/admin/commerciaux/' + id);
+  }
+  deleteCommercial(id: number) {
+    return this.http.delete('http://localhost:9090/admin/commerciaux/' + id);
+  }
+  modifierCommercial(c: Commercial) {
+    return this.http.put('http://localhost:9090/admin/commerciaux', c);
+  }
+  insererCommercial(c: Commercial) {
+    return this.http.post('http://localhost:9090/admin/commerciaux', c)
   }
 }

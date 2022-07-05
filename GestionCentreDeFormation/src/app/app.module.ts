@@ -21,6 +21,10 @@ import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component'
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
+import { AddAssistantComponent } from './add-assistant/add-assistant.component';
+import { ModifAssistantComponent } from './modif-assistant/modif-assistant.component';
+import { AddCommercialComponent } from './add-commercial/add-commercial.component';
+import { ModifCommercialComponent } from './modif-commercial/modif-commercial.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { HttpInterceptorBasicAuthService } from './services/http-interceptor-bas
     FooterComponent,
     AdminComponent,
     FormateurComponent,
-    AccueilAdminComponent
+    AccueilAdminComponent,
+    AddAssistantComponent,
+    ModifAssistantComponent,
+    AddCommercialComponent,
+    ModifCommercialComponent
   ],
   imports: [
     BrowserModule,
