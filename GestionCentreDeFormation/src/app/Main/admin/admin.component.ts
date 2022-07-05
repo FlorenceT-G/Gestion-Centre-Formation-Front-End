@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
-import {formatDate} from '@angular/common';
 import { Router } from '@angular/router';
 import { GetAllService } from 'src/app/services/get-all.service';
 import { Formation } from 'src/app/models/Formation';
 
 
-//formatDate(new Date(),'dd/MM/yyyy', 'fr');
 
 
 @Component({
@@ -17,57 +14,80 @@ import { Formation } from 'src/app/models/Formation';
 export class AdminComponent implements OnInit {
 
   formation !: Formation[];
+  date !: Date;
 
 
-  form !: Formation;
+  duree!: String[];
 
-  a !: number;
-  b !: number;
+
+
+
+
+  constructor(private router: Router, private Service: GetAllService) { }
+
+
+
+
   
 
-  constructor(private router:Router,private Service:GetAllService) { }
-
   ngOnInit(): void {
+
+    this.date = new Date();
+    this.duree =[];
+   
 
     this.formationencours();
 
 
+    console.log(this.duree);
+
+
+
 
   }
 
 
-  formationencours(){
+  formationencours() {
     this.Service.getAllFormationEnCours().subscribe(
-      reponse=>
-      {
+      reponse => {
         for (let i = 0; i < reponse.length; i = i + 1) {
           reponse[i].dateDebut = new Date(reponse[i].dateDebut);
-          reponse[i].dateFin = new Date(reponse[i].dateFin);
+          reponse[i].dateFin = new Date(reponse[i].dateFin);          
+          this.duree.push(this.progression(reponse[i]))
+          console.log("this.du re e")
+          console.log(this.duree)
         }
-      this.formation = reponse
+
+        //this.progression(reponse[0]);
+        this.formation = reponse
+      })}
 
 
-      var date1 = reponse[0].dateDebut;
-      var date2 = reponse[0].dateFin;
+      // ########################################################################
+
+      progression(form : Formation){
+        /*
+        console.log((((this.date.getTime()-form.dateDebut.getTime()) / (form.dateFin.getTime()-form.dateDebut.getTime())*100)-
+        ((this.date.getTime()-form.dateDebut.getTime()) / (form.dateFin.getTime()-form.dateDebut.getTime())*100)%1).toString()+"%")
+        */
+       // console.log(form.participant.length);
 
 
-      //var date1 = new Date(reponse[0].dateDebut);
-      //var date2 = new Date(reponse[0].dateFin);
-      var Diff_temps = date2.getTime() - date1.getTime(); 
-      var Diff_jours = Diff_temps / (1000 * 3600 * 24); 
+        return ((((this.date.getTime()-form.dateDebut.getTime()) / (form.dateFin.getTime()-form.dateDebut.getTime())*100)-
+        ((this.date.getTime()-form.dateDebut.getTime()) / (form.dateFin.getTime()-form.dateDebut.getTime())*100)%1).toString()+"%")
+
+      }
+
+
+
+
+
+  /*
+  Number Diff_temps = form.dateFin.getTime() -  form.dateDebut.getTime()
+  var Diff_jours = Diff_temps / (1000 * 3600 * 24); 
+
+ */
   
-      console.log(Diff_jours)
-
- 
-    
-      console.log(this.a-this.b )
-    //var Diff_jours = Diff_temps / (1000 * 3600 * 24); 
-
-
-      })
-
-
-  }
 
 
 
