@@ -3,8 +3,8 @@ export class Formation {
     idFormation!:number
 	libFormation!:String
 	description!:String
-	dateDebut!:String
-	dateFin!:String
+	dateDebut!:Date
+	dateFin!:Date
 	cout!:number
 
 }

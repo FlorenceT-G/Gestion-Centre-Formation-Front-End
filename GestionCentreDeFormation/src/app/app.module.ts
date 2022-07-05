@@ -32,6 +32,8 @@ import { HttpInterceptorBasicAuthService } from './services/http-interceptor-bas
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
+import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 
 
 @NgModule({
@@ -61,7 +63,9 @@ import { AddParticipantComponent } from './Participant/add-participant/add-parti
     ACompteComponent,
     AAccueilComponent,
     AddParticipantComponent,
-    ModifParticipantComponent
+    ModifParticipantComponent,
+    AddFormateurComponent,
+    ModifFormateurComponent
   ],
   imports: [
     BrowserModule,
