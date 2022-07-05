@@ -20,17 +20,25 @@ export class LoginComponent implements OnInit {
   }
 
   auth() {
-    
+    this.AuthService.getUtilisateur(this.username).subscribe(
+      reponse => {
+
+        console.log(reponse)
+
+      });
+
     this.AuthService.authentification(this.username, this.password)
         .subscribe(
           data => 
             {
               sessionStorage.setItem('token', 'Bearer ' + data.jwt)
               this.invalidLogin = false;
-              //console.log(sessionStorage.getItem('token'))
+              console.log(sessionStorage.getItem('token'))
               this.AuthService.getUtilisateur(this.username).subscribe(
                 reponse => {
                   sessionStorage.setItem('user', JSON.stringify(reponse));
+
+                  console.log(reponse.role.libRole);
                   if(reponse.role.libRole==="admin")
                   {
                     this.router.navigateByUrl('admin');
@@ -53,6 +61,7 @@ export class LoginComponent implements OnInit {
                   }
                 }
               )
+              this.router.navigateByUrl('admin');
           },
 
                     /*

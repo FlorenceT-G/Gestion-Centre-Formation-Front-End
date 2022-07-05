@@ -31,7 +31,7 @@ getAllUtilisateur(){
 }
 getUtilisateur(login:string)
 { 
-  return this.http.get<Utilisateur>('http://localhost:9090/admin/utilisateurs/'+login);
+  return this.http.get<Utilisateur>('http://localhost:9090/utilisateurs/'+login);
 }
 deleteUtilisateur(id:number){
   return this.http.delete('http://localhost:9090/utilisateurs/'+id);
