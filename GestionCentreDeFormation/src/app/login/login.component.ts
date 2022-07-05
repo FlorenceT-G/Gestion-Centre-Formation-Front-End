@@ -19,20 +19,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*
-  auth() { 
+  auth() {
     this.AuthService.authentification(this.username, this.password)
         .subscribe(
           data => 
             {
-              console.log("authentification")
               sessionStorage.setItem('t', 'Bearer ' + data.jwt)
               this.invalidLogin = false;
-              console.log(sessionStorage.getItem('t'))
               this.AuthService.getUtilisateur(this.username).subscribe(
                 reponse => {
-                  console.log("reponse")
-                  console.log(reponse.nom)
+                  //console.log("reponse")
+                  //console.log(reponse.nom)
                   sessionStorage.setItem('user', JSON.stringify(reponse));
                   if(reponse.role.libRole==="admin")
                   {
@@ -56,24 +53,6 @@ export class LoginComponent implements OnInit {
                   }
                 }
               )
-          },
-          error => {
-            console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')
-            this.invalidLogin = true
-          }
-        )
-  }*/
-
-  auth() {
-    
-    this.AuthService.authentification(this.username, this.password)
-        .subscribe(
-          data => {
-            //console.log(data.jwt);
-            sessionStorage.setItem('t','Bearer '+data.jwt)
-            console.log(sessionStorage.getItem('t'));
-            this.router.navigateByUrl('');
-            this.invalidLogin = false      
           },
           error => {
             console.log('kkkkkkkkkkkkkkkkkkkkkkkkko')

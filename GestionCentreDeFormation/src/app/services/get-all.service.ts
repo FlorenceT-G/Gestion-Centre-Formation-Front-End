@@ -27,6 +27,7 @@ export class GetAllService {
 
 
 
+
   // ------------------------------- Formateur ------------------------------------
   getAllFormateur() {
     return this.http.get<Formateur[]>('http://localhost:9090/admin/formateur');
@@ -52,7 +53,7 @@ export class GetAllService {
   getUtilisateur(login: string) {
     return this.http.get<any>(`http://localhost:9090/utilisateurs/${login}`);
   }
-
+ //return this.http.get<Utilisateur>('http://localhost:9090/utilisateurs/'+login);
   deleteUtilisateur(id: number) {
     return this.http.delete('http://localhost:9090/utilisateurs/' + id);
   }
