@@ -10,7 +10,7 @@ import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assis
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
-import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { LoginComponent } from './login/login.component';

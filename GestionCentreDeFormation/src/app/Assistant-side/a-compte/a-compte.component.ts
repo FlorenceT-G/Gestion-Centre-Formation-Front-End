@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
   selector: 'app-a-compte',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ACompteComponent implements OnInit {
 
-  constructor() { }
+  userString!:any
+  userObject!:any
+  validUser = false
+
+  constructor(private all:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
+    this.userString = sessionStorage.getItem('user')
+    if(this.userString != null) {
+      this.userObject = JSON.parse(this.userString)
+      this.validUser = true
+    }
+  }
+
+  modifCompte() {
+    
+  }
+
+  reload() {
+    this.router.navigateByUrl("a-compte")
   }
 
 }
