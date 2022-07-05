@@ -5,6 +5,7 @@ import { Assistant } from '../models/Assistant.model';
 import { Commercial } from '../models/Commercial.model';
 import { Contact } from '../models/Contact';
 import { Formateur } from '../models/Formateur';
+import { Participant } from '../models/Participant.model';
 import { Formation } from '../models/Formation';
 import { Paiement } from '../models/Paiement';
 import { Prospect } from '../models/Prospect';
@@ -104,6 +105,26 @@ export class GetAllService {
   }
 
 
+
+  // ------------------------------- Participant ------------------------------------
+  getAllParticipant() {
+    return this.http.get<Participant[]>('http://localhost:9090/assistant/participants');
+  }
+  getByIdParticipant(id: number) {
+    return this.http.get<Participant>('http://localhost:9090/assistant/participants/'+id);
+  }
+  deleteParticipant(id: number) {
+    return this.http.delete('http://localhost:9090/assistant/participants/'+id);
+  }
+  modifierParticipant(c: Participant) {
+    return this.http.put('http://localhost:9090/assistant/participants', c);
+  }
+  insererParticipant(c: Participant) {
+    return this.http.post('http://localhost:9090/assistant/participants', c)
+  }
+
+  
+  
   // ------------------------------- Contact ------------------------------------
   getAllContact() {
     return this.http.get<Contact[]>('http://localhost:9090/contacts');

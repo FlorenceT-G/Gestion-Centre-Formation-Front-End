@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { FormationsComponent } from './Formation/formations/formations.component';
 import { HeaderComponent } from './header/header.component';
+
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
@@ -29,6 +30,9 @@ import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
+import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
+import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+
 
 @NgModule({
   declarations: [
@@ -55,13 +59,16 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
     AGestionPaiementsComponent,
     AInscriptionParticipantComponent,
     ACompteComponent,
-    AAccueilComponent
+    AAccueilComponent,
+    AddParticipantComponent,
+    ModifParticipantComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }
