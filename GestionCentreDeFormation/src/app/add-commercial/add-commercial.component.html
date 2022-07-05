@@ -1,0 +1,11 @@
+<h4>Nouveau commercial</h4>
+
+<form (ngSubmit)="SaveCommercial()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="commercial.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="commercial.prenom" /><br>
+    Username : <input type="text" name="username" [(ngModel)]="commercial.username" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="commercial.adresseMail" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>

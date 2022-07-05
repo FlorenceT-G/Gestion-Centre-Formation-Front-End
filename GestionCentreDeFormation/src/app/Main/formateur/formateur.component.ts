@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Formateur } from 'src/app/models/Formateur';
+import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
   selector: 'app-formateur',
@@ -7,9 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormateurComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private service:GetAllService) { }
 
   ngOnInit(): void {
   }
-
 }
