@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
                   sessionStorage.setItem('user', JSON.stringify(reponse));
                   if(reponse.role.libRole==="admin")
                   {
-                    this.router.navigateByUrl('');
+                    this.router.navigateByUrl('admin');
                   }
                   if(reponse.role.libRole==="assistant")
                   {

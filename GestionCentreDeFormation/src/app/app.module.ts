@@ -1,9 +1,9 @@
-import { CommonModule } from '@angular/common';
+
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
+import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AAccueilComponent } from './Assistant-side/a-accueil/a-accueil.component';
@@ -29,7 +29,6 @@ import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
 import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.component';
-
 
 @NgModule({
   declarations: [
@@ -59,8 +58,6 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
     AAccueilComponent
   ],
   imports: [
-    CommonModule,
-    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

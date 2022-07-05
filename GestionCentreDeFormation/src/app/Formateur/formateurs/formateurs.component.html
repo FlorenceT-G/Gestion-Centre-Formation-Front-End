@@ -13,7 +13,6 @@
                     <th> Nom </th>
                     <th> Prenom </th> 
                     <th> Adresse mail </th>
-
                     <td></td>
                     <td></td>
 
@@ -25,8 +24,9 @@
                     <td> {{formateur.nom}} </td>
                     <td> {{formateur.prenom}} </td>
                     <td> {{formateur.adresseMail}} </td>
+                    <td><button (click)="supprimer(formateur.idUtilisateur)">Supprimer le formateur</button></td>
                 </tr>
             </tbody>
         </table>
 
-        <button (click)="retour()"><h6>Retour &agrave; l'espace administratif</h6></button>
+        <button (click)="retour()"><h6>Retour &agrave; l'accueil</h6></button>
