@@ -76,7 +76,7 @@ import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/fo
     AddFormateurComponent,
     ModifFormateurComponent,
     CAccueilComponent,
-    CGestionProspectsComponent
+    CGestionProspectsComponent,
     AddFormationComponent,
     ModifFormationComponent,
     FormateurAccueilComponent,
