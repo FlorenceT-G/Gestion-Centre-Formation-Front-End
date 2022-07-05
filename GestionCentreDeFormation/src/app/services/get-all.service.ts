@@ -15,8 +15,7 @@ export class GetAllService {
 
   //login
   authentification(username: string, password: string) {
-    console.log("authentication : " + username + " " + password)
-    return this.http.post<any>('http://localhost:9090/authenticate', {username: "admin", password: "1234" })
+    return this.http.post<any>('http://localhost:9090/authenticate', {username, password})
   }
 
 
@@ -25,6 +24,7 @@ export class GetAllService {
     sessionStorage.removeItem('user');
     this.router.navigateByUrl('login');
   }
+
 
 
 
@@ -51,11 +51,9 @@ export class GetAllService {
   }
 
   getUtilisateur(login: string) {
-    console.log(login)
-    console.log("getUtilisateur")
     return this.http.get<any>(`http://localhost:9090/utilisateurs/${login}`);
   }
-
+ //return this.http.get<Utilisateur>('http://localhost:9090/utilisateurs/'+login);
   deleteUtilisateur(id: number) {
     return this.http.delete('http://localhost:9090/utilisateurs/' + id);
   }

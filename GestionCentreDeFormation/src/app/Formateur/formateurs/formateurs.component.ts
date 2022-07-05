@@ -37,4 +37,6 @@ export class FormateursComponent implements OnInit {
     this.router.navigateByUrl("")
   }
 
+  
+
 }

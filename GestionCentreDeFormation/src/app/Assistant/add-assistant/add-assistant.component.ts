@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Assistant } from 'src/app/models/Assistant.model';
-import { GetAllService } from '../../../services/get-all.service';
+import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
   selector: 'app-add-assistant',
@@ -12,7 +12,7 @@ export class AddAssistantComponent implements OnInit {
 
   assistant!:Assistant;
 
-  constructor(private AssService : GetAllService ,  private route:ActivatedRoute, 
+  constructor(private AssService : GetAllService,  private route:ActivatedRoute, 
     private router : Router) { }
 
   ngOnInit(): void {
