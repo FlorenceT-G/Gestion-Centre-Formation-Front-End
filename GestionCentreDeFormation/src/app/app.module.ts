@@ -37,6 +37,7 @@ import { AddParticipantComponent } from './Participant/add-participant/add-parti
 import { CommonModule } from '@angular/common';
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-forma
     AddParticipantComponent,
     ModifParticipantComponent,
     AddFormateurComponent,
-    ModifFormateurComponent
+    ModifFormateurComponent,
+    FormateurAccueilComponent
   ],
   imports: [
     BrowserModule,
