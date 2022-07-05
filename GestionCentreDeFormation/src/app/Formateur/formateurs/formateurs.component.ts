@@ -38,7 +38,7 @@ export class FormateursComponent implements OnInit {
   }
 
   redirigerAjout() {
-    this.router.navigateByUrl("")
+    this.router.navigateByUrl("") // Mettre URL ajout formateur
   }
   
 

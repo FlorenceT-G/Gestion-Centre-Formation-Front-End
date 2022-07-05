@@ -26,8 +26,8 @@ import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-co
 import { CommonModule } from '@angular/common';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
-import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
 
 @NgModule({
   declarations: [
