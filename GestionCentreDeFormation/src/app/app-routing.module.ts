@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
+import { AInscriptionParticipantComponent } from './Assistant-side/a-inscription-participant/a-inscription-participant.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
-
+  { path: 'modifierParticipant/:id',component: AInscriptionParticipantComponent},
   { path: '**', redirectTo: 'login'}
 ];
 
