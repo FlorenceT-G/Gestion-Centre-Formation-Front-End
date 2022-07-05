@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
 import { AAccueilComponent } from './Assistant-side/a-accueil/a-accueil.component';
+import { ACompteComponent } from './Assistant-side/a-compte/a-compte.component';
 import { AGestionPaiementsComponent } from './Assistant-side/a-gestion-paiements/a-gestion-paiements.component';
 import { AInscriptionParticipantComponent } from './Assistant-side/a-inscription-participant/a-inscription-participant.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
+  { path: 'a-gestion-compte', component:ACompteComponent},
   { path: '**', redirectTo: 'login'}
 ];
 
