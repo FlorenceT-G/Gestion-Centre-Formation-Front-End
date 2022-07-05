@@ -10,7 +10,9 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class FormationsComponent implements OnInit {
 
-  formations!:Formation[]
+  formationsEncours!:Formation[]
+  formationsVenir!:Formation[]
+  formationsPassees!:Formation[]
 
 
   constructor(private allService: GetAllService, private router:Router) { }
@@ -23,8 +25,15 @@ export class FormationsComponent implements OnInit {
 
   recuperer(){
     this.allService.getAllFormationEnCours().subscribe(
-      response => {this.formations=response;}
+      response => {this.formationsEncours=response;}
     )
+    this.allService.getProchainesFormations().subscribe(
+      response => {this.formationsVenir=response;}
+    )
+    this.allService.getAllFormationEnCours().subscribe(
+      response => {this.formationsPassees=response;}
+    )
+
   }
 
   supprimer(id:number){

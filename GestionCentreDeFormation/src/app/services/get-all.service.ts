@@ -195,12 +195,12 @@ export class GetAllService {
   getByNomProspect(nom:string) {
     return this.http.get<Prospect>('http://localhost:9090/commercial/prospects/' + nom);
   }
-  /*getByNumProspect(num:string) {
-    return this.http.get<Prospect>('http://localhost:9090/commercial/prospects/' + num);
-  }*/
-  /*getByMailProspect(mail:string) {
-    return this.http.get<Prospect>('http://localhost:9090/commercial/prospects/' + mail);
-  }*/
+  getByNumProspect(num:number) {
+    return this.http.get<Prospect>('http://localhost:9090/commercial/prospect/' + num);
+  }
+  getByMailProspect(mail:string) {
+    return this.http.get<Prospect>('http://localhost:9090/commercial/prospect/' + mail);
+  }
   deleteProspect(id:number) {
     return this.http.delete('http://localhost:9090/commercial/prospects/' + id);
   }
@@ -211,7 +211,7 @@ export class GetAllService {
     return this.http.post('http://localhost:9090/commercial/prospects', p)
   }
 
-  
+
   // ------------------------------- Relance ------------------------------------
   getAllRelance() {
     return this.http.get<Relance[]>('http://localhost:9090/assistant/liste-relances');
