@@ -20,11 +20,13 @@ import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorBasicAuthService } from './services/http-interceptor-basic-auth.service';
-import { AccueilAdminComponent } from './Admin/accueil-admin/accueil-admin.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
+import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
+
 
 @NgModule({
   declarations: [
@@ -43,11 +45,12 @@ import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-co
     FooterComponent,
     AdminComponent,
     FormateurComponent,
-    AccueilAdminComponent,
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
-    ModifCommercialComponent
+    ModifCommercialComponent,
+    AjoutadminComponent,
+    AccueiladminComponent
   ],
   imports: [
     BrowserModule,
