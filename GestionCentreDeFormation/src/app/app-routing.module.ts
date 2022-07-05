@@ -7,7 +7,9 @@ import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assis
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
+import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
@@ -33,7 +35,11 @@ const routes: Routes = [
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
-
+  { path: 'addFormateur',component: AddFormateurComponent},
+  { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
+  { path: 'assistant', component: AAccueilComponent},
+  { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
+  { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
   { path: '**', redirectTo: 'login'}
 ];
 
