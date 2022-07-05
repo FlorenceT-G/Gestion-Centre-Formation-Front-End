@@ -1,1 +1,61 @@
-<p>participants works!</p>
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2">GESTION DES PARTICIPANTS
+                       
+                    </h1>
+                        <br>
+
+
+<table width="100%">
+    <thead>
+    <tr>
+    <th>ID</th>
+    <th>Nom</th>
+    <th>Prenom </th> 
+    <th> Username</th>
+    <th>Adresse mail</th>
+    <th>Formations</th>
+    <th>Paiement</th>
+
+    <td></td>
+    <td></td>
+
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+        <tr *ngFor="let p of participants">
+        <td>{{p.idUtilisateur}}</td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}} </td>
+        <td>{{p.username}}</td>
+        <td>{{p.adresseMail}}</td>
+        <td><button (click)="formations(p.idUtilisateur)">Consulter</button></td>
+        <td><button (click)="paiement(p.idUtilisateur)">Détails</button></td>
+
+        <td><button (click)="supprimer(p.idUtilisateur)">Supprimer le participant</button></td>
+        <td><button (click)="modifier(p.idUtilisateur)">Modifier le participant</button></td>
+
+        </tr>
+
+    
+    </tbody>
+    </table>
+    <br>  <br>
+
+
+    <button (click)="ajouterParticipant()"><h6>Ajouter un participant</h6></button><br>
+    <button (click)="accueil()"><h6>Retour &agrave; l'accueil</h6></button>
+
+       
+</div>
+</div>
+</div>
+</div>
+
+
+

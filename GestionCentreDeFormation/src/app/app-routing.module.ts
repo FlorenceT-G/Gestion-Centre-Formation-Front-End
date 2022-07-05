@@ -1,17 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
+import { AAccueilComponent } from './Assistant-side/a-accueil/a-accueil.component';
+import { ACompteComponent } from './Assistant-side/a-compte/a-compte.component';
+import { AGestionPaiementsComponent } from './Assistant-side/a-gestion-paiements/a-gestion-paiements.component';
+import { AInscriptionParticipantComponent } from './Assistant-side/a-inscription-participant/a-inscription-participant.component';
 import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
 import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
 import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
+import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
-
+import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
+import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
+import { ParticipantsComponent } from './Participant/participants/participants.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -20,7 +29,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   
   { path: 'admin',component: AdminComponent},
-  { path: 'assistant',component: AdminComponent},
   { path: 'commercial',component: AdminComponent},
   { path: 'formateur',component: FormateurComponent},
   { path: 'participant',component: AdminComponent},
@@ -28,6 +36,16 @@ const routes: Routes = [
   { path: 'afficherCommerciaux',component: CommercialsComponent},
   { path: 'addCommercial',component: AddCommercialComponent},
   { path: 'modifierCommercial/:id',component: ModifCommercialComponent},
+  { path: 'afficherParticipants',component: ParticipantsComponent},
+  { path: 'addParticipant',component: AddParticipantComponent},
+  { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
+  { path: 'modifierParticipant/:id',component: AInscriptionParticipantComponent},
+  { path: 'addFormateur',component: AddFormateurComponent},
+  { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
+  { path: 'assistant', component: AAccueilComponent},
+  { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
+  { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
+  { path: 'a-gestion-compte', component:ACompteComponent},
   { path: '**', redirectTo: 'login'}
 ];
 

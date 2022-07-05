@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Commercial } from 'src/app/models/Commercial.model';
-import { GetAllService } from 'src/app/services/get-all.service';
+import { Commercial } from '../../models/Commercial.model';
+import { GetAllService } from '../../services/get-all.service';
+
 
 @Component({
   selector: 'app-add-commercial',
