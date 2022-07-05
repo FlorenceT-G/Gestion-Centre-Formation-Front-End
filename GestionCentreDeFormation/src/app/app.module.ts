@@ -42,6 +42,7 @@ import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospect
 import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
 import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
+import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/fo
     AddFormationComponent,
     ModifFormationComponent,
     FormateurAccueilComponent,
+    FormateurCompteComponent,
   ],
   imports: [
     BrowserModule,

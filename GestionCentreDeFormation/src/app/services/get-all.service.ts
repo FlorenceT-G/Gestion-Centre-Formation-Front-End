@@ -57,7 +57,7 @@ export class GetAllService {
     return this.http.get<any>(`http://localhost:9090/utilisateurs/${login}`);
   }
   getByIdUtilisateur(id:number) {
-    return this.http.get<any>('http://localhost:9090/utilisateurs/'+id);
+    return this.http.get<any>('http://localhost:9090/utilisateur/'+id);
   }
  //return this.http.get<Utilisateur>('http://localhost:9090/utilisateurs/'+login);
   deleteUtilisateur(id: number) {

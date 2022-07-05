@@ -12,15 +12,11 @@ export class FormateurCompteComponent implements OnInit {
 
   userString!:any
   userObject!:any
-  utilisateur!:Utilisateur
   validUser = false
 
   constructor(private service:GetAllService, private route:ActivatedRoute, private router:Router) { }
 
-  ngOnInit(): void {
-    this.utilisateur = new Utilisateur()
-    // this.getCompte()
-    
+  ngOnInit(): void {    
     this.userString = sessionStorage.getItem('user')
     if(this.userString != null) {
       this.userObject = JSON.parse(this.userString)
@@ -29,17 +25,9 @@ export class FormateurCompteComponent implements OnInit {
   }
 
   saveCompte() {
-    this.service.modifierUtilisateur(this.utilisateur).subscribe(
-      response => this.router.navigateByUrl('formateur')
-      // Créer le chemin pour revenir à l'accueil en tant que formateur
+    this.service.modifierUtilisateur(this.userObject).subscribe(
+      response => this.router.navigateByUrl('formateur-accueil')
     )
-  }
-
-  getCompte() {
-    const id=+this.route.snapshot.params['id'];
-    this.service.getByIdUtilisateur(id).subscribe(
-      response => {
-        this.utilisateur=response});
   }
 
 }

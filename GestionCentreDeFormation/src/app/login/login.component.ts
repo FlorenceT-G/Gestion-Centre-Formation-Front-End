@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
                   }
                   if(reponse.role.libRole==="formateur")
                   {
-                    this.router.navigateByUrl('formateur');
+                    this.router.navigateByUrl('formateur-accueil');
                   }
                   if(reponse.role.libRole==="participant")
                   {
