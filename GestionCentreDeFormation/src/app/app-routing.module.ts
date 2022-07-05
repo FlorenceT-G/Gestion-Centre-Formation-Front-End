@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilAdminComponent } from './accueil-admin/accueil-admin.component';
-import { AddAssistantComponent } from './add-assistant/add-assistant.component';
-import { AddCommercialComponent } from './add-commercial/add-commercial.component';
+import { AddAssistantComponent } from './Assistant/add-assistant/add-assistant.component';
 
 import { AssistantsComponent } from './Assistant/assistants/assistants.component';
+import { ModifAssistantComponent } from './Assistant/modif-assistant/modif-assistant.component';
+import { AddCommercialComponent } from './Commercial/add-commercial/add-commercial.component';
 import { CommercialsComponent } from './Commercial/commercials/commercials.component';
+import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
 import { FormateurComponent } from './Main/formateur/formateur.component';
-import { ModifAssistantComponent } from './modif-assistant/modif-assistant.component';
-import { ModifCommercialComponent } from './modif-commercial/modif-commercial.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
