@@ -1,1 +1,12 @@
-<p>formateur-compte works!</p>
+
+<h1>Paramètre du compte</h1>
+
+<form (ngSubmit)="saveCompte()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="utilisateur.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="utilisateur.prenom" /><br>
+    Username : <input type="text" name="username" [(ngModel)]="utilisateur.username" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="utilisateur.adresseMail" /><br>
+    
+    <button type="button" class="btn outline-dark">Enregistrer les modifications</button>
+</form>

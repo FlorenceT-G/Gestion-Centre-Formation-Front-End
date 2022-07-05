@@ -34,11 +34,15 @@ export class FormateursComponent implements OnInit {
   }
 
   retour() {
-    this.router.navigateByUrl("")
+    this.router.navigateByUrl("admin")
   }
 
-  redirigerAjout() {
-    this.router.navigateByUrl("") // Mettre URL ajout formateur
+  redirectionAjout() {
+    this.router.navigateByUrl("addFormateur")
+  }
+
+  redirectionModifier(id:number) {
+    this.router.navigateByUrl("modifierFormateur/"+id)
   }
   
 
