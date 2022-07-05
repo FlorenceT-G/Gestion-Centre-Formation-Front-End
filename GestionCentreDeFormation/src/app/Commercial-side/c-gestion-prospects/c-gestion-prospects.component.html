@@ -1,10 +1,36 @@
 <h1>Liste des Prospects</h1>
 
-<table>
+<table class="tabcenter">
     <thead>
-        <td>Nom</td><td>Prénom</td><td>Adresse Mail</td><td>Numéro de téléphone</td><td>Options</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        <td>Adresse Mail</td>
+        <td>Numéro de téléphone</td>
+        <td>Dates de Contact</td>
+        <td>Options</td>
     </thead>
     <tr *ngFor="let p of lProspects">
-        <td>{{p.nom}}</td><td>{{p.prenom}}</td><td>{{p.email}}</td><td>{{p.numTel}}</td><td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour inscription</button></td>
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.numTel}}</td>
+        <td>
+            <span *ngFor="let c of p.contacts">
+                <span *ngIf="c.idContact;then contacts else nouveau"></span>
+                <ng-template #contacts>
+                    <span *ngForm="let c of p.contacts">
+                        {{c.dateContact}} <button type="button" class="btn btn-dark" (click)="afficherCR()">Voir
+                            CR</button><br>
+                    </span>
+                </ng-template>
+                <ng-template #nouveau>
+                    Aucun contacts
+                </ng-template>
+            </span>
+            <button type="button" class="btn btn-dark" (click)="ajouterDate()">Ajouter une date</button>
+        </td>
+        <td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour
+                inscription</button></td>
+
     </tr>
 </table>

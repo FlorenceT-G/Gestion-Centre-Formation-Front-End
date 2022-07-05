@@ -11,6 +11,7 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class CGestionProspectsComponent implements OnInit {
 
   lProspects!: Prospect[]
+  prospect:Prospect = new Prospect()
   constructor(private all:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
@@ -22,15 +23,14 @@ export class CGestionProspectsComponent implements OnInit {
   }
 
   AInscrire(id:number) {
-    let p!:Prospect
     this.all.getByIdProspect(id).subscribe(
       prospect => {
-        p = prospect;
+        this.prospect = prospect;
+        this.prospect.aInscrire = true;
       }
     )
 
-    p.aInscrire = true;
-    this.all.modifierProspect(p).subscribe(
+    this.all.modifierProspect(this.prospect).subscribe(
       reload => {
         this.reload()
       }
@@ -40,6 +40,13 @@ export class CGestionProspectsComponent implements OnInit {
 
   reload() {
     this.router.navigateByUrl("c-gestion-prospects")
+  }
+
+  afficherCR() {
+    
+  }
+  ajouterDate() {
+
   }
 
 }

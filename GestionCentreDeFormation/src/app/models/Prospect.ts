@@ -1,3 +1,5 @@
+import { Contact } from "./Contact";
+
 export class Prospect {
 
     idProspect!:number;
@@ -7,5 +9,7 @@ export class Prospect {
 	numTel!:string;
 
 	aInscrire!:boolean;
+
+	contacts!:Contact[];
 
 }

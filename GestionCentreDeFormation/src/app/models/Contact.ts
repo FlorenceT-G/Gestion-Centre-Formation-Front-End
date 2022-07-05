@@ -1,12 +1,12 @@
+import { Commercial } from "./Commercial.model";
+import { Prospect } from "./Prospect";
+
 export class Contact {
+    idContact!:number;
+    compteRendu!:string;
+    dateContact!:Date;
 
-    idUtilisateur!: number;
-    nom!: string;
-	prenom!: string;
-	adresseMail!: string;
-    username!:string;
-    password!:string
-	
+    prospect!:Prospect;
 
-
+    commercial!:Commercial;
 }
