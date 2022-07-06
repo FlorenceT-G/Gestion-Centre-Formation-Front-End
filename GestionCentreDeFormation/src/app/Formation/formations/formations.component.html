@@ -39,7 +39,7 @@
         <td>{{fc.dateDebut}}</td>
         <td>{{fc.dateFin}}</td>
         <td>{{fc.cout}}</td>
-        <td>{{fc.formateur}}</td>
+        <td>{{fc.formateur.nom}} {{fc.formateur.prenom}}</td>
 
         <td><button (click)="voirParticipants(fc.idFormation)">Consulter</button></td>
         <td><button (click)="supprimer(fc.idFormation)">Supprimer</button></td>
@@ -81,7 +81,7 @@
             <td>{{fv.dateDebut}}</td>
             <td>{{fv.dateFin}}</td>
             <td>{{fv.cout}}</td>
-            <td>{{fv.formateur}}</td>
+            <td>{{fv.formateur.nom}} {{fv.formateur.prenom}}</td>
     
 
             <td><button (click)="voirParticipants(fv.idFormation)">Consulter</button></td>
@@ -124,7 +124,7 @@
             <td>{{fp.dateDebut}}</td>
             <td>{{fp.dateFin}}</td>
             <td>{{fp.cout}}</td>
-            <td>{{fp.formateur}}</td>
+            <td>{{fp.formateur.nom}} {{fp.formateur.prenom}}</td>
     
     
             <td><button (click)="voirParticipants(fp.idFormation)">Consulter</button></td>
