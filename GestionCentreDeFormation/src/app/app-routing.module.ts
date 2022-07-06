@@ -15,8 +15,6 @@ import { CommercialsComponent } from './Commercial/commercials/commercials.compo
 import { ModifCommercialComponent } from './Commercial/modif-commercial/modif-commercial.component';
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
-import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
-import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateursComponent } from './Formateur/formateurs/formateurs.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
@@ -30,6 +28,8 @@ import { ModifParticipantComponent } from './Participant/modif-participant/modif
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
+import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},

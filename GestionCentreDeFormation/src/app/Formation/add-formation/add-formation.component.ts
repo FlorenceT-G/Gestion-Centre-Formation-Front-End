@@ -24,12 +24,25 @@ export class AddFormationComponent implements OnInit {
   }
 
   SaveFormation(){
-    this.Service.insererFormation(this.formation).subscribe(
+  if (this.idFormateur==null){
+      this.Service.insererFormation(this.formation).subscribe(
+        response=>{
+          this.router.navigateByUrl('afficherFormations');
+        }
+      )
+    }
+    else{
+    this.Service.getByIdFormateur(this.idFormateur).subscribe(
+      response=>{this.formation.formateur=response;
+      this.Service.insererFormation(this.formation).subscribe(
       response=>{
-        this.router.navigateByUrl('afficherFormation');
+        this.router.navigateByUrl('afficherFormations');
       }
+    )}
     )
   }
+}
+  
   
   recuperer(){
     this.Service.getFormateurDispo().subscribe(
