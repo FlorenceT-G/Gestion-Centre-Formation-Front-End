@@ -47,6 +47,9 @@ export class GetAllService {
   deleteFormateur(id: number) {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
   }
+  getFormateurDispo() {
+    return this.http.get<Formateur[]>('http://localhost:9090/admin/formateurDispo');
+  }
 
 
   // ------------------------------- Utilisateur ------------------------------------
@@ -157,13 +160,13 @@ export class GetAllService {
     return this.http.get<Formation[]>('http://localhost:9090/historiqueFormations');
   }
   getByIdFormation(id:number) {
-    return this.http.get<Formation>('http://localhost:9090/admin/formation/' + id);
+    return this.http.get<Formation>('http://localhost:9090/formations/'+id);
   }
   insererFormation(f:Formation) {
     return this.http.post('http://localhost:9090/admin/formations', f);
   }
   modifierFormation(f:Formation) {
-    return this.http.put('http://localhost:9090/admin/formations/', f);
+    return this.http.put('http://localhost:9090/admin/formations', f);
   }
   deleteFormation(id:number) {
     return this.http.delete('http://localhost:9090/admin/formations/' + id);

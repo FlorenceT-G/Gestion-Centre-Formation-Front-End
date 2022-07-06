@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
               this.invalidLogin = false;
               this.AuthService.getUtilisateur(this.username).subscribe(
                 reponse => {
-                  console.log(sessionStorage.getItem('t'))
                   //console.log("reponse")
                   //console.log(reponse.nom)
                   sessionStorage.setItem('user', JSON.stringify(reponse));

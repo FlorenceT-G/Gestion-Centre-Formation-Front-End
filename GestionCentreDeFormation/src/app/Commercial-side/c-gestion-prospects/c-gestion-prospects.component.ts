@@ -11,7 +11,6 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class CGestionProspectsComponent implements OnInit {
 
   lProspects!: Prospect[]
-  prospect!:Prospect
   constructor(private all:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
@@ -24,17 +23,19 @@ export class CGestionProspectsComponent implements OnInit {
 
   AInscrire(id:number) {
     console.log("works")
+    console.log(id)
+    let p!:Prospect
     this.all.getByIdProspect(id).subscribe(
       prospect => {
-        console.log("this is true")
-        this.prospect = prospect;
-        this.prospect.aInscrire = true;
+        console.log(prospect)
+        p = prospect;
+        p.aInscrire = true;
       }
     )
 
-    console.log(this.prospect)
+    console.log(p)
 
-    this.all.modifierProspect(this.prospect).subscribe(
+    this.all.modifierProspect(p).subscribe(
       reload => {
         this.reload()
       }
