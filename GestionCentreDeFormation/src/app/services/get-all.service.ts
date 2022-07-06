@@ -47,6 +47,9 @@ export class GetAllService {
   deleteFormateur(id: number) {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
   }
+  getFormateurDispo() {
+    return this.http.get<Formateur[]>('http://localhost:9090/admin/formateurDispo');
+  }
 
 
   // ------------------------------- Utilisateur ------------------------------------

@@ -13,7 +13,7 @@
         <td>{{p.nom}}</td>
         <td>{{p.prenom}}</td>
         <td>{{p.email}}</td>
-        <td>{{p.numTel}}</td>
+        <td>{{p.numTel}}</td>   
         <td>
             <span *ngFor="let c of p.contacts">
                 <span *ngIf="c.idContact;then contacts else nouveau"></span>
@@ -27,7 +27,7 @@
                     Aucun contacts
                 </ng-template>
             </span>
-            <button type="button" class="btn btn-dark" (click)="ajouterDate()">Ajouter une date</button>
+            <button type="button" class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter une date</button>
         </td>
         <td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour
                 inscription</button></td>

@@ -29,6 +29,7 @@ import { AddParticipantComponent } from './Participant/add-participant/add-parti
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
+import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -47,7 +48,6 @@ const routes: Routes = [
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
-  { path: 'modifierParticipant/:id',component: AInscriptionParticipantComponent},
   { path: 'addFormateur',component: AddFormateurComponent},
   { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
   { path: 'assistant', component: AAccueilComponent},
@@ -55,6 +55,7 @@ const routes: Routes = [
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
   { path: 'a-gestion-compte', component:ACompteComponent}, 
   { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
+  { path: 'commercial-ajout-contact/:id', component:CAjoutContactComponent},
   { path: 'afficherFormations',component: FormationsComponent},
   { path: 'addFormation',component: AddFormationComponent},
   { path: 'modifierFormation/:id',component: ModifFormationComponent},

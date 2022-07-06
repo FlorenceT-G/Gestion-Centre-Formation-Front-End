@@ -58,9 +58,8 @@ export class AdminComponent implements OnInit {
           reponse[i].dateFin = new Date(reponse[i].dateFin);          
           this.duree.push(this.progression(reponse[i]))
           this.compteur.push(this.duree.length-1)
-
-          
-          console.log(this.duree)
+          console.log("this.du re e")
+          console.log(reponse[i].listeParticipants[0])
         }
 
         //this.progression(reponse[0]);
