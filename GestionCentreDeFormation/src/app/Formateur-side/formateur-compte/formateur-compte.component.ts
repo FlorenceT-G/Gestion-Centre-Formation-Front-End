@@ -28,7 +28,7 @@ export class FormateurCompteComponent implements OnInit {
 
   saveCompte() {
     console.log(this.userObject.idUtilisateur)
-    this.service.modifierUtilisateur(this.userObject).subscribe(
+    this.service.modifierFormateur(this.userObject).subscribe(
       response => this.router.navigateByUrl('formateur-accueil')
     )
   }

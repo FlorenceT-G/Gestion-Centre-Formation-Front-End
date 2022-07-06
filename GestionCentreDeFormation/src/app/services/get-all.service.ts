@@ -42,7 +42,7 @@ export class GetAllService {
     return this.http.post('http://localhost:9090/admin/formateur', f);
   }
   modifierFormateur(f: Formateur) {
-    return this.http.put('http://localhost:9090/admin/formateur/', f);
+    return this.http.put('http://localhost:9090/formateur/formateur/', f);
   }
   deleteFormateur(id: number) {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
