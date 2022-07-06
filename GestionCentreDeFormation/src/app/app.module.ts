@@ -37,9 +37,13 @@ import { AddParticipantComponent } from './Participant/add-participant/add-parti
 import { CommonModule } from '@angular/common';
 import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
+import { CAccueilComponent } from './Commercial-side/c-accueil/c-accueil.component';
+import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
 import { AddFormationComponent } from './Formation/add-formation/add-formation.component';
 import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
+import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
+import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
 
 
 @NgModule({
@@ -73,9 +77,13 @@ import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/fo
     ModifParticipantComponent,
     AddFormateurComponent,
     ModifFormateurComponent,
+    CAccueilComponent,
+    CGestionProspectsComponent,
     AddFormationComponent,
     ModifFormationComponent,
     FormateurAccueilComponent,
+    FormateurCompteComponent,
+    CAjoutContactComponent,
   ],
   imports: [
     BrowserModule,

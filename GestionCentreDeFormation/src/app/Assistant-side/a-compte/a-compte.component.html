@@ -1,12 +1,21 @@
-
-<h1>Paramètre du compte</h1>
+<h1>Paramètres du compte</h1>
 
 <form (ngSubmit)="modifCompte()">
-
-    Nom : <input type="text" name="nom" [(ngModel)]="userObject.nom" /><br>
-    Prenom : <input type="text" name="prenom" [(ngModel)]="userObject.prenom" /><br>
-    Username : <input type="text" name="username" [(ngModel)]="userObject.username" /><br>
-    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="userObject.adresseMail" /><br>
-    
-    <button type="button" class="btn outline-dark">Enregistrer les modifications</button>
+    <table class="tabcenter">
+        <tr>Nom :<td></td>
+            <td><input type="text" name="nom" [(ngModel)]="userObject.nom" /><br></td>
+        </tr>
+        <tr>Prenom :<td></td>
+            <td><input type="text" name="prenom" [(ngModel)]="userObject.prenom" /><br></td>
+        </tr>
+        <tr>Username :<td></td>
+            <td><input type="text" name="username" [(ngModel)]="userObject.username" /><br></td>
+        </tr>
+        <tr> Adresse mail :<td></td>
+            <td><input type="text" name="adresseMail" [(ngModel)]="userObject.adresseMail" /><br></td>
+        </tr>
+        <tr>
+            <td colspan="2" class="txtcenter"><button type="submit" class="btn outline-dark">Enregistrer les modifications</button></td>
+        </tr>
+    </table>
 </form>

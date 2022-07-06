@@ -25,8 +25,12 @@
                     <td> {{formateur.prenom}} </td>
                     <td> {{formateur.adresseMail}} </td>
                     <td><button (click)="supprimer(formateur.idUtilisateur)">Supprimer le formateur</button></td>
+                    <td><button (click)="redirectionModifier(formateur.idUtilisateur)">Modifier le formateur</button></td>
                 </tr>
             </tbody>
         </table>
 
+        <br> <br>
+        <button (click)="redirectionAjout()"><h6>Ajouter un formateur</h6></button>
+        <br>
         <button (click)="retour()"><h6>Retour &agrave; l'accueil</h6></button>

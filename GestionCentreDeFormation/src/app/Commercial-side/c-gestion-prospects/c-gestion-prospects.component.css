@@ -13,3 +13,10 @@ td {
 .txtcenter {
 	text-align:center;
 }
+
+thead {
+	text-align: center;
+	font-weight:bold;
+	background-color: rgb( 86, 86, 86);
+	color: rgb(204, 204, 204);
+}

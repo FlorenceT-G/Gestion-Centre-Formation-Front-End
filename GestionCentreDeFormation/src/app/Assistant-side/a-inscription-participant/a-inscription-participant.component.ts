@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Prospect } from 'src/app/models/Prospect';
+import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
   selector: 'app-a-inscription-participant',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AInscriptionParticipantComponent implements OnInit {
 
-  constructor() { }
+  lProspects!:Prospect[]
+
+  constructor(private all:GetAllService) { }
 
   ngOnInit(): void {
+    this.all.getProspectAInscrire().subscribe(
+      liste => {
+        this.lProspects = liste;
+      }
+    )
+    
+  }
+
+  inscrire(){
+    
   }
 
 }

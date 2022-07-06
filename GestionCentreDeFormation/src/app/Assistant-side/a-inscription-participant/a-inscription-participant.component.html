@@ -1,1 +1,14 @@
-<p>a-inscription-participant works!</p>
+<h1>Liste des prospects à inscrire</h1>
+
+<table>
+    <thead>
+        <td>Nom</td><td>Prénom</td><td>Adresse Mail</td><td>Numéro de téléphone</td><td>Options</td>
+    </thead>
+    <tr *ngFor="let p of lProspects">
+        <td>{{p.nom}}</td>
+        <td>{{p.prenom}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.numTel}}</td>   
+        <td><button (click)="inscrire()">Inscrire</button></td>
+    </tr>
+</table>

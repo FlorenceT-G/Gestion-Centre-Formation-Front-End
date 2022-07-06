@@ -16,7 +16,7 @@ export class AddFormateurComponent implements OnInit {
 
   ngOnInit(): void {
     this.formateur = new Formateur()
-    this.formateur.password= "1234"
+    this.formateur.password="1234"
   }
 
   saveFormateur() {
