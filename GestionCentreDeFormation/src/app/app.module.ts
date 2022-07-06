@@ -45,7 +45,12 @@ import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/fo
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 
+
+//testgrap    npm install ng2-charts --save
+import { NgChartsModule } from 'ng2-charts';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +91,7 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     FormateurCompteComponent,
     CAjoutContactComponent,
     CAfficherCrComponent,
+    FormateurFormationsComponent
   ],
   imports: [
     BrowserModule,
@@ -93,7 +99,9 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    //testgraph
+    NgChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }

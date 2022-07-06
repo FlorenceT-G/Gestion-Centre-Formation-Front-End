@@ -19,7 +19,7 @@
                 <span *ngIf="c.idContact;then contacts else nouveau"></span>
                 <ng-template #contacts>
                     <span *ngFor="let c of p.contacts" class="txtcenter">
-                        {{c.dateContact | date: "dd-MM-yyyy"}} <br>
+                        {{c.dateContact}} <br>
                     </span>
                 </ng-template>
                 <ng-template #nouveau>

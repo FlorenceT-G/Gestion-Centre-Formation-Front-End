@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Formation } from 'src/app/models/Formation';
 import { Utilisateur } from 'src/app/models/Utilisateur.model';
 import { GetAllService } from 'src/app/services/get-all.service';
 
@@ -21,13 +22,14 @@ export class FormateurCompteComponent implements OnInit {
     if(this.userString != null) {
       this.userObject = JSON.parse(this.userString)
       this.validUser = true
-    }
+    }    
+    console.log(this.userObject.idUtilisateur)
   }
 
   saveCompte() {
+    console.log(this.userObject.idUtilisateur)
     this.service.modifierUtilisateur(this.userObject).subscribe(
       response => this.router.navigateByUrl('formateur-accueil')
     )
   }
-
 }
