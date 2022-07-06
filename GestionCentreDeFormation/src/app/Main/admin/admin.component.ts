@@ -15,6 +15,7 @@ export class AdminComponent implements OnInit {
 
   formation !: Formation[];
   date !: Date;
+  compteur!:number[]
 
 
   duree!: String[];
@@ -34,6 +35,7 @@ export class AdminComponent implements OnInit {
 
     this.date = new Date();
     this.duree =[];
+    this.compteur=[];
    
 
     this.formationencours();
@@ -50,11 +52,14 @@ export class AdminComponent implements OnInit {
   formationencours() {
     this.Service.getAllFormationEnCours().subscribe(
       reponse => {
+
         for (let i = 0; i < reponse.length; i = i + 1) {
           reponse[i].dateDebut = new Date(reponse[i].dateDebut);
           reponse[i].dateFin = new Date(reponse[i].dateFin);          
           this.duree.push(this.progression(reponse[i]))
-          console.log("this.du re e")
+          this.compteur.push(this.duree.length-1)
+
+          
           console.log(this.duree)
         }
 
