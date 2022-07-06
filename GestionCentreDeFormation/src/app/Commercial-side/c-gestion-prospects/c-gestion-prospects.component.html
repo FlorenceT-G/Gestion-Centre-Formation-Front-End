@@ -18,18 +18,22 @@
             <span *ngFor="let c of p.contacts">
                 <span *ngIf="c.idContact;then contacts else nouveau"></span>
                 <ng-template #contacts>
-                    <span *ngForm="let c of p.contacts">
-                        {{c.dateContact}} <button type="button" class="btn btn-dark" (click)="afficherCR()">Voir
-                            CR</button><br>
+                    <span *ngFor="let c of p.contacts" class="txtcenter">
+                        {{c.dateContact | date: "dd-MM-yyyy"}} <br>
                     </span>
                 </ng-template>
                 <ng-template #nouveau>
                     Aucun contacts
                 </ng-template>
             </span>
-            <button type="button" class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter une date</button>
+
+            <div class="txtcenter">
+                <button type="button" class="btn btn-default btn-sm" (click)="afficherCR(p.idProspect)">Voir CRs</button>
+                <br>
+                <button type="button" class="btn btn-dark btn-sm" (click)="ajouterDate(p.idProspect)">Ajouter une date</button></div>
+            
         </td>
-        <td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour
+        <td><button type="button" class="btn btn-dark" (click)="AInscrire(p)">Valider pour
                 inscription</button></td>
 
     </tr>

@@ -28,6 +28,7 @@ import { ModifParticipantComponent } from './Participant/modif-participant/modif
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 
@@ -56,6 +57,7 @@ const routes: Routes = [
   { path: 'a-gestion-compte', component:ACompteComponent}, 
   { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
   { path: 'commercial-ajout-contact/:id', component:CAjoutContactComponent},
+  { path: 'c-afficher-cr/:id', component:CAfficherCrComponent},
   { path: 'afficherFormations',component: FormationsComponent},
   { path: 'addFormation',component: AddFormationComponent},
   { path: 'modifierFormation/:id',component: ModifFormationComponent},

@@ -44,6 +44,7 @@ import { ModifFormationComponent } from './Formation/modif-formation/modif-forma
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 
 
 @NgModule({
@@ -84,6 +85,7 @@ import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajou
     FormateurAccueilComponent,
     FormateurCompteComponent,
     CAjoutContactComponent,
+    CAfficherCrComponent,
   ],
   imports: [
     BrowserModule,

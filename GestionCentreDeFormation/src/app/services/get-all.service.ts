@@ -144,8 +144,8 @@ export class GetAllService {
   modifierContact(c:Contact) {
     return this.http.put('http://localhost:9090/contacts', c);
   }
-  insererContact(c:Contact) {
-    return this.http.post('http://localhost:9090/contacts', c)
+  insererContact(c:Contact, idProspect:number, idCommercial:number) {
+    return this.http.post('http://localhost:9090/contacts/' + idProspect + "/" + idCommercial, c)
   }
 
 

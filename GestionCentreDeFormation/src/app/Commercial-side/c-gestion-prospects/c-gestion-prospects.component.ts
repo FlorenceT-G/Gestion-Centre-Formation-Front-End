@@ -21,35 +21,27 @@ export class CGestionProspectsComponent implements OnInit {
     );
   }
 
-  AInscrire(id:number) {
-    console.log("works")
-    console.log(id)
-    let p!:Prospect
-    this.all.getByIdProspect(id).subscribe(
-      prospect => {
-        console.log(prospect)
-        p = prospect;
-        p.aInscrire = true;
-      }
-    )
-
-    console.log(p)
+  AInscrire(p:Prospect) {
+    p.ainscrire = true;
 
     this.all.modifierProspect(p).subscribe(
-      reload => {
-        this.reload()
-      }
-    );
+      reload => this.reload()
+    )
 
   }
 
   reload() {
-    this.router.navigateByUrl("c-gestion-prospects")
+    this.all.getProspectNonInscrits().subscribe(
+      liste => {
+        this.lProspects = liste;
+      } 
+    );
   }
 
-  afficherCR() {
-
+  afficherCR(id:number) {
+    this.router.navigateByUrl('c-afficher-cr/' + id)
   }
+
   ajouterDate(id:number) {
     this.router.navigateByUrl("commercial-ajout-contact/" + id)
   }

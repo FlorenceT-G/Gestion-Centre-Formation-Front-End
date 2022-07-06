@@ -8,7 +8,7 @@ export class Prospect {
 	email!:string;
 	numTel!:string;
 
-	aInscrire!:boolean;
+	ainscrire!:boolean;
 
 	contacts!:Contact[];
 

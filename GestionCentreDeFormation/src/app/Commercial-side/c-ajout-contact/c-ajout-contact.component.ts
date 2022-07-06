@@ -1,4 +1,3 @@
-import { getLocaleDateFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Commercial } from 'src/app/models/Commercial.model';
@@ -26,7 +25,10 @@ export class CAjoutContactComponent implements OnInit {
     this.route.params.subscribe(
       params => this.all.getByIdProspect(params['id']).subscribe(
         result => {
+          // console.log(result)
           this.p = result
+          // console.log("---")
+          // console.log(this.p)
         }
       )
     )
@@ -40,11 +42,11 @@ export class CAjoutContactComponent implements OnInit {
     this.contact.commercial = this.commercialObjet;
     this.contact.prospect = this.p;
 
-    this.all.insererContact(this.contact).subscribe(
-      res => {
-        this.backtrack() }
-    )
+    console.log(this.contact)
 
+    this.all.insererContact(this.contact, this.p.idProspect, this.commercialObjet.idUtilisateur).subscribe(
+      res => this.backtrack()
+    )
   }
 
   backtrack() {
