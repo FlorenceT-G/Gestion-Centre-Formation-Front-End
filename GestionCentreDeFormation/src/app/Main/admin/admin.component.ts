@@ -114,10 +114,9 @@ recuperer(){
 // gestion des utilisateur
 
 supprimera(id:number){
-  this.Service.deleteAssistant(id).subscribe(
-    response=>{this.recuperer();
-              this.router.navigateByUrl('afficherAssistants');})
-}
+  this.Service.deleteAssistant(id).subscribe()
+  const myTimeout = setTimeout(this.a, 300);
+         }
 
 modifiera(id:number){
   this.router.navigateByUrl('modifierAssistant/'+id);
@@ -129,10 +128,9 @@ ajouterAssistant(){
 
 
 supprimerc(id:number){
-  this.Service.deleteCommercial(id).subscribe(
-    response=>{
-              this.router.navigateByUrl('admin');})
-}
+  this.Service.deleteCommercial(id).subscribe()
+  const myTimeout = setTimeout(this.a, 300);
+         }
 modifierc(id:number){
   this.router.navigateByUrl('modifierCommercial/'+id);
 }
@@ -142,12 +140,9 @@ ajouterComm(){
 
 
 supprimerf(id:number) {
-  this.Service.deleteFormateur(id).subscribe(
-    response => {
-      this.router.navigateByUrl("admin");
-    }
-  )
-}
+  this.Service.deleteFormateur(id).subscribe()
+  const myTimeout = setTimeout(this.a, 300);
+         }
 ajouterF() {
   this.router.navigateByUrl("addFormateur")
 }
@@ -158,10 +153,9 @@ redirectionModifierf(id:number) {
 
 
 supprimerp(id:number){
-  this.Service.deleteParticipant(id).subscribe(
-    response=>{this.recuperer();
-              this.router.navigateByUrl('afficherParticipants');})
-}
+  this.Service.deleteParticipant(id).subscribe()
+     const myTimeout = setTimeout(this.a, 300);
+            }
 
 modifierp(id:number){
   this.router.navigateByUrl('modifierParticipant/'+id);
@@ -172,10 +166,9 @@ ajouterParticipant(){
 }
 
 supprimeru(id:number){
-  this.Service.deleteUtilisateur(id).subscribe(
-    response=>{
-              this.router.navigateByUrl('afficherParticipants');})
-}
+  this.Service.deleteUtilisateur(id).subscribe()
+  const myTimeout = setTimeout(this.a, 300);
+         }
 
 modifieru(id:number){
   this.router.navigateByUrl('modifierUtilisateur/'+id);
@@ -201,7 +194,9 @@ ajouterutil(){
 
 
 
-
+a(){
+  location.reload();
+}
 
 
 
