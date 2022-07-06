@@ -44,6 +44,7 @@ import { ModifFormationComponent } from './Formation/modif-formation/modif-forma
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 
 
 //testgrap    npm install ng2-charts --save
@@ -87,6 +88,7 @@ import { NgChartsModule } from 'ng2-charts';
     FormateurAccueilComponent,
     FormateurCompteComponent,
     CAjoutContactComponent,
+    FormateurFormationsComponent,
   ],
   imports: [
     BrowserModule,
