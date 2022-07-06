@@ -46,6 +46,9 @@ import { FormateurCompteComponent } from './Formateur-side/formateur-compte/form
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
 
 
+//testgrap    npm install ng2-charts --save
+import { NgChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,7 +94,11 @@ import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajou
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    //testgraph
+    NgChartsModule,
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }

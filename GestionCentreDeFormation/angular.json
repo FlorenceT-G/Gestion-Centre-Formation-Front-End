@@ -27,7 +27,11 @@
             
             ],
             "scripts": [
+              "node_modules/chart.js/dist/Chart.min.js"
              
+            ],
+            "allowedCommonJsDependencies": [
+              "chart.js"
             ]
           },
           "configurations": {
