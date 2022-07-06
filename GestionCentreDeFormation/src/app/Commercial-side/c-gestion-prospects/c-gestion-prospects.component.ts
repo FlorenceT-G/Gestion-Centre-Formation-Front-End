@@ -32,6 +32,8 @@ export class CGestionProspectsComponent implements OnInit {
       }
     )
 
+    console.log(this.prospect)
+
     this.all.modifierProspect(this.prospect).subscribe(
       reload => {
         this.reload()

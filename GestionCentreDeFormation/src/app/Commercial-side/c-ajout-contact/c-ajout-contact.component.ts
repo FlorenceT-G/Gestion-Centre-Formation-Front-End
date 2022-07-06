@@ -13,7 +13,7 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class CAjoutContactComponent implements OnInit {
 
-  p:Prospect =  new Prospect()
+  p!:Prospect
   auj!:number
   commercialString!:any
   commercialObjet!:Commercial
@@ -41,13 +41,14 @@ export class CAjoutContactComponent implements OnInit {
     this.contact.prospect = this.p;
 
     this.all.insererContact(this.contact).subscribe(
-      res => this.backtrack()
+      res => {
+        this.backtrack() }
     )
 
   }
 
   backtrack() {
-    this.router.navigateByUrl('c-gestion-prospect')
+    this.router.navigateByUrl('c-gestion-prospects')
   }
 
 }
