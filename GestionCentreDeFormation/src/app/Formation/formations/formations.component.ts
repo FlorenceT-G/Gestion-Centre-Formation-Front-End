@@ -30,7 +30,7 @@ export class FormationsComponent implements OnInit {
     this.allService.getProchainesFormations().subscribe(
       response => {this.formationsVenir=response;}
     )
-    this.allService.getAllFormationEnCours().subscribe(
+    this.allService.getHistoriqueFormations().subscribe(
       response => {this.formationsPassees=response;}
     )
 
@@ -52,6 +52,10 @@ export class FormationsComponent implements OnInit {
 
   accueil(){
     this.router.navigateByUrl('');
+  }
+
+  voirParticipants(idFormation:number){
+    this.router.navigateByUrl('afficherParticipantsByFormation/'+idFormation);
   }
 
 }

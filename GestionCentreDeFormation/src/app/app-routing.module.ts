@@ -45,7 +45,6 @@ const routes: Routes = [
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
-  { path: 'modifierParticipant/:id',component: AInscriptionParticipantComponent},
   { path: 'addFormateur',component: AddFormateurComponent},
   { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
   { path: 'assistant', component: AAccueilComponent},

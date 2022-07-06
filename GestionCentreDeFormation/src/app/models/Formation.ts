@@ -1,3 +1,5 @@
+import { Formateur } from "./Formateur"
+
 export class Formation {
 
     idFormation!:number
@@ -6,5 +8,6 @@ export class Formation {
 	dateDebut!:Date
 	dateFin!:Date
 	cout!:number
+	formateur!:Formateur
 
 }

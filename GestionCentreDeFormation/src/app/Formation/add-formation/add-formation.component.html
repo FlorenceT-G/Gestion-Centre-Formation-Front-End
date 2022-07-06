@@ -1,1 +1,16 @@
-<p>add-formation works!</p>
+<h4>Nouvelle formation</h4>
+
+<form (ngSubmit)="SaveFormation()">
+
+    Intitulé : <input type="text" name="libFormation" [(ngModel)]="formation.libFormation" /><br>
+    Description : <input type="text" name="description" [(ngModel)]="formation.description" /><br>
+    Date de début : <input type="date" name="dateDebut" [(ngModel)]="formation.dateDebut" /><br>
+    Date de fin : <input type="date" name="dateFin" [(ngModel)]="formation.dateFin" /><br>
+    Tarif : <input type="number" name="cout" [(ngModel)]="formation.cout" /><br>
+    Formateur : <select name="idFormateur" id="idFormateur" [(ngModel)]="idFormateur">
+        <option *ngFor="let f of formateurs" [ngValue] ="f.idUtilisateur">{{f.nom}} {{f.prenom}}</option>
+        </select>
+    
+    <input type="submit" value="Ajouter">
+</form>
+
