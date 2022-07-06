@@ -1,3 +1,6 @@
+import { Formateur } from "./Formateur";
+import { Formation } from "./Formation";
+
 export class Participant {
 
     idUtilisateur!: number;
@@ -6,5 +9,7 @@ export class Participant {
 	adresseMail!: string;
     username!:string;
     password!:string;
+
+    listeFormations!:Formation[]
     
 }

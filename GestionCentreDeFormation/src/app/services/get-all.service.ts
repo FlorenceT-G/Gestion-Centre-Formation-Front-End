@@ -162,6 +162,9 @@ export class GetAllService {
   getByIdFormation(id:number) {
     return this.http.get<Formation>('http://localhost:9090/formations/'+id);
   }
+  getFormationByParticipant(id:number) {
+    return this.http.get<Formation[]>('http://localhost:9090/formationParticipant/'+id);
+  }
   insererFormation(f:Formation) {
     return this.http.post('http://localhost:9090/admin/formations', f);
   }

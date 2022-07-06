@@ -1,1 +1,65 @@
-<p>a-gestion-paiements works!</p>
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2">Gestion des paiements
+                       
+                    </h1>
+                        <br>
+
+
+<table width="100%"  *ngFor="let p of participants">
+
+    <thead>
+        <caption>Participant ID {{p.idUtilisateur}} : {{p.nom}}  {{p.prenom}}</caption>
+    <tr>
+    
+    <th>Id Formation</th>
+    <th>Intitulé</th>
+    <th>Description</th> 
+    <th>Date de début</th>
+    <th>Date de fin</th>
+    <th>Tarif</th>
+    <th>Montant payé</th>
+    <th>Montant à régler</th>
+    <th></th>
+
+
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+        <tr *ngFor="let f of p.listeFormations">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.cout}}</td>
+        <td></td>
+        <td></td>
+        <td><button (click)="relancer(p.idUtilisateur)">Relancer</button></td>
+       
+
+
+    </tr>
+
+    
+    </tbody>
+    </table>
+    <br>  <br>
+
+
+
+    <button (click)="accueil()"><h6>Retour</h6></button>
+
+       
+</div>
+</div>
+</div>
+</div>
+
+
+
