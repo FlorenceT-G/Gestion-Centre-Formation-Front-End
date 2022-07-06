@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Utilisateur } from '../models/Utilisateur.model';
 import { GetAllService } from '../services/get-all.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { GetAllService } from '../services/get-all.service';
 })
 export class LoginComponent implements OnInit {
 
+  uti!:Utilisateur
+  
   username!:string 
   password!:string
   invalidLogin = false
@@ -17,6 +20,41 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private AuthService:GetAllService) { }
 
   ngOnInit(): void {
+
+    
+    var obj = JSON.parse(sessionStorage['user']);
+  if (obj)
+  {
+    console.log(obj)
+
+    this.uti=obj;
+
+
+    if(this.uti.role.libRole==="admin")
+                  {
+                    this.router.navigateByUrl('admin');
+                  }
+                  if(this.uti.role.libRole==="assistant")
+                  {
+                    this.router.navigateByUrl('assistant');
+                  }
+                  if(this.uti.role.libRole==="commercial")
+                  {
+                    this.router.navigateByUrl('commercial');
+                  }
+                  if(this.uti.role.libRole==="formateur")
+                  {
+                    this.router.navigateByUrl('formateur-accueil');
+                  }
+                  if(this.uti.role.libRole==="participant")
+                  {
+                    this.router.navigateByUrl('participant');
+                  }
+  }
+
+
+
+
   }
 
   auth() {
