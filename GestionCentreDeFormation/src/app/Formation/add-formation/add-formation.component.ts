@@ -24,6 +24,14 @@ export class AddFormationComponent implements OnInit {
   }
 
   SaveFormation(){
+  if (this.idFormateur==null){
+      this.Service.insererFormation(this.formation).subscribe(
+        response=>{
+          this.router.navigateByUrl('afficherFormations');
+        }
+      )
+    }
+    else{
     this.Service.getByIdFormateur(this.idFormateur).subscribe(
       response=>{this.formation.formateur=response;
       this.Service.insererFormation(this.formation).subscribe(
@@ -33,6 +41,8 @@ export class AddFormationComponent implements OnInit {
     )}
     )
   }
+}
+  
   
   recuperer(){
     this.Service.getFormateurDispo().subscribe(
