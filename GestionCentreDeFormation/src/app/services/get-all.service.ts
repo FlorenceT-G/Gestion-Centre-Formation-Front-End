@@ -119,6 +119,9 @@ export class GetAllService {
   getByIdParticipant(id: number) {
     return this.http.get<Participant>('http://localhost:9090/assistant/participants/'+id);
   }
+  getParticipantByPaiementNok() {
+    return this.http.get<Participant[]>('http://localhost:9090/assistant/participants-paiementsNok');
+  }
   deleteParticipant(id: number) {
     return this.http.delete('http://localhost:9090/assistant/participants/'+id);
   }
@@ -159,11 +162,17 @@ export class GetAllService {
   getHistoriqueFormations() {
     return this.http.get<Formation[]>('http://localhost:9090/historiqueFormations');
   }
+  getAllFormations() {
+    return this.http.get<Formation[]>('http://localhost:9090/formations');
+  }
   getByIdFormation(id:number) {
     return this.http.get<Formation>('http://localhost:9090/formations/'+id);
   }
   getFormationByParticipant(id:number) {
     return this.http.get<Formation[]>('http://localhost:9090/formationParticipant/'+id);
+  }
+  getFormationPasPayeesByParticipant(id:number) {
+    return this.http.get<Formation[]>('http://localhost:9090/formationParticipantPasPayees/'+id);
   }
   insererFormation(f:Formation) {
     return this.http.post('http://localhost:9090/admin/formations', f);
@@ -180,6 +189,15 @@ export class GetAllService {
   getAllPaiement() {
     return this.http.get<Paiement[]>('http://localhost:9090/assistant/paiement');
   }
+
+  getAllPaiementParticipant(idParticipant:number) {
+    return this.http.get<Paiement[]>('http://localhost:9090/paiementParticipant/'+idParticipant);
+  }
+
+  getRestePaiement(idParticipant:number, idFormation:number) {
+    return this.http.get<number>('http://localhost:9090/paiementResteByParticipant/'+idParticipant+"?idFormation="+idFormation);
+  }
+
   getByIdPaiement(id:number) {
     return this.http.get<Paiement>('http://localhost:9090/paiement/' + id);
   }
