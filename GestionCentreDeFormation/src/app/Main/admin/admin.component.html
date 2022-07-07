@@ -117,184 +117,168 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- utilisatuer preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
 
                 <div class="col-xl-6 col-md-6 mb-4">
                     <div class="text-center">
+                        <h3>Nos assistants</h3>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Adresse mail</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let a of Assistants">
+                                    <td>{{a.idUtilisateur}}</td>
+                                    <td>{{a.nom}}</td>
+                                    <td>{{a.prenom}}</td>
+                                    <td>{{a.adresseMail}}</td>
+                                    <td><button (click)="supprimera(a.idUtilisateur)">supprimer</button></td>
+                                    <td><button (click)="modifiera(a.idUtilisateur)">Modifier</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                    <h3>Nos assistants</h3>
+                        <h3>Nos commerciaux</h3>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Adresse mail</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of Commercials">
+                                    <td>{{c.idUtilisateur}}</td>
+                                    <td>{{c.nom}}</td>
+                                    <td>{{c.prenom}}</td>
+                                    <td>{{c.adresseMail}}</td>
+                                    <td><button (click)="supprimerc(c.idUtilisateur)">Supprimer</button></td>
+                                    <td><button (click)="modifierc(c.idUtilisateur)">Modifier</button></td>
 
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Adresse mail</th>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                                <td></td>
-                                <td></td>
+                        <h3>Nos formateurs</h3>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th> ID </th>
+                                    <th> Nom </th>
+                                    <th> Prenom </th>
+                                    <th> Adresse mail </th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let formateur of Formateurs">
+                                    <td> {{formateur.idUtilisateur}} </td>
+                                    <td> {{formateur.nom}} </td>
+                                    <td> {{formateur.prenom}} </td>
+                                    <td> {{formateur.adresseMail}} </td>
+                                    <td><button (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button></td>
+                                    <td><button
+                                            (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                            </tr>
-                        </thead>
+                        <h3>Nos participants</h3>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom </th>
+                                    <th>Adresse mail</th>
+                                    <th>Formations</th>
+                                    <th>Paiement</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let p of Participants">
+                                    <td>{{p.idUtilisateur}}</td>
+                                    <td>{{p.nom}}</td>
+                                    <td>{{p.prenom}} </td>
+                                    <td>{{p.adresseMail}}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><button (click)="supprimerp(p.idUtilisateur)">Supprimer</button></td>
+                                    <td><button (click)="modifierp(p.idUtilisateur)">Modifier</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br> <br>
 
-                        <tbody>
+                        <h3>Tous nos utilisateurs</h3>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nom</th>
+                                    <th>Prenom</th>
+                                    <th>Username</th>
+                                    <th>Adresse mail</th>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let c of Utilisateurs">
+                                    <td>{{c.idUtilisateur}}</td>
+                                    <td>{{c.nom}}</td>
+                                    <td>{{c.prenom}}</td>
+                                    <td>{{c.username}}</td>
+                                    <td>{{c.adresseMail}}</td>
+                                    <td><button (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
+                                        <button (click)="modifieru(c.idUtilisateur)">Modifier</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                            <tr *ngFor="let a of Assistants">
-                                <td>{{a.idUtilisateur}}</td>
-                                <td>{{a.nom}}</td>
-                                <td>{{a.prenom}}</td>
-                                <td>{{a.adresseMail}}</td>
+                        <br> <br> <br>
 
+                        <button (click)="ajouterutil()">
+                            <h6>Ajouter un utilisateur</h6>
+                        </button>
 
-                                <td><button (click)="supprimera(a.idUtilisateur)">supprimer</button></td>
-                                <td><button (click)="modifiera(a.idUtilisateur)">Modifier</button></td>
+                        <button (click)="ajouterAssistant()">
+                            <h6>Ajouter un assistant</h6>
+                        </button>
 
-                            </tr>
+                        <button (click)="ajouterComm()">
+                            <h6>Ajouter un commercial</h6>
+                        </button>
 
+                        <button (click)="ajouterF()">
+                            <h6>Ajouter un formateur</h6>
+                        </button>
 
-                        </tbody>    
-                    </table>
-                    <br> <br>
-                    <button (click)="ajouterAssistant()"><h6>Ajouter un assistant</h6></button>
-                    <br> <br> <br> <br>
+                        <button (click)="ajouterParticipant()">
+                            <h6>Ajouter un participant</h6>
+                        </button>
 
-
-
-
-
-                    <h3>Nos commerciaux</h3>
-
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Adresse mail</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let c of Commercials">
-                                <td>{{c.idUtilisateur}}</td>
-                                <td>{{c.nom}}</td>
-                                <td>{{c.prenom}}</td>
-                                <td>{{c.adresseMail}}</td>
-                                <td><button (click)="supprimerc(c.idUtilisateur)">Supprimer</button></td>
-                                <td><button (click)="modifierc(c.idUtilisateur)">Modifier</button></td>
-                                
-                            </tr>
-                        </tbody>
-                        
-                    </table>
-                    <br> <br>
-                    <button (click)="ajouterComm()"><h6>Ajouter un commercial</h6></button>
-                    <br> <br> <br> <br>
-
-
-                    <h3>Nos formateurs</h3>
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th> ID </th>
-                                <th> Nom </th>
-                                <th> Prenom </th>
-                                <th> Adresse mail </th>
-                                <td></td>
-                                <td></td>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let formateur of Formateurs">
-                                <td> {{formateur.idUtilisateur}} </td>
-                                <td> {{formateur.nom}} </td>
-                                <td> {{formateur.prenom}} </td>
-                                <td> {{formateur.adresseMail}} </td>
-                                <td><button (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button></td>
-                                <td><button (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br> <br>
-                    <button (click)="ajouterF()"><h6>Ajouter un formateur</h6></button>
-                    <br> <br> <br> <br>
-
-                    <h3>Nos participants</h3>
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom </th>
-                                <th>Adresse mail</th>
-                                <th>Formations</th>
-                                <th>Paiement</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let p of Participants">
-                                <td>{{p.idUtilisateur}}</td>
-                                <td>{{p.nom}}</td>
-                                <td>{{p.prenom}} </td>
-                                <td>{{p.adresseMail}}</td>
-                                <td></td>
-                                <td></td>
-                                <td><button (click)="supprimerp(p.idUtilisateur)">Supprimer</button></td>
-                                <td><button (click)="modifierp(p.idUtilisateur)">Modifier</button></td>
-                            </tr>
-                        </tbody>
-                        
-                    </table>
-                    <br> <br>
-                    <button (click)="ajouterParticipant()"><h6>Ajouter un participant</h6></button>
-                    <br> <br> <br> <br>
-
-                    <h3>Tous nos utilisateurs</h3>
-
-                    <table width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Username</th>
-                                <th>Adresse mail</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let c of Utilisateurs">
-                                <td>{{c.idUtilisateur}}</td>
-                                <td>{{c.nom}}</td>
-                                <td>{{c.prenom}}</td>
-                                <td>{{c.username}}</td>
-                                <td>{{c.adresseMail}}</td>
-                                <td><button (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
-                                    <button (click)="modifieru(c.idUtilisateur)">Modifier</button>
-                                </td>
-                            </tr>
-                        </tbody>
-  
-                    </table>
-                    <br> <br>
-                    <button (click)="ajouterutil()"><h6>Ajouter un utilisateur</h6></button>
-                    
-
+                    </div>
                 </div>
-
                 <div class="col-xl-3 col-md-6 mb-4">
-
-                      
-
-
-
-                      <div class="card shadow mb-4">
+                    <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
                         </div>
@@ -302,45 +286,22 @@
                             <div class="chart-area">
 
 
-                                <canvas id="myAreaChart"
-                                  baseChart
-                                [type]="'line'"
-                                [datasets]="barChartData2"
-                                [labels]="barChartLabels2"
-                                [options]="barChartOptions2"
-                                [legend]="barChartLegend2"                                
-                                (chartHover)="chartHovered2($event)"
-                                (chartClick)="chartClicked2($event)"></canvas>
+                                <canvas id="myAreaChart" baseChart [type]="'line'" [datasets]="barChartData2"
+                                    [labels]="barChartLabels2" [options]="barChartOptions2" [legend]="barChartLegend2"
+                                    (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)"></canvas>
                             </div>
-                            <hr>
-                            Cumul des montants des paiements reçus cette année
-                            
+
+
                         </div>
                     </div>
-
-
-
                 </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             </div>
+
+
+
+
+
 
         </div>
         <br><br><br><br><br>
