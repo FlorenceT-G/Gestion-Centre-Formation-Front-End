@@ -195,7 +195,7 @@ supprimeru(id:number){
          }
 
 modifieru(id:number){
-  this.router.navigateByUrl('modifierUtilisateur/'+id);
+  this.router.navigateByUrl('modifu/'+id);
 }
 
 ajouterutil(){

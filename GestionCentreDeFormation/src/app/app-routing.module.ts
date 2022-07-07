@@ -32,13 +32,14 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
 import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
+import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
   { path: 'addAssistant',component: AddAssistantComponent},
   { path: 'afficherFormateurs', component: FormateursComponent},
+  { path: 'modifu/:id', component: AccueiladminComponent},
   { path: 'login', component: LoginComponent},
-  
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
   { path: 'formateur',component: FormateurComponent},
