@@ -11,6 +11,7 @@ import { Paiement } from '../models/Paiement';
 import { Prospect } from '../models/Prospect';
 import { Relance } from '../models/Relance';
 import { Utilisateur } from '../models/Utilisateur.model';
+import { NumberValueAccessor } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -271,13 +272,17 @@ export class GetAllService {
   modifierRelance(r:Relance) {
     return this.http.put('http://localhost:9090/assistant/relances', r);
   }
-  insererRelance(r:Relance) {
-    return this.http.post('http://localhost:9090/assistant/ajoutRelance', r)
+  insererRelance(r:Relance, idParticipant:number, idAssistant:number) {
+    return this.http.post('http://localhost:9090/assistant/ajoutRelance/' + idParticipant + '/' + idAssistant, r)
   }
 
    // ------------------------------- Mail ------------------------------------
 
    sendMailInscription(idParticipant:number) {
     return this.http.get<number>('http://localhost:9090/assistant/sendmailinscription/' + idParticipant)
+   }
+   sendMailRelancePaiement(idParticipant:number, idFormation:number) {
+    console.log("envoie mail relance")
+    return this.http.get('http://localhost:9090/assistant/mailrelance/' + idParticipant + '/' + idFormation)
    }
 }
