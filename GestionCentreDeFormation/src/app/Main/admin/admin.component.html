@@ -120,8 +120,9 @@
                 <!-- utilisatuer preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
 
                 <div class="col-xl-6 col-md-6 mb-4">
+                    <div class="text-center">
 
-                    <h3>gestion Assistant</h3>
+                    <h3>Nos assistants</h3>
 
                     <table width="100%">
                         <thead>
@@ -129,7 +130,6 @@
                                 <th>ID</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
-                                <th>Username</th>
                                 <th>Adresse mail</th>
 
                                 <td></td>
@@ -144,25 +144,26 @@
                                 <td>{{a.idUtilisateur}}</td>
                                 <td>{{a.nom}}</td>
                                 <td>{{a.prenom}}</td>
-                                <td>{{a.username}}</td>
                                 <td>{{a.adresseMail}}</td>
 
 
-                                <td><button (click)="supprimera(a.idUtilisateur)">Supprimer l'assistant</button></td>
-                                <td><button (click)="modifiera(a.idUtilisateur)">Modifier l'assistant</button></td>
+                                <td><button (click)="supprimera(a.idUtilisateur)">supprimer</button></td>
+                                <td><button (click)="modifiera(a.idUtilisateur)">Modifier</button></td>
 
                             </tr>
 
 
-                        </tbody>
-                        <tr>
-                            <td> <button (click)="ajouterAssistant()">
-                                    <h6>Ajouter un Assistants</h6>
-                                </button></td>
-                        </tr>
+                        </tbody>    
                     </table>
+                    <br> <br>
+                    <button (click)="ajouterAssistant()"><h6>Ajouter un assistant</h6></button>
+                    <br> <br> <br> <br>
 
-                    <h3>gestion Commercial</h3>
+
+
+
+
+                    <h3>Nos commerciaux</h3>
 
                     <table width="100%">
                         <thead>
@@ -170,7 +171,6 @@
                                 <th>ID</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
-                                <th>Username</th>
                                 <th>Adresse mail</th>
                                 <td></td>
                                 <td></td>
@@ -181,21 +181,20 @@
                                 <td>{{c.idUtilisateur}}</td>
                                 <td>{{c.nom}}</td>
                                 <td>{{c.prenom}}</td>
-                                <td>{{c.username}}</td>
                                 <td>{{c.adresseMail}}</td>
-                                <td><button (click)="supprimerc(c.idUtilisateur)">Supprimer le commercial</button>
-                                    <button (click)="modifierc(c.idUtilisateur)">Modifier le commercial</button>
-                                </td>
+                                <td><button (click)="supprimerc(c.idUtilisateur)">Supprimer</button></td>
+                                <td><button (click)="modifierc(c.idUtilisateur)">Modifier</button></td>
+                                
                             </tr>
                         </tbody>
-                        <tr>
-                            <td> <button (click)="ajouterComm()">
-                                    <h6>Ajouter un commercial</h6>
-                                </button></td>
-                        </tr>
+                        
                     </table>
+                    <br> <br>
+                    <button (click)="ajouterComm()"><h6>Ajouter un commercial</h6></button>
+                    <br> <br> <br> <br>
 
-                    <h3>gestion Formateurs</h3>
+
+                    <h3>Nos formateurs</h3>
                     <table width="100%">
                         <thead>
                             <tr>
@@ -214,27 +213,22 @@
                                 <td> {{formateur.nom}} </td>
                                 <td> {{formateur.prenom}} </td>
                                 <td> {{formateur.adresseMail}} </td>
-                                <td><button (click)="supprimerf(formateur.idUtilisateur)">Supprimer le
-                                        formateur</button></td>
-                                <td><button (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier le
-                                        formateur</button></td>
+                                <td><button (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button></td>
+                                <td><button (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button></td>
                             </tr>
                         </tbody>
-                        <tr>
-                            <td> <button (click)="ajouterF()">
-                                    <h6>Ajouter un Formateurs</h6>
-                                </button></td>
-                        </tr>
                     </table>
+                    <br> <br>
+                    <button (click)="ajouterF()"><h6>Ajouter un formateur</h6></button>
+                    <br> <br> <br> <br>
 
-                    <h3>gestion Participant</h3>
+                    <h3>Nos participants</h3>
                     <table width="100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Nom</th>
                                 <th>Prenom </th>
-                                <th> Username</th>
                                 <th>Adresse mail</th>
                                 <th>Formations</th>
                                 <th>Paiement</th>
@@ -247,20 +241,20 @@
                                 <td>{{p.idUtilisateur}}</td>
                                 <td>{{p.nom}}</td>
                                 <td>{{p.prenom}} </td>
-                                <td>{{p.username}}</td>
                                 <td>{{p.adresseMail}}</td>
-                                <td><button (click)="supprimerp(p.idUtilisateur)">Supprimer le participant</button></td>
-                                <td><button (click)="modifierp(p.idUtilisateur)">Modifier le participant</button></td>
+                                <td></td>
+                                <td></td>
+                                <td><button (click)="supprimerp(p.idUtilisateur)">Supprimer</button></td>
+                                <td><button (click)="modifierp(p.idUtilisateur)">Modifier</button></td>
                             </tr>
                         </tbody>
-                        <tr>
-                            <td> <button (click)="ajouterParticipant()">
-                                    <h6>Ajouter un Participants</h6>
-                                </button></td>
-                        </tr>
+                        
                     </table>
+                    <br> <br>
+                    <button (click)="ajouterParticipant()"><h6>Ajouter un participant</h6></button>
+                    <br> <br> <br> <br>
 
-                    <h3>gestion Utilisateur</h3>
+                    <h3>Tous nos utilisateurs</h3>
 
                     <table width="100%">
                         <thead>
@@ -281,17 +275,16 @@
                                 <td>{{c.prenom}}</td>
                                 <td>{{c.username}}</td>
                                 <td>{{c.adresseMail}}</td>
-                                <td><button (click)="supprimeru(c.idUtilisateur)">Supprimer l'utilisateur</button>
-                                    <button (click)="modifieru(c.idUtilisateur)">Modifier l'utilisateur</button>
+                                <td><button (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
+                                    <button (click)="modifieru(c.idUtilisateur)">Modifier</button>
                                 </td>
                             </tr>
                         </tbody>
-                        <tr>
-                            <td> <button (click)="ajouterutil()">
-                                    <h6>Ajouter un utilisateur</h6>
-                                </button></td>
-                        </tr>
+  
                     </table>
+                    <br> <br>
+                    <button (click)="ajouterutil()"><h6>Ajouter un utilisateur</h6></button>
+                    
 
                 </div>
 
@@ -327,7 +320,7 @@
 
 
 
-
+                </div>
                 </div>
 
 

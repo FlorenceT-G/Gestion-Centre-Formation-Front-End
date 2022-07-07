@@ -1,0 +1,18 @@
+<h4>Nouveau paiement</h4>
+
+<form (ngSubmit)="SavePaiement()">
+    <p *ngIf="bool">{{errorMsg}}</p><br>
+
+
+    Participant : <select name="idUtilisateur" id="idUtilisateur" [(ngModel)]="idUtilisateur">
+        <option *ngFor="let p of participants" [ngValue] ="p.idUtilisateur">{{p.nom}} {{p.prenom}}</option>
+        </select><br>
+
+    Formation : <select name="idFormation" id="idFormation" [(ngModel)]="idFormation">
+        <option  *ngFor="let f of formations" [ngValue] ="f.idFormation">{{f.idFormation}} : {{f.libFormation}}</option>
+        </select><br>
+
+    Montant : <input type="number"  name="montant" [(ngModel)]="paiement.montant" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>

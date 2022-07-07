@@ -41,7 +41,7 @@
                                 <th>Date de fin</th>
                                 <th>Coût</th>
                             </tr>
-                            <tr *ngFor="let fc of formationsEnCours">
+                            <tr *ngFor="let fc of FEnCours">
                                 <td>{{fc.idFormation}}</td>
                                 <td>{{fc.libFormation}}</td>
                                 <td>{{fc.description}}</td>
@@ -62,7 +62,7 @@
                                 <th>Date de fin</th>
                                 <th>Coût</th>
                             </tr>
-                            <tr *ngFor="let pf of prochainesFormations">
+                            <tr *ngFor="let pf of prochainesF">
                                 <td>{{pf.idFormation}}</td>
                                 <td>{{pf.libFormation}}</td>
                                 <td>{{pf.description}}</td>
@@ -83,7 +83,7 @@
                                 <th>Date de fin</th>
                                 <th>Coût</th>
                             </tr>
-                            <tr *ngFor="let hf of historiqueFormation">
+                            <tr *ngFor="let hf of historiqueF">
                                 <td>{{hf.idFormation}}</td>
                                 <td>{{hf.libFormation}}</td>
                                 <td>{{hf.description}}</td>

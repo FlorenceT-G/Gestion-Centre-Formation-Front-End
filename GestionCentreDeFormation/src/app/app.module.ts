@@ -35,7 +35,7 @@ import { UtilisateursComponent } from './Utilisateur/utilisateurs/utilisateurs.c
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
 import { CommonModule } from '@angular/common';
-import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { ModifFormateurComponent } from './Formateur/modif-formateur/modif-formateur.component';
 import { CAccueilComponent } from './Commercial-side/c-accueil/c-accueil.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
@@ -44,13 +44,16 @@ import { ModifFormationComponent } from './Formation/modif-formation/modif-forma
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
-import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
+import { PaiementsComponent } from './Paiement/paiements/paiements.component';
+import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
+import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
 
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 
 @NgModule({
   declarations: [
@@ -92,6 +95,9 @@ import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component'
     CAjoutContactComponent,
     CAfficherCrComponent,
     FormateurFormationsComponent,
+    PaiementsComponent,
+    AddPaiementComponent,
+    ModifPaiementComponent,
     CCompteComponent
   ],
   imports: [
