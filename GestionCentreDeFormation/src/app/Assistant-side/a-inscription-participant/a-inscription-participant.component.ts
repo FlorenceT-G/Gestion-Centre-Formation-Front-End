@@ -26,11 +26,25 @@ export class AInscriptionParticipantComponent implements OnInit {
     for(let prospect of this.lProspects) {
       this.all.insererParticpantParProspect(prospect).subscribe(
         response => {
-          console.log(response)
-          // this.all.sendMailInscription(response).subscribe()
+          // la réponse récupère l'identifiant du participant juste inscrit
+          // transformation de l'objet en string pour le parse en number
+          var s = JSON.stringify(response);
+          var id = parseInt(s);
+          // envoie du mail
+          this.all.sendMailInscription(id).subscribe(
+            fait => this.reload()
+          )
         }
       )
     }
+  }
+
+  reload() {
+    this.all.getProspectAInscrire().subscribe(
+      liste => {
+        this.lProspects = liste
+      }
+    )
   }
 
 }

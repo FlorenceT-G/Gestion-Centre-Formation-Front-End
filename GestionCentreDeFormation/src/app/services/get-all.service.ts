@@ -165,6 +165,9 @@ export class GetAllService {
   getHistoriqueFormations() {
     return this.http.get<Formation[]>('http://localhost:9090/historiqueFormations');
   }
+  getFormationByIdFormateur(id:number) {
+    return this.http.get<Formation[]>('http://localhost:9090/formationFormateur/'+id);
+  }
   getAllFormations() {
     return this.http.get<Formation[]>('http://localhost:9090/formations');
   }
