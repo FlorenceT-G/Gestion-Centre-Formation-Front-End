@@ -28,17 +28,21 @@ import { ModifParticipantComponent } from './Participant/modif-participant/modif
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { CGestionProspectsComponent } from './Commercial-side/c-gestion-prospects/c-gestion-prospects.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
-import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
-import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
+import { AddFormateurComponent } from './Formateur/add-formateur/add-formateur.component';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
+import { PaiementsComponent } from './Paiement/paiements/paiements.component';
+import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
+import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
+import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
   { path: 'addAssistant',component: AddAssistantComponent},
   { path: 'afficherFormateurs', component: FormateursComponent},
+  { path: 'modifu/:id', component: AccueiladminComponent},
   { path: 'login', component: LoginComponent},
-  
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
   { path: 'formateur',component: FormateurComponent},
@@ -67,6 +71,9 @@ const routes: Routes = [
   { path: 'formateur-compte', component:FormateurCompteComponent},
   { path: 'formateur-formations', component:FormateurFormationsComponent},
   { path: 'formateur-accueil', component:FormateurAccueilComponent},
+  { path: 'afficherPaiements',component: PaiementsComponent},
+  { path: 'addPaiement',component: AddPaiementComponent},
+  { path: 'modifierPaiement/:id',component: ModifPaiementComponent},
   { path: '**', redirectTo: 'login'}
 ];
 

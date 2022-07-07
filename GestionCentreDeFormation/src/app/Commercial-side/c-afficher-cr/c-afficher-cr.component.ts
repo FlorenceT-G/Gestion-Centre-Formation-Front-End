@@ -25,18 +25,10 @@ export class CAfficherCrComponent implements OnInit {
       )
     )
 
-    console.log(this.p.contacts)
+    
 
     this.userString = sessionStorage.getItem('user')
     this.userObject = JSON.parse(this.userString);
-
-    /*for(let c of this.p.contacts) {
-      this.all.getByIdCommercial(this.userObject.idUtilisateur).subscribe(
-        res => {
-          c.commercial = res
-        }
-      )
-    }*/
   }
 
 

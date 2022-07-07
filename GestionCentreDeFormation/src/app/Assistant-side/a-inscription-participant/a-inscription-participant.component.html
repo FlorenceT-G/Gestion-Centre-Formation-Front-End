@@ -1,5 +1,6 @@
 <h1>Liste des prospects à inscrire</h1>
 
+<ng-container *ngIf="lProspects">
 <table>
     <thead>
         <td>Nom</td><td>Prénom</td><td>Adresse Mail</td><td>Numéro de téléphone</td><td>Options</td>
@@ -12,3 +13,4 @@
         <td><button (click)="inscrire()">Inscrire</button></td>
     </tr>
 </table>
+</ng-container>

@@ -26,13 +26,7 @@
               "src/styles.css"
             
             ],
-            "scripts": [
-              "node_modules/chart.js/dist/Chart.min.js"
-             
-            ],
-            "allowedCommonJsDependencies": [
-              "chart.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

@@ -1,23 +1,24 @@
+<ng-container *ngIf="p">
 <h1>Récapitulatif des contacts avec {{p.nom}}, {{p.prenom}}</h1>
 
-<table>
+<table class="tabcenter">
     <thead>
         <td>Date</td>
         <td>Compte-Rendu</td>
-        <td>Commercial</td>
     </thead>
     <tbody *ngFor="let c of p.contacts">
         <tr>
             <td>{{c.dateContact}}</td>
             <td>{{c.compteRendu}}</td>
-            <td>[{{c.commercial.idUtilisateur}}], {{c.commercial.nom}}, {{c.commercial.prenom}}</td>
         </tr>
     </tbody>
     <tr>
-        <td colspan="3">
+        <td colspan="3" class="txtcenter">
             <button class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter contact</button>
         </td>
     </tr>
 </table>
+
+</ng-container>
 
 <button class="btn btn-dark" (click)="backtrack()">Retour</button>
