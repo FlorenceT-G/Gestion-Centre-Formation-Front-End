@@ -1,4 +1,3 @@
-import { Formateur } from "./Formateur"
 import { Formation } from "./Formation"
 import { Participant } from "./Participant.model"
 

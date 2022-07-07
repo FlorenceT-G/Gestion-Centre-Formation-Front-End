@@ -11,5 +11,6 @@ export class Participant {
     password!:string;
 
     listeFormations!:Formation[]
+    restePaiements!:number[]
     
 }
