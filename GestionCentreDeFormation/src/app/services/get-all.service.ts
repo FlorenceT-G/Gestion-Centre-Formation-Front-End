@@ -104,7 +104,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/admin/commerciaux/' + id);
   }
   modifierCommercial(c: Commercial) {
-    return this.http.put('http://localhost:9090/admin/commerciaux', c);
+    return this.http.put('http://localhost:9090/commercial/commerciaux', c);
   }
   insererCommercial(c: Commercial) {
     return this.http.post('http://localhost:9090/admin/commerciaux', c)

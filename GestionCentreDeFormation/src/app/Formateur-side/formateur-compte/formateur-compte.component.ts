@@ -23,7 +23,6 @@ export class FormateurCompteComponent implements OnInit {
       this.userObject = JSON.parse(this.userString)
       this.validUser = true
     }    
-    console.log(this.userObject.idUtilisateur)
   }
 
   saveCompte() {

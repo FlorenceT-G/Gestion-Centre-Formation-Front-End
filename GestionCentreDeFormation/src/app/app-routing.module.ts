@@ -31,6 +31,7 @@ import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajou
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 import { AddFormateurComponent } from './Formateur/formateurs/add-formateur/add-formateur.component';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
+import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -54,7 +55,8 @@ const routes: Routes = [
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
-  { path: 'a-gestion-compte', component:ACompteComponent}, 
+  { path: 'a-gestion-compte', component:ACompteComponent},
+  { path: 'c-gestion-compte', component:CCompteComponent},
   { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
   { path: 'commercial-ajout-contact/:id', component:CAjoutContactComponent},
   { path: 'c-afficher-cr/:id', component:CAfficherCrComponent},

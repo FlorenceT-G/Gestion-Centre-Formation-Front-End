@@ -50,6 +50,7 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
+import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { FormateurFormationsComponent } from './Formateur-side/formateur-formati
     FormateurCompteComponent,
     CAjoutContactComponent,
     CAfficherCrComponent,
-    FormateurFormationsComponent
+    FormateurFormationsComponent,
+    CCompteComponent
   ],
   imports: [
     BrowserModule,
