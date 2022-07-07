@@ -24,14 +24,23 @@ export class AGestionPaiementsComponent implements OnInit {
     this.recupererPaiements();
   
   }
+
   recupererParticipants(){
     this.allService.getAllParticipant().subscribe(
       response => {this.participants=response;
         for (let i=0; i<this.participants.length; i=i+1){
           this.allService.getFormationByParticipant(this.participants[i].idUtilisateur).subscribe(
-            response=>{this.participants[i].listeFormations=response;}
-          )
-        }
+            response=>{this.participants[i].listeFormations=response;
+                    this.participants[i].restePaiements=[];
+                    for (let j=0; j<response.length; j=j+1){
+                      this.allService.getRestePaiement(this.participants[i].idUtilisateur, response[j].idFormation).subscribe(
+                        reste=>{
+                          this.participants[i].restePaiements.splice(j,0,reste);
+                          }
+                      )
+                    };})
+      
+        };
       }
     )
   }

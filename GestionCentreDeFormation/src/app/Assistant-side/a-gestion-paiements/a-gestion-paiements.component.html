@@ -47,13 +47,6 @@
 
 
 
-
-
-
-
-
-
-
 <h2 class="pb-2">Liste des participants</h2><br>
 
 <table width="100%"  *ngFor="let p of participants">
@@ -79,15 +72,15 @@
     
     <tbody>
     
-    <tr *ngFor="let f of p.listeFormations">
+    <tr *ngFor="let f of p.listeFormations; index as i">
         <td>{{f.idFormation}}</td>
         <td>{{f.libFormation}}</td>
         <td>{{f.description}}</td>
         <td>{{f.dateDebut}}</td>
         <td>{{f.dateFin}}</td>
         <td>{{f.cout}}</td>
-        <td></td>
-        <td></td>
+        <td>{{f.cout - p.restePaiements[i]}}</td>
+        <td >{{p.restePaiements[i]}}</td>
         <td><button (click)="relancer(p.idUtilisateur)">Relancer</button></td>
     </tr>
 
