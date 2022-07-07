@@ -44,11 +44,16 @@ import { ModifFormationComponent } from './Formation/modif-formation/modif-forma
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
-import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
+
+//testgrap    npm install ng2-charts --save
+import { NgChartsModule } from 'ng2-charts';
+import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
+import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 
 @NgModule({
   declarations: [
@@ -88,10 +93,12 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
     FormateurAccueilComponent,
     FormateurCompteComponent,
     CAjoutContactComponent,
+    CAfficherCrComponent,
     FormateurFormationsComponent,
     PaiementsComponent,
     AddPaiementComponent,
     ModifPaiementComponent,
+    CCompteComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +106,9 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    //testgraph
+    NgChartsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }

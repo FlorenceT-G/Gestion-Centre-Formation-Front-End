@@ -22,8 +22,15 @@ export class AInscriptionParticipantComponent implements OnInit {
     
   }
 
-  inscrire(){
-    
+  inscrire() {
+    for(let prospect of this.lProspects) {
+      this.all.insererParticpantParProspect(prospect).subscribe(
+        response => {
+          console.log(response)
+          // this.all.sendMailInscription(response).subscribe()
+        }
+      )
+    }
   }
 
 }

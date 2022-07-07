@@ -1,1 +1,57 @@
-<p>accueiladmin works!</p>
+
+
+
+
+
+
+
+
+
+<form (ngSubmit)="Saveuti()">
+    <table class="table table-striped">
+        <tr>
+            <th>nom</th>
+            <th>prenom</th>
+            <th>adresse Mail:</th>
+            <th>login</th>
+            <th>password</th>
+            <th>Role</th>
+
+        </tr>
+
+        
+
+            <tr>
+                <td><input type="text" name="nom" [(ngModel)]="uti.nom"></td>
+                <td><input type="text" name="prenom" [(ngModel)]="uti.prenom"></td>
+
+                <td><input type="text" name="adresseMail" [(ngModel)]="uti.adresseMail"></td>
+                
+                <td><input type="text" name="login" [(ngModel)]="uti.username"></td>
+                <td><input type="text" name="password" [(ngModel)]="uti.password"></td>
+
+
+                <td>
+
+                <select id="role">
+                    <option value="admin">Admin</option>
+                    <option value="client" selected >Client</option>
+                </select></td>
+
+            </tr>
+            <tr> <td></td></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+                <button type="submit">Ajouter</button>
+            </tr>
+        
+        
+    </table></form>
+<br><br><br><br><br>
+
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+
+<a routerLink="/landing">retour menu</a>

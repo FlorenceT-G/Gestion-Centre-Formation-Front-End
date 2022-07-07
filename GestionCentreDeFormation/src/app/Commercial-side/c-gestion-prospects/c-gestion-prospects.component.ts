@@ -11,7 +11,6 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class CGestionProspectsComponent implements OnInit {
 
   lProspects!: Prospect[]
-  prospect!:Prospect
   constructor(private all:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
@@ -22,31 +21,27 @@ export class CGestionProspectsComponent implements OnInit {
     );
   }
 
-  AInscrire(id:number) {
-    console.log("works")
-    this.all.getByIdProspect(id).subscribe(
-      prospect => {
-        console.log("this is true")
-        this.prospect = prospect;
-        this.prospect.aInscrire = true;
-      }
-    )
+  AInscrire(p:Prospect) {
+    p.ainscrire = true;
 
-    this.all.modifierProspect(this.prospect).subscribe(
-      reload => {
-        this.reload()
-      }
-    );
+    this.all.modifierProspect(p).subscribe(
+      reload => this.reload()
+    )
 
   }
 
   reload() {
-    this.router.navigateByUrl("c-gestion-prospects")
+    this.all.getProspectNonInscrits().subscribe(
+      liste => {
+        this.lProspects = liste;
+      } 
+    );
   }
 
-  afficherCR() {
-
+  afficherCR(id:number) {
+    this.router.navigateByUrl('c-afficher-cr/' + id)
   }
+
   ajouterDate(id:number) {
     this.router.navigateByUrl("commercial-ajout-contact/" + id)
   }

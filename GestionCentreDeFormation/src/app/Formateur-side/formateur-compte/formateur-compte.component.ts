@@ -23,11 +23,11 @@ export class FormateurCompteComponent implements OnInit {
       this.userObject = JSON.parse(this.userString)
       this.validUser = true
     }    
-    console.log(this.userObject.idUtilisateur)
   }
 
   saveCompte() {
-    this.service.modifierUtilisateur(this.userObject).subscribe(
+    console.log(this.userObject.idUtilisateur)
+    this.service.modifierFormateur(this.userObject).subscribe(
       response => this.router.navigateByUrl('formateur-accueil')
     )
   }

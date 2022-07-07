@@ -33,13 +33,16 @@ import { FormateurFormationsComponent } from './Formateur-side/formateur-formati
 import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
+import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
+import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
+import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
   { path: 'addAssistant',component: AddAssistantComponent},
   { path: 'afficherFormateurs', component: FormateursComponent},
+  { path: 'modifu/:id', component: AccueiladminComponent},
   { path: 'login', component: LoginComponent},
-  
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
   { path: 'formateur',component: FormateurComponent},
@@ -56,9 +59,11 @@ const routes: Routes = [
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
-  { path: 'a-gestion-compte', component:ACompteComponent}, 
+  { path: 'a-gestion-compte', component:ACompteComponent},
+  { path: 'c-gestion-compte', component:CCompteComponent},
   { path: 'c-gestion-prospects', component:CGestionProspectsComponent},
   { path: 'commercial-ajout-contact/:id', component:CAjoutContactComponent},
+  { path: 'c-afficher-cr/:id', component:CAfficherCrComponent},
   { path: 'afficherFormations',component: FormationsComponent},
   { path: 'addFormation',component: AddFormationComponent},
   { path: 'modifierFormation/:id',component: ModifFormationComponent},

@@ -42,7 +42,7 @@ export class GetAllService {
     return this.http.post('http://localhost:9090/admin/formateur', f);
   }
   modifierFormateur(f: Formateur) {
-    return this.http.put('http://localhost:9090/admin/formateur/', f);
+    return this.http.put('http://localhost:9090/formateur/formateur/', f);
   }
   deleteFormateur(id: number) {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
@@ -104,7 +104,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/admin/commerciaux/' + id);
   }
   modifierCommercial(c: Commercial) {
-    return this.http.put('http://localhost:9090/admin/commerciaux', c);
+    return this.http.put<Commercial>('http://localhost:9090/commercial/commerciaux', c);
   }
   insererCommercial(c: Commercial) {
     return this.http.post('http://localhost:9090/admin/commerciaux', c)
@@ -128,8 +128,11 @@ export class GetAllService {
   modifierParticipant(c: Participant) {
     return this.http.put('http://localhost:9090/assistant/participants', c);
   }
-  insererParticipant(c: Participant) {
-    return this.http.post('http://localhost:9090/assistant/participants', c)
+  insererParticipant(p: Participant) {
+    return this.http.post('http://localhost:9090/assistant/participants', p)
+  }
+  insererParticpantParProspect(p: Prospect) {
+    return this.http.post('http://localhost:9090/assistant/participantsparprospect', p)
   }
 
   
@@ -147,8 +150,8 @@ export class GetAllService {
   modifierContact(c:Contact) {
     return this.http.put('http://localhost:9090/contacts', c);
   }
-  insererContact(c:Contact) {
-    return this.http.post('http://localhost:9090/contacts', c)
+  insererContact(c:Contact, idProspect:number, idCommercial:number) {
+    return this.http.post('http://localhost:9090/contacts/' + idProspect + "/" + idCommercial, c)
   }
 
 
@@ -268,4 +271,10 @@ export class GetAllService {
   insererRelance(r:Relance) {
     return this.http.post('http://localhost:9090/assistant/ajoutRelance', r)
   }
+
+   // ------------------------------- Mail ------------------------------------
+
+   sendMailInscription(idParticipant:number) {
+    return this.http.get<number>('http://localhost:9090/assistant/sendmailinscription/' + idParticipant)
+   }
 }

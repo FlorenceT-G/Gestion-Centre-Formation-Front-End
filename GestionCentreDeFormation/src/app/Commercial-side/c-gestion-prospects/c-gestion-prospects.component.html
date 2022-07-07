@@ -13,23 +13,28 @@
         <td>{{p.nom}}</td>
         <td>{{p.prenom}}</td>
         <td>{{p.email}}</td>
-        <td>{{p.numTel}}</td>   
+        <td>{{p.numTel}}</td>
         <td>
-            <span *ngFor="let c of p.contacts">
-                <span *ngIf="c.idContact;then contacts else nouveau"></span>
+            <span *ngFor="let c of p.contacts" class="txtcenter">
+                <span *ngIf="c.idContact;then contacts else aucun"></span>
                 <ng-template #contacts>
-                    <span *ngForm="let c of p.contacts">
-                        {{c.dateContact}} <button type="button" class="btn btn-dark" (click)="afficherCR()">Voir
-                            CR</button><br>
-                    </span>
+                    {{c.dateContact}}
                 </ng-template>
-                <ng-template #nouveau>
-                    Aucun contacts
+                <ng-template #aucun>
+                    <div>Aucun contacts</div>
                 </ng-template>
             </span>
-            <button type="button" class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter une date</button>
+
+            <div class="txtcenter">
+                <button type="button" class="btn btn-default btn-sm" (click)="afficherCR(p.idProspect)">Voir
+                    CRs</button>
+                <br>
+                <button type="button" class="btn btn-dark btn-sm" (click)="ajouterDate(p.idProspect)">Ajouter une
+                    date</button>
+            </div>
+
         </td>
-        <td><button type="button" class="btn btn-dark" (click)="AInscrire(p.idProspect)">Valider pour
+        <td><button type="button" class="btn btn-dark" (click)="AInscrire(p)">Valider pour
                 inscription</button></td>
 
     </tr>

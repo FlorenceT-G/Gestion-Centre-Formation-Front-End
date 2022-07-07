@@ -78,6 +78,7 @@
 
         <div class="container-fluid">
 
+
             <!-- Page Heading 
                         <div class="d-sm-flex align-items-center justify-content-between mb-12">
             -->
@@ -285,31 +286,78 @@
                     <button (click)="ajouterutil()"><h6>Ajouter un utilisateur</h6></button>
                     
 
+                </div>
+
+                <div class="col-xl-3 col-md-6 mb-4">
+
+                    <div style="display: block">
+                        <canvas baseChart
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                      </div>
+                      
+
+
+
+                      <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Area Chart</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+
+
+                                <canvas id="myAreaChart"
+                                  baseChart
+                                [type]="'line'"
+                                [datasets]="barChartData2"
+                                [labels]="barChartLabels2"
+                                [options]="barChartOptions2"
+                                [legend]="barChartLegend2"
+
+                                
+                                
+                                (chartHover)="chartHovered($event)"
+                                (chartClick)="chartClicked($event)"></canvas>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            </div>
+                            <hr>
+                            Styling for the area chart can be found in the
+                            <code>/js/demo/chart-area-demo.js</code> file.
+                        </div>
+                    </div>
 
 
 
                 </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             </div>
 
