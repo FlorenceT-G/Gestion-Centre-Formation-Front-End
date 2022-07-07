@@ -36,6 +36,21 @@
         </td>
         <td><button type="button" class="btn btn-dark" (click)="AInscrire(p)">Valider pour
                 inscription</button></td>
-
     </tr>
 </table>
+
+<h1>Ajout de prospects</h1>
+
+<form (ngSubmit)="ajouterProspect()">
+    <table>
+        <tr>
+            <td>Délimiteur : (, ou autre) </td>
+            <td><input type="text" name="delimiter" [(ngModel)]="delimiter"/></td>
+        </tr>
+        <tr>
+            <td>Fichiers .csv :</td>
+            <td><input type="file" name="csvFile" (change)="selectEvent($event)"/></td>
+        </tr>
+    </table>
+    <button> Valider </button>
+    </form>

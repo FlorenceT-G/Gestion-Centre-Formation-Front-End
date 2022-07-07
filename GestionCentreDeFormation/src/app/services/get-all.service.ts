@@ -251,6 +251,9 @@ export class GetAllService {
   insererProspect(p:Prospect) {
     return this.http.post('http://localhost:9090/commercial/prospects', p)
   }
+  insererProspectCsvFile(data:FormData) {
+    return this.http.post('http://localhost:9090/commercial/csvFile', data)
+  }
 
 
   // ------------------------------- Relance ------------------------------------
