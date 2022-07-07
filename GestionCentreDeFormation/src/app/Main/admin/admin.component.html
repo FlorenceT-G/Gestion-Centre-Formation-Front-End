@@ -122,8 +122,11 @@
 
                 <div class="col-xl-6 col-md-6 mb-4">
                     <div class="text-center">
-                        <h3>Nos assistants</h3>
+
                         <table width="100%">
+                            <tr>
+                                <h3>Nos assistants</h3>
+                            </tr>
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -140,14 +143,17 @@
                                     <td>{{a.nom}}</td>
                                     <td>{{a.prenom}}</td>
                                     <td>{{a.adresseMail}}</td>
-                                    <td><button (click)="supprimera(a.idUtilisateur)">supprimer</button></td>
-                                    <td><button (click)="modifiera(a.idUtilisateur)">Modifier</button></td>
+                                    <td><button class="accordion-button3"
+                                            (click)="supprimera(a.idUtilisateur)">supprimer</button>
+                                        <button class="accordion-button4"
+                                            (click)="modifiera(a.idUtilisateur)">Modifier</button>
+                                    </td>
                                 </tr>
                             </tbody>
-                        </table>
 
-                        <h3>Nos commerciaux</h3>
-                        <table width="100%">
+                            <tr>
+                                <h3>Nos commerciaux</h3>
+                            </tr>
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -164,15 +170,17 @@
                                     <td>{{c.nom}}</td>
                                     <td>{{c.prenom}}</td>
                                     <td>{{c.adresseMail}}</td>
-                                    <td><button (click)="supprimerc(c.idUtilisateur)">Supprimer</button></td>
-                                    <td><button (click)="modifierc(c.idUtilisateur)">Modifier</button></td>
+                                    <td><button class="accordion-button3"
+                                            (click)="supprimerc(c.idUtilisateur)">Supprimer</button>
+                                        <button class="accordion-button4"
+                                            (click)="modifierc(c.idUtilisateur)">Modifier</button>
+                                    </td>
 
                                 </tr>
                             </tbody>
-                        </table>
+                    
 
-                        <h3>Nos formateurs</h3>
-                        <table width="100%">
+                       <tr> <h3>Nos formateurs</h3></tr>
                             <thead>
                                 <tr>
                                     <th> ID </th>
@@ -189,16 +197,17 @@
                                     <td> {{formateur.nom}} </td>
                                     <td> {{formateur.prenom}} </td>
                                     <td> {{formateur.adresseMail}} </td>
-                                    <td><button (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button></td>
-                                    <td><button
+                                    <td><button class="accordion-button3"
+                                            (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button>
+                                        <button class="accordion-button4"
                                             (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button>
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
 
-                        <h3>Nos participants</h3>
-                        <table width="100%">
+
+                     <tr>   <h3>Nos participants</h3>     </tr>
+
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -219,15 +228,16 @@
                                     <td>{{p.adresseMail}}</td>
                                     <td></td>
                                     <td></td>
-                                    <td><button (click)="supprimerp(p.idUtilisateur)">Supprimer</button></td>
-                                    <td><button (click)="modifierp(p.idUtilisateur)">Modifier</button></td>
+                                    <td><button class="accordion-button3"
+                                            (click)="supprimerp(p.idUtilisateur)">Supprimer</button>
+                                        <button class="accordion-button4"
+                                            (click)="modifierp(p.idUtilisateur)">Modifier</button>
+                                    </td>
                                 </tr>
                             </tbody>
-                        </table>
-                        <br> <br>
 
-                        <h3>Tous nos utilisateurs</h3>
-                        <table width="100%">
+                            <tr>   <h3>Tous nos utilisateurs</h3>   </tr>
+
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -246,37 +256,42 @@
                                     <td>{{c.prenom}}</td>
                                     <td>{{c.username}}</td>
                                     <td>{{c.adresseMail}}</td>
-                                    <td><button (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
-                                        <button (click)="modifieru(c.idUtilisateur)">Modifier</button>
+                                    <td><button class="accordion-button3"
+                                            (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
+                                        <button class="accordion-button4"
+                                            (click)="modifieru(c.idUtilisateur)">Modifier</button>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <br> <br> <br>
-
-                        <button (click)="ajouterutil()">
-                            <h6>Ajouter un utilisateur</h6>
-                        </button>
-
-                        <button (click)="ajouterAssistant()">
+                        <button class="accordion-button2" (click)="ajouterAssistant()">
                             <h6>Ajouter un assistant</h6>
                         </button>
 
-                        <button (click)="ajouterComm()">
+                        <button class="accordion-button2" (click)="ajouterComm()">
                             <h6>Ajouter un commercial</h6>
                         </button>
 
-                        <button (click)="ajouterF()">
+                        <button class="accordion-button2" (click)="ajouterF()">
                             <h6>Ajouter un formateur</h6>
                         </button>
 
-                        <button (click)="ajouterParticipant()">
+                        <button class="accordion-button2" (click)="ajouterParticipant()">
                             <h6>Ajouter un participant</h6>
+                        </button>
+                        <br><br>
+                        <button class="accordion-button2" (click)="ajouterutil()">
+                            <h6>Ajouter un utilisateur</h6>
                         </button>
 
                     </div>
                 </div>
+
+            <!-- graphe preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
+
+
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -284,18 +299,13 @@
                         </div>
                         <div class="card-body">
                             <div class="chart-area">
-
-
                                 <canvas id="myAreaChart" baseChart [type]="'line'" [datasets]="barChartData2"
                                     [labels]="barChartLabels2" [options]="barChartOptions2" [legend]="barChartLegend2"
                                     (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)"></canvas>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
-
             </div>
 
 

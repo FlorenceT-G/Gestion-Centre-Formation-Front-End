@@ -121,7 +121,8 @@ export class AdminComponent implements OnInit {
       (reponse => {
         this.paiem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         for (let i = 0; i < reponse.length; i = i + 1) {
-          this.d = new Date(Date.parse(reponse[i].datePaiement.toString()));
+          //this.d = new Date(Date.parse(reponse[i].datePaiement.toString()));
+          this.d = new Date(reponse[i].datePaiement)
           this.m = this.d.getMonth()
           this.paiem[this.m] = this.paiem[this.m] + reponse[i].montant
           this.Paiements = reponse
