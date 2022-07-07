@@ -12,4 +12,6 @@ export class Prospect {
 
 	contacts!:Contact[];
 
+	constructor() {}
+
 }
