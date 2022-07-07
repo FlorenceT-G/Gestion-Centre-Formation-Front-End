@@ -1,1 +1,108 @@
-<p>a-gestion-paiements works!</p>
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2">GESTION DES PAIEMENTS</h1>
+                        <br>
+
+
+                        <h2 class="pb-2"> Paiements effectués</h2>
+                        <br>
+                        
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th> ID </th>
+                                            <th> Date du paiement </th>
+                                            <th> Montant</th> 
+                                            <th> Reste à régler </th>
+                                            <th> Participant </th>
+                                            <th> ID Formation </th>
+                                            <td></td>
+                                            <td></td>
+                        
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let p of paiements">
+                                            <td> {{p.idPaiement}} </td>
+                                            <td> {{p.datePaiement}} </td>
+                                            <td> {{p.montant}} </td>
+                                            <td> {{p.reste}} </td>
+                                            <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
+                                            <td> {{p.formation.idFormation}} </td>
+                                            <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
+                                            <td><button (click)="modifier(p.idPaiement)">Modifier</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        
+                                <br>
+                                <button (click)="ajouterPaiement()"><h6>Créer un paiement</h6></button>
+                                <br> <br> <br> <br>
+                        
+                        
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="pb-2">Liste des participants</h2><br>
+
+<table width="100%"  *ngFor="let p of participants">
+
+  
+    <thead>
+        <caption><h6>Participant ID {{p.idUtilisateur}} : {{p.nom}}  {{p.prenom}}</h6></caption>
+    <tr>
+    
+    <th>Id Formation</th>
+    <th>Intitulé</th>
+    <th>Description</th> 
+    <th>Date de début</th>
+    <th>Date de fin</th>
+    <th>Tarif</th>
+    <th>Montant payé</th>
+    <th>Montant à régler</th>
+    <th></th>
+
+
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+    <tr *ngFor="let f of p.listeFormations">
+        <td>{{f.idFormation}}</td>
+        <td>{{f.libFormation}}</td>
+        <td>{{f.description}}</td>
+        <td>{{f.dateDebut}}</td>
+        <td>{{f.dateFin}}</td>
+        <td>{{f.cout}}</td>
+        <td></td>
+        <td></td>
+        <td><button (click)="relancer(p.idUtilisateur)">Relancer</button></td>
+    </tr>
+
+    
+    </tbody>
+    <br> <br>
+    </table>
+
+    <button (click)="accueil()"><h6>Retour</h6></button>
+
+       
+</div>
+</div>
+</div>
+</div>
+
+
+

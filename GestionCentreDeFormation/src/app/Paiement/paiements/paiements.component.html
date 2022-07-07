@@ -1,0 +1,41 @@
+<div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-color:antiquewhite ; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <div class="brand text-center text-red"></div>
+                    <h1 class="pb-2"> Paiements effectués</h1>
+<br>
+
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> Date du paiement </th>
+                    <th> Montant</th> 
+                    <th> Reste à régler </th>
+                    <th> Participant </th>
+                    <th> ID Formation </th>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of paiements">
+                    <td> {{p.idPaiement}} </td>
+                    <td> {{p.datePaiement}} </td>
+                    <td> {{p.montant}} </td>
+                    <td> {{p.reste}} </td>
+                    <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
+                    <td> {{p.formation.idFormation}} </td>
+                    <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
+                    <td><button (click)="modifier(p.idPaiement)">Modifier</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <br> <br>
+        <button (click)="ajouterPaiement()"><h6>Créer un paiement</h6></button>
+        <br>
+        <button (click)="accueil()"><h6>Retour</h6></button>
+
