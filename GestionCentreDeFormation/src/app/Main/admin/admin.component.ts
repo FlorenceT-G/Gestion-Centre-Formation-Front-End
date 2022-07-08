@@ -69,6 +69,12 @@ export class AdminComponent implements OnInit {
 
   }
 
+
+
+
+
+
+
   formationencours() {
     this.Service.getAllFormationEnCours().subscribe(
       reponse => {
