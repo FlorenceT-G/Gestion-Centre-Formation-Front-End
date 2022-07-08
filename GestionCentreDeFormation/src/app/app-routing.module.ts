@@ -22,7 +22,6 @@ import { FormationsComponent } from './Formation/formations/formations.component
 import { ModifFormationComponent } from './Formation/modif-formation/modif-formation.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
-import { FormateurComponent } from './Main/formateur/formateur.component';
 import { AddParticipantComponent } from './Participant/add-participant/add-participant.component';
 import { ModifParticipantComponent } from './Participant/modif-participant/modif-participant.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
@@ -45,7 +44,6 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
-  { path: 'formateur',component: FormateurComponent},
   { path: 'participant',component: AdminComponent},
   { path: 'modifierAssistant/:id',component: ModifAssistantComponent},
   { path: 'afficherCommerciaux',component: CommercialsComponent},
