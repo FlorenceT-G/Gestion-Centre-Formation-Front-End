@@ -19,8 +19,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
-
 </head>
 
 <body>
@@ -38,28 +36,17 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-
-
-
                 </ul>
-
-
             </div>
-
-
-
         </div>
     </nav>
-
-
-
 
     <!-- Page Header-->
     <header class="masthead"
         style="background-image: url('https://eveilhomme.com/wp-content/uploads/2021/03/838_gettyimages-1134722319.jpg')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="col-md-8 col-lg-8 col-xl-7">
                     <div class="site-heading">
                         <h1>Accueil Administration</h1>
 
@@ -69,8 +56,6 @@
         </div>
     </header>
 
-
-
     <!-- Main Content-->
     <!-- Main Content-->
     <!-- Main Content-->
@@ -79,291 +64,450 @@
     <!-- Main Content-->
 
 
+    <div class="container-fluid">
 
-
-    <div class="row">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Page Heading 
+        <div class="row">
+            <!-- Page Heading 
                         <div class="d-sm-flex align-items-center justify-content-between mb-12">
             -->
-        <div class="row">
-            <!-- formation preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="row">
+                <!-- formation preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
+                <div class="col-xl-3 col-md-6 mb-4">
 
-                <div class=" card border-left-primary shadow h-100 py-2">
-                    <h3>Formation en cours</h3>
-                    <div *ngFor="let c of compteur">
-                        <div class="col-xl-11 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
-                                <div class="card-body">
-                                    <h3>{{formation[c].libFormation}} </h3>
-                                    <div class=" row no-gutters align-items-center">
-                                        <div class=" col-auto ">
+                    <div class=" card border-left-primary shadow h-100 py-2">
 
-                                            <div class=" h6 mb-0 mr-3 font-weight-bold text-gray-800">
-                                                {{duree[c]}}</div>
+                        <h3>Formation en cours</h3>
+                        <div *ngFor="let c of compteur">
+                            <div class="col-xl-11 col-md-6 mb-4">
+                                <div class="card border-left-info shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <h3>{{formation[c].libFormation}} </h3>
+                                        <div class=" row no-gutters align-items-center">
+                                            <div class=" col-auto ">
+
+                                                <div class=" h6 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                    {{duree[c]}}</div>
+                                            </div>
+                                            <div class=" col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: {{duree[c]}}" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class=" col">
-                                            <div class="progress progress-sm mr-2">
-                                                <div class="progress-bar bg-info" role="progressbar"
-                                                    style="width: {{duree[c]}}" aria-valuenow="50" aria-valuemin="0"
-                                                    aria-valuemax="100"></div>
+                                        <h6>Cout: {{formation[c].cout}} </h6>
+                                        <h6>Formateur: {{formation[c].formateur.prenom}}
+                                            {{formation[c].formateur.nom}}
+                                        </h6>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- utilisatuer preview      -->
+
+                <div class="col-xl-6 col-md-6 mb-4">
+
+                    <div class="card shadow mb-4 border-top-primary">
+                        <div class="text-center">
+
+                            <div class="col-xl-12 col-md-6 mb-4">
+                                <div class="row">
+                                    <div class="col-xl-6 col-md-6 mb-4">
+                                        <h3 style="text-align: left ;">Tous nos Utilisateurs</h3>
+                                    </div>
+                                    <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <mat-accordion>
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+
+                                        <div class="col-xl-12">
+                                            <div class="row">
+                                                <div class="col-xl-6 ">
+                                                    <mat-panel-title>
+                                                        <h3 style="text-align: left ;">Nos assistants</h3>
+                                                    </mat-panel-title>
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                    <mat-panel-description>
+                                                        <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                            width="20" height="15">
+                                                    </mat-panel-description>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </mat-expansion-panel-header>
+
+                                    <table width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nom</th>
+                                                <th>Prenom</th>
+                                                <th>Adresse mail</th>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let a of Assistants">
+                                                <td>{{a.idUtilisateur}}</td>
+                                                <td>{{a.nom}}</td>
+                                                <td>{{a.prenom}}</td>
+                                                <td>{{a.adresseMail}}</td>
+                                                <td>
+                                                    <button class="accordion-button3"
+                                                        (click)="supprimera(a.idUtilisateur)">supprimer</button>
+                                                    <button class="accordion-button4"
+                                                        (click)="modifiera(a.idUtilisateur)">Modifier</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+
+                        <mat-accordion >
+                            <mat-expansion-panel hideToggle >
+
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+
+
+                                                    <h3 style="text-align: left ;">Nos commerciaux</h3>
+
+
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+
+
+                                                    <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                        width="20" height="15">
+
+
+                                                </mat-panel-description>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+
+                                <table width="100%">
+
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Adresse mail</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let c of Commercials">
+                                            <td>{{c.idUtilisateur}}</td>
+                                            <td>{{c.nom}}</td>
+                                            <td>{{c.prenom}}</td>
+                                            <td>{{c.adresseMail}}</td>
+                                            <td><button class="accordion-button3"
+                                                    (click)="supprimerc(c.idUtilisateur)">Supprimer</button>
+                                                <button class="accordion-button4"
+                                                    (click)="modifierc(c.idUtilisateur)">Modifier</button>
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+
+
+
+                                </table>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+
+                        <mat-accordion  class="card">
+                            <mat-expansion-panel hideToggle>
+
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+
+                                                    <h3 style="text-align: left ;">Nos formateurs</h3>
+
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+                                                    <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                        width="20" height="15">
+                                                </mat-panel-description>
                                             </div>
                                         </div>
                                     </div>
-                                    <h6>Cout: {{formation[c].cout}} </h6>
-                                    <h6>Formateur: {{formation[c].formateur.prenom}}
-                                        {{formation[c].formateur.nom}}
-                                    </h6>
-                                </div>
-                                <br>
+                                </mat-expansion-panel-header>
+
+
+
+                                <table width="100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th> ID </th>
+                                            <th> Nom </th>
+                                            <th> Prenom </th>
+                                            <th> Adresse mail </th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let formateur of Formateurs">
+                                            <td> {{formateur.idUtilisateur}} </td>
+                                            <td> {{formateur.nom}} </td>
+                                            <td> {{formateur.prenom}} </td>
+                                            <td> {{formateur.adresseMail}} </td>
+                                            <td><button class="accordion-button3"
+                                                    (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button>
+                                                <button class="accordion-button4"
+                                                    (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+
+                        <mat-accordion>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+
+                                                    <h3 style="text-align: left ;">Nos participants</h3>
+
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+                                                    <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                        width="20" height="15">
+                                                </mat-panel-description>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+                                <table width="100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nom</th>
+                                            <th>Prenom </th>
+                                            <th>Adresse mail</th>
+                                            <th>Formations</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let p of Participants">
+                                            <td>{{p.idUtilisateur}}</td>
+                                            <td>{{p.nom}}</td>
+                                            <td>{{p.prenom}} </td>
+                                            <td>{{p.adresseMail}}</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><button class="accordion-button3"
+                                                    (click)="supprimerp(p.idUtilisateur)">Supprimer</button>
+                                                <button class="accordion-button4"
+                                                    (click)="modifierp(p.idUtilisateur)">Modifier</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+
+                                </table>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+                        <mat-accordion>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+
+                                                    <h3 style="text-align: left ;">Nos Admins</h3>
+
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+                                                    <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                        width="20" height="15">
+                                                </mat-panel-description>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+                                <table width="100%">
+
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nom</th>
+                                            <th>Prenom</th>
+                                            <th>Username</th>
+                                            <th>Adresse mail</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </thead>
+
+
+                                    <tbody *ngFor="let c of Utilisateurs">
+                                        <tr *ngIf="c.role.libRole==='admin'">
+
+
+
+                                            <td>{{c.idUtilisateur}}</td>
+
+
+                                            <td>{{c.prenom}}</td>
+
+                                            <td>{{c.username}}</td>
+
+                                            <td>{{c.adresseMail}}</td>
+
+                                            <td><button class="accordion-button3"
+                                                    (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
+                                                <button class="accordion-button4"
+                                                    (click)="modifieru(c.idUtilisateur)">Modifier</button>
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+
+
+
+                                </table>
+
+
+
+
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+                        <mat-accordion style="text-align:center ;">
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+
+                                                    <h3 style="text-align: left ;">Ajouter un Utilisateurs</h3>
+
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+                                                    <img src="https://biolectric.be/wp-content/uploads/2020/08/Arrow-down.svg.png"
+                                                        width="20" height="15">
+                                                </mat-panel-description>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+                                <br> <br> <br>
+                                <button class="accordion-button2" (click)="ajouterAssistant()">
+                                    <h6>Ajouter un assistant</h6>
+                                </button>
+
+                                <button class="accordion-button2" (click)="ajouterComm()">
+                                    <h6>Ajouter un commercial</h6>
+                                </button>
+
+                                <button class="accordion-button2" (click)="ajouterF()">
+                                    <h6>Ajouter un formateur</h6>
+                                </button>
+
+                                <button class="accordion-button2" (click)="ajouterParticipant()">
+                                    <h6>Ajouter un participant</h6>
+                                </button>
+                                <br><br>
+                                <button class="accordion-button2" (click)="ajouterutil()">
+                                    <h6>Ajouter un Admin</h6>
+                                </button>
+
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+
+                    </div>
+                </div>
+
+                <!-- graphe preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
+
+
+                <div class="col-xl-3 col-md-6 mb-4">
+
+                    <div class=" card border-right-primary shadow h-100 py-2">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Recette</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="chart-area">
+                                <canvas id="myAreaChart" baseChart [type]="'line'" [datasets]="barChartData2"
+                                    [labels]="barChartLabels2" [options]="barChartOptions2" [legend]="barChartLegend2"
+                                    (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- utilisatuer preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
-
-            <div class="col-xl-6 col-md-6 mb-4">
-                <div class="text-center">
-
-                    <h3 style="text-align: left ;">Nos assistants</h3>
-                    <table width="100%">
-
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Adresse mail</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let a of Assistants">
-                                <td>{{a.idUtilisateur}}</td>
-                                <td>{{a.nom}}</td>
-                                <td>{{a.prenom}}</td>
-                                <td>{{a.adresseMail}}</td>
-
-                                <td>
 
 
 
-                                    <button class="accordion-button3"
-                                        (click)="supprimera(a.idUtilisateur)">supprimer</button>
-                                    <button class="accordion-button4"
-                                        (click)="modifiera(a.idUtilisateur)">Modifier</button>
-
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h3 style="text-align: left ;">Nos commerciaux</h3>
-                    <table width="100%">
-
-
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Adresse mail</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let c of Commercials">
-                                <td>{{c.idUtilisateur}}</td>
-                                <td>{{c.nom}}</td>
-                                <td>{{c.prenom}}</td>
-                                <td>{{c.adresseMail}}</td>
-                                <td><button class="accordion-button3"
-                                        (click)="supprimerc(c.idUtilisateur)">Supprimer</button>
-                                    <button class="accordion-button4"
-                                        (click)="modifierc(c.idUtilisateur)">Modifier</button>
-                                </td>
-
-                            </tr>
-                        </tbody>
-
-
-
-                    </table>
-
-                    <h3 style="text-align: left ;">Nos formateurs</h3>
-
-                    <table width="100%">
-
-                        <thead>
-                            <tr>
-                                <th> ID </th>
-                                <th> Nom </th>
-                                <th> Prenom </th>
-                                <th> Adresse mail </th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let formateur of Formateurs">
-                                <td> {{formateur.idUtilisateur}} </td>
-                                <td> {{formateur.nom}} </td>
-                                <td> {{formateur.prenom}} </td>
-                                <td> {{formateur.adresseMail}} </td>
-                                <td><button class="accordion-button3"
-                                        (click)="supprimerf(formateur.idUtilisateur)">Supprimer</button>
-                                    <button class="accordion-button4"
-                                        (click)="redirectionModifierf(formateur.idUtilisateur)">Modifier</button>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-                    <h3 style="text-align: left ;">Nos participants</h3>
-
-                    <table width="100%">
-
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom </th>
-                                <th>Adresse mail</th>
-                                <th>Formations</th>
-                                <th>Paiement</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let p of Participants">
-                                <td>{{p.idUtilisateur}}</td>
-                                <td>{{p.nom}}</td>
-                                <td>{{p.prenom}} </td>
-                                <td>{{p.adresseMail}}</td>
-                                <td></td>
-                                <td></td>
-                                <td><button class="accordion-button3"
-                                        (click)="supprimerp(p.idUtilisateur)">Supprimer</button>
-                                    <button class="accordion-button4"
-                                        (click)="modifierp(p.idUtilisateur)">Modifier</button>
-                                </td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-                    <h3 style="text-align: left ;">Tous nos utilisateurs</h3>
-
-                    <table width="100%">
-
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom</th>
-                                <th>Prenom</th>
-                                <th>Username</th>
-                                <th>Adresse mail</th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let c of Utilisateurs">
-                                <td>{{c.idUtilisateur}}</td>
-                                <td>{{c.nom}}</td>
-                                <td>{{c.prenom}}</td>
-                                <td>{{c.username}}</td>
-                                <td>{{c.adresseMail}}</td>
-                                <td><button class="accordion-button3"
-                                        (click)="supprimeru(c.idUtilisateur)">Supprimer</button>
-                                    <button class="accordion-button4"
-                                        (click)="modifieru(c.idUtilisateur)">Modifier</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <br> <br> <br>
-                    <button class="accordion-button2" (click)="ajouterAssistant()">
-                        <h6>Ajouter un assistant</h6>
-                    </button>
-
-                    <button class="accordion-button2" (click)="ajouterComm()">
-                        <h6>Ajouter un commercial</h6>
-                    </button>
-
-                    <button class="accordion-button2" (click)="ajouterF()">
-                        <h6>Ajouter un formateur</h6>
-                    </button>
-
-                    <button class="accordion-button2" (click)="ajouterParticipant()">
-                        <h6>Ajouter un participant</h6>
-                    </button>
-                    <br><br>
-                    <button class="accordion-button2" (click)="ajouterutil()">
-                        <h6>Ajouter un utilisateur</h6>
-                    </button>
-
-                </div>
-            </div>
-
-            <!-- graphe preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
-
-
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Recette</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <canvas id="myAreaChart" baseChart [type]="'line'" [datasets]="barChartData2"
-                                [labels]="barChartLabels2" [options]="barChartOptions2" [legend]="barChartLegend2"
-                                (chartHover)="chartHovered2($event)" (chartClick)="chartClicked2($event)"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-
-
-
-
-
 
     </div>
     <br><br><br><br><br>
-   
+
 
 
 

@@ -18,6 +18,8 @@ import 'chart.js';
 })
 export class AdminComponent implements OnInit {
 
+  panelOpenState = false;
+
   formation !: Formation[];
   date !: Date;
   compteur!: number[]
@@ -43,7 +45,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router, private Service: GetAllService) { }
 
 
-
+ 
 
 
 
@@ -61,10 +63,6 @@ export class AdminComponent implements OnInit {
     this.recuperer();
 
     this.graphique();
-
-
-
-
 
 
   }

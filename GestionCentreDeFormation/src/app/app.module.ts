@@ -48,6 +48,9 @@ import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+//  npm install @angular/material --save
+import {MatExpansionModule} from '@angular/material/expansion';
 
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
@@ -107,6 +110,8 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
     //testgraph
     NgChartsModule
   ],

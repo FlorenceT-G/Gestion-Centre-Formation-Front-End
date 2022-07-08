@@ -4601,7 +4601,7 @@ textarea.form-control-lg {
 .accordion-button3 {
 
   align-items: center;
-  width: 30%;
+  width: 35%;
   height: .8cm;
   color: #f1eede;
   text-align: center;
@@ -6845,6 +6845,11 @@ textarea.form-control-lg {
 
 .gap-5 {
   gap: 3rem !important;
+}
+
+.justify-content-bf {
+  text-align: left;
+  
 }
 
 .justify-content-start {
