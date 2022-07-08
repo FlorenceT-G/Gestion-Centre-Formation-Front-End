@@ -33,6 +33,7 @@ export class FormateurCompteComponent implements OnInit {
         this.reload()
       }
     )
+    sessionStorage.setItem('user', JSON.stringify(this.userObject));
   }
 
   reload() {

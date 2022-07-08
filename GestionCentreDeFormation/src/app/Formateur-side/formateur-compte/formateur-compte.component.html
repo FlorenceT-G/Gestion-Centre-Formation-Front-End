@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Gestion Centre de Formation</title>
+        <title>Clean Blog - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -31,33 +31,13 @@
         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
-                       
-                    <h1>Paramètres du compte</h1>
-                    <form (ngSubmit)="saveCompte()">
-                    <table>
-                        <tr>
-                            <td>Nom :</td>
-                            <td><input type="text" name="nom" [(ngModel)]="userObject.nom" /></td>
-                        </tr>
-                        <tr>
-                            <td> Prenom :</td>
-                            <td><input type="text" name="prenom" [(ngModel)]="userObject.prenom" /></td>
-                        </tr>
-                        <tr>
-                            <td>Username :</td>
-                            <td><input type="text" name="username" [(ngModel)]="userObject.username" /></td>
-                        </tr>
-                        <tr>
-                            <td>Adresse mail :</td>
-                            <td><input type="text" name="adresseMail" [(ngModel)]="userObject.adresseMail" /></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><button type="submit" class="btn outline-dark">Enregistrer les modifications</button> </td>
-                        </tr>
-
-                    </table>
-                    </form>
-                        
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div *ngIf="validUser" class="site-heading">Paramètres du compte de {{userObject.prenom}}</div>
+                        <div class="site-heading">
+                            <h1>Inti Formation</h1>
+                            <span class="subheading">Projet de fin de Formation</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -65,5 +45,31 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <form (ngSubmit)="saveCompte()">
+        <table>
+            <tr>
+                <td>Nom :</td>
+                <td><input type="text" name="nom" [(ngModel)]="userObject.nom" /></td>
+            </tr>
+            <tr>
+                <td> Prenom :</td>
+                <td><input type="text" name="prenom" [(ngModel)]="userObject.prenom" /></td>
+            </tr>
+            <tr>
+                <td>Username :</td>
+                <td><input type="text" name="username" [(ngModel)]="userObject.username" /></td>
+            </tr>
+            <tr>
+                <td>Adresse mail :</td>
+                <td><input type="text" name="adresseMail" [(ngModel)]="userObject.adresseMail" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn outline-dark">Enregistrer les modifications</button> </td>
+            </tr>
+
+        </table>
+        </form>
+
     </body>
 </html>

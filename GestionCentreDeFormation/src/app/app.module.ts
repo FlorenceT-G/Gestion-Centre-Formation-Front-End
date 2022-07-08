@@ -24,7 +24,6 @@ import { HeaderComponent } from './header/header.component';
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
-import { FormateurComponent } from './Main/formateur/formateur.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
@@ -71,7 +70,6 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     HeaderComponent,
     FooterComponent,
     AdminComponent,
-    FormateurComponent,
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
