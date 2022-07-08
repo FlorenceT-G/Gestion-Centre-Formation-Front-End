@@ -15,10 +15,8 @@ table {
     border-collapse: collapse;
     background-color: #5a5c69; color: #E4E4E4;
     margin-bottom: 1em;
+    text-align: center;
 }
 td {
     border:solid 1.5px #000; 
-}
-table {
-    text-align: center;
 }

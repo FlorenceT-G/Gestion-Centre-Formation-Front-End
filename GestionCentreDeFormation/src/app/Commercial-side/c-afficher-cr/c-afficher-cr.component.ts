@@ -24,21 +24,16 @@ export class CAfficherCrComponent implements OnInit {
         }
       )
     )
-
-    
-
     this.userString = sessionStorage.getItem('user')
     this.userObject = JSON.parse(this.userString);
   }
-
-
 
   ajouterDate(id:number) {
     this.router.navigateByUrl("commercial-ajout-contact/" + id)
   }
 
   backtrack() {
-    this.router.navigateByUrl('c-afficher-prospects')
+    this.router.navigateByUrl('c-gestion-prospects')
   }
 
 }
