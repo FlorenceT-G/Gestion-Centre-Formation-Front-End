@@ -32,6 +32,7 @@ export class AdminComponent implements OnInit {
   Participants !: Participant[]
   Utilisateurs !: Utilisateur[]
   Paiements !: Paiement[]
+  formationfutur !: Formation[];
 
   recette!: number[];
 
@@ -115,7 +116,14 @@ export class AdminComponent implements OnInit {
     this.Service.getAllParticipant().subscribe
       (reponse => { this.Participants = reponse })
 
+      this.Service.getProchainesFormations().subscribe
+      (reponse => { this.formationfutur = reponse })
 
+
+
+
+
+      
   }
 
   barChartData2 !: any[]
