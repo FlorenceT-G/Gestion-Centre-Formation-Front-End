@@ -22,7 +22,7 @@ export class FormateurFormationsComponent implements OnInit {
   historiqueF!:Formation[]
   prochainesF!:Formation[]
   // Affichage ou non des formations
-  pasDePF = true
+  pasDePF = false
   pasDeFeC = false
   pasDeHF = false
 
@@ -64,27 +64,11 @@ export class FormateurFormationsComponent implements OnInit {
               var k = 0;
               this.FEnCours[k]=this.formationFormateur[j]
               k++
-              if(this.FEnCours==null) {
-
-              }
             }
           }
         }
-      }
-    )
-
-    this.service.getHistoriqueFormations().subscribe(
-      response => {
-        this.historiqueFAll=response;
-
-        for(let i=0; i<this.historiqueFAll.length; i++) {
-          for(let j=0; j<this.formationFormateur.length; j++) { 
-            if(this.formationFormateur[j].idFormation==this.historiqueFAll[i].idFormation) {
-              var k = 0;
-              this.historiqueF[k]=this.formationFormateur[j]
-              k++
-            }
-          }
+        if(this.FEnCours[0].idFormation==null) {
+          this.pasDeFeC = true
         }
       }
     )
@@ -101,6 +85,9 @@ export class FormateurFormationsComponent implements OnInit {
               k++
             }
           }
+        }
+        if(this.prochainesF[0].idFormation==null) {
+          this.pasDePF = true
         }
       }
     )
@@ -122,6 +109,9 @@ export class FormateurFormationsComponent implements OnInit {
               k++
             }
           }
+        }
+        if(this.historiqueF[0].idFormation==null) {
+          this.pasDeHF = true
         }
       }
     )
