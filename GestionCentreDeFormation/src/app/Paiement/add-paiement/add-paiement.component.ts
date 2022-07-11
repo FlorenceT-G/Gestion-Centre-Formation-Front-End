@@ -13,6 +13,7 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class AddPaiementComponent implements OnInit {
 
+  uti!: Utilisateur
   paiement !:Paiement;
   idUtilisateur!:number
   idFormation!:number
@@ -61,7 +62,15 @@ export class AddPaiementComponent implements OnInit {
                   this.paiement.reste=resteRep-this.paiement.montant;
                   this.paiement.datePaiement=new Date();
                   this.Service.insererPaiement(this.paiement).subscribe(
-                  insererOk=>{this.router.navigateByUrl('a-gestion-paiements')});
+                  insererOk=>{var obj = JSON.parse(sessionStorage['user']);
+                  if (obj) {
+                    this.uti = obj;
+                    if (this.uti.role.libRole === "admin") {
+                      this.router.navigateByUrl('admin');
+                    }
+                    else{
+                      this.router.navigateByUrl('a-gestion-paiements');
+                    }}});
                   }
               )
               this.tamp=1;

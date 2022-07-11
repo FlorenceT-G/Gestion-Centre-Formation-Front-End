@@ -35,9 +35,11 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
+import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
+  { path:'addUtilisateur',component:AjoutadminComponent},
   { path: 'addAssistant',component: AddAssistantComponent},
   { path: 'afficherFormateurs', component: FormateursComponent},
   { path: 'modifu/:id', component: AccueiladminComponent},
