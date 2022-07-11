@@ -31,6 +31,7 @@ export class CCompteComponent implements OnInit {
         this.reload();
       }
     )
+    sessionStorage.setItem('user', JSON.stringify(this.userObject));
   }
 
   reload() {

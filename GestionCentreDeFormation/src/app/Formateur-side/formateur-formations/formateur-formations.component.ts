@@ -21,6 +21,10 @@ export class FormateurFormationsComponent implements OnInit {
   FEnCours!:Formation[]
   historiqueF!:Formation[]
   prochainesF!:Formation[]
+  // Affichage ou non des formations
+  pasDePF = true
+  pasDeFeC = false
+  pasDeHF = false
 
   userString!:any
   userObject!:any
@@ -60,6 +64,9 @@ export class FormateurFormationsComponent implements OnInit {
               var k = 0;
               this.FEnCours[k]=this.formationFormateur[j]
               k++
+              if(this.FEnCours==null) {
+
+              }
             }
           }
         }
@@ -88,12 +95,13 @@ export class FormateurFormationsComponent implements OnInit {
         for(let i=0; i<this.prochainesFAll.length; i++) {
           for(let j=0; j<this.formationFormateur.length; j++) {
             if(this.formationFormateur[j].idFormation==this.prochainesFAll[i].idFormation) {
+              this.pasDePF=false
               var k = 0;
               this.prochainesF[k]=this.formationFormateur[j]
               k++
             }
           }
-        }  
+        }
       }
     )
 
