@@ -48,7 +48,6 @@ export class AGestionPaiementsComponent implements OnInit {
                           }
                       )
                     };})
-      
         };
       }
     )

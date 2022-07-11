@@ -51,94 +51,86 @@
         </div>
     </header>
 
+    <h1 class="h1"> Gestion des paiements </h1>
 
-<h1>GESTION DES PAIEMENTS</h1>
-<br>
+    <h2 class="h2Paiment"> Paiements effectués</h2>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th> ID </th>
+                <th> Date du paiement </th>
+                <th> Montant</th>
+                <th> Reste à régler </th>
+                <th> Participant </th>
+                <th> ID Formation </th>
+                <th colspan="2"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of paiements">
+                <td> {{p.idPaiement}} </td>
+                <td> {{p.datePaiement}} </td>
+                <td> {{p.montant}} </td>
+                <td> {{p.reste}} </td>
+                <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
+                <td> {{p.formation.idFormation}} </td>
+                <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
+                <td><button (click)="modifier(p.idPaiement)">Modifier</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-<h2 class="pb-2"> Paiements effectués</h2>
-<br>
-<table width="100%">
-    <thead>
-        <tr>
-            <th> ID </th>
-            <th> Date du paiement </th>
-            <th> Montant</th>
-            <th> Reste à régler </th>
-            <th> Participant </th>
-            <th> ID Formation </th>
-            <td></td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of paiements">
-            <td> {{p.idPaiement}} </td>
-            <td> {{p.datePaiement}} </td>
-            <td> {{p.montant}} </td>
-            <td> {{p.reste}} </td>
-            <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
-            <td> {{p.formation.idFormation}} </td>
-            <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
-            <td><button (click)="modifier(p.idPaiement)">Modifier</button></td>
-        </tr>
-    </tbody>
-</table>
+    <br>
+    <button class="CreerPaiement" (click)="ajouterPaiement()">
+        <h6>Créer un paiement</h6>
+    </button>
 
-<br>
-<button (click)="ajouterPaiement()">
-    <h6>Créer un paiement</h6>
-</button>
-<br> <br> <br>
+    <h2 class="h2Participant">Liste des participants</h2>
 
-<h2 class="pb-2">Liste des participants</h2><br>
-
-<table width="100%" *ngFor="let p of participants">
-
-    <thead>
+    <table class="TableParticipantsFormations" *ngFor="let p of participants">
         <caption>
-            <h6>Participant ID {{p.idUtilisateur}} : {{p.nom}} {{p.prenom}}</h6>
+            <h6> Participant {{p.idUtilisateur}} : {{p.prenom}} {{p.nom}} </h6>
         </caption>
-        <tr>
+        <thead>
 
-            <th>Id Formation</th>
-            <th>Intitulé</th>
-            <th>Description</th>
-            <th>Date de début</th>
-            <th>Date de fin</th>
-            <th>Tarif</th>
-            <th>Montant payé</th>
-            <th>Montant à régler</th>
-            <th></th>
+            <tr>
+                <th>Id Formation</th>
+                <th>Intitulé</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Tarif</th>
+                <th>Montant payé</th>
+                <th>Reste à régler</th>
+                <th></th>
+            </tr>
+        </thead>
 
-        </tr>
-    </thead>
+        <tbody>
+            <tr *ngFor="let f of p.listeFormations; index as i">
+                <td>{{f.idFormation}}</td>
+                <td>{{f.libFormation}}</td>
+                <td>{{f.description}}</td>
+                <td>{{f.dateDebut}}</td>
+                <td>{{f.dateFin}}</td>
+                <td>{{f.cout}}</td>
+                <td>{{f.cout - p.restePaiements[i]}}</td>
+                <td>{{p.restePaiements[i]}}</td>
+                <td *ngIf="p.restePaiements[i]!=0"><button
+                        (click)="relancer(p.idUtilisateur, f.idFormation)">Relancer</button></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <tbody>
 
-        <tr *ngFor="let f of p.listeFormations; index as i">
-            <td>{{f.idFormation}}</td>
-            <td>{{f.libFormation}}</td>
-            <td>{{f.description}}</td>
-            <td>{{f.dateDebut}}</td>
-            <td>{{f.dateFin}}</td>
-            <td>{{f.cout}}</td>
-            <td>{{f.cout - p.restePaiements[i]}}</td>
-            <td>{{p.restePaiements[i]}}</td>
-            <td><button (click)="relancer(p.idUtilisateur, f.idFormation)">Relancer</button></td>
-        </tr>
+    <button class="retour" (click)="accueil()">
+        <h6>Retour</h6>
+    </button>
 
-    </tbody>
-    <br> <br>
-</table>
-
-<button (click)="accueil()">
-    <h6>Retour</h6>
-</button>
-
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<script src="js/scripts.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>

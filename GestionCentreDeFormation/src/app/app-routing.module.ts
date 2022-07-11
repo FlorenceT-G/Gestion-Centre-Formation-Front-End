@@ -35,6 +35,11 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 import { AccueiladminComponent } from './Admin/accueiladmin/accueiladmin.component';
+import { ParticipantAccueilComponent } from './Participant-side/participant-accueil/participant-accueil.component';
+import { PartcipantCompteComponent } from './Participant-side/partcipant-compte/partcipant-compte.component';
+import { ParticipantPaiementsComponent } from './Participant-side/participant-paiements/participant-paiements.component';
+import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
+import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
 
 const routes: Routes = [
@@ -46,6 +51,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'admin',component: AdminComponent},
   { path: 'commercial',component: CAccueilComponent},
+  { path: 'participant',component: ParticipantAccueilComponent},
   { path: 'participant',component: AdminComponent},
   { path: 'modifierAssistant/:id',component: ModifAssistantComponent},
   { path: 'afficherCommerciaux',component: CommercialsComponent},
@@ -74,6 +80,10 @@ const routes: Routes = [
   { path: 'afficherPaiements',component: PaiementsComponent},
   { path: 'addPaiement',component: AddPaiementComponent},
   { path: 'modifierPaiement/:id',component: ModifPaiementComponent},
+  { path: 'participant-compte',component: PartcipantCompteComponent},
+  { path: 'participant-paiements',component: ParticipantPaiementsComponent},
+  { path: 'participant-formations',component: ParticipantFormationsComponent},
+  { path: 'addPaiementParticipant/:id',component: AddPaiementParticipantComponent},
   { path: '**', redirectTo: 'login'}
 ];
 

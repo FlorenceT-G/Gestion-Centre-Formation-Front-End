@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Gestion Centre de Formation</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="">Accueil</a>
-                
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-prospects">Gestion des Prospects</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-compte">Compte </a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
 
-                    <ng-container *ngIf="p">
-                        <h1>Récapitulatif des contacts avec {{p.nom}}, {{p.prenom}}</h1>
-                        
-                        <table class="tabcenter">
-                            <thead>
-                                <td>Date</td>
-                                <td>Compte-Rendu</td>
-                            </thead>
-                            <tbody *ngFor="let c of p.contacts">
-                                <tr>
-                                    <td>{{c.dateContact}}</td>
-                                    <td>{{c.compteRendu}}</td>
-                                </tr>
-                            </tbody>
-                            <tr>
-                                <td colspan="3" class="txtcenter">
-                                    <button class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter contact</button>
-                                </td>
-                            </tr>
-                        </table>
-                        
-                        </ng-container>
-                        
-                        <button class="btn btn-dark" (click)="backtrack()">Retour</button>
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="">Accueil</a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-prospects">Gestion des
+                            Prospects</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-compte">Compte </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div *ngIf="p" class="site-heading">Compte-rendu des contacts avec {{p.nom}}, {{p.prenom}}</div>
+                    <div class="site-heading">
+                        <h1>Inti Formation</h1>
+                        <span class="subheading">Projet de fin de Formation</span>
                     </div>
                 </div>
             </div>
-        </header>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </header>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+
+    <ng-container *ngIf="p">
+        <h1>Récapitulatif des contacts avec {{p.nom}}, {{p.prenom}}</h1>
+
+        <table class="tabcenter">
+            <thead>
+                <td>Date</td>
+                <td>Compte-Rendu</td>
+            </thead>
+            <tbody *ngFor="let c of p.contacts">
+                <tr>
+                    <td>{{c.dateContact}}</td>
+                    <td>{{c.compteRendu}}</td>
+                </tr>
+            </tbody>
+            <tr>
+                <td colspan="3" class="txtcenter">
+                    <button class="btn btn-dark" (click)="ajouterDate(p.idProspect)">Ajouter contact</button>
+                </td>
+            </tr>
+        </table>
+
+    </ng-container>
+</body>
+
 </html>

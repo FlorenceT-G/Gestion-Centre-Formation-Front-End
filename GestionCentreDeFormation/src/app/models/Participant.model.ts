@@ -10,6 +10,7 @@ export class Participant {
     username!:string;
     password!:string;
 
+    //Ignorés dans le back
     listeFormations!:Formation[]
     restePaiements!:number[]
     
