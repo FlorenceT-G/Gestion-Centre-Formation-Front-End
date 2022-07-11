@@ -10043,6 +10043,17 @@
   .border-left-primary {
     border-left: 0.25rem solid #4e73df !important;
   }
+
+  .border-right-primary {
+    border-right: 0.25rem solid #d81f1f !important;
+  }
+
+  .border-top-primary {
+    border-top: 0.25rem solid #1e5616 !important;
+  }
+
+
+
   
   .border-bottom-primary {
     border-bottom: 0.25rem solid #4e73df !important;
@@ -11280,3 +11291,9 @@
     width: 100%;
   }
   
+  
+
+
+  .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }

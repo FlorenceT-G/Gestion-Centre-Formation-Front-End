@@ -11,16 +11,24 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class CGestionProspectsComponent implements OnInit {
 
   lProspects!: Prospect[]
+
+  selectedFile!:File
+  delimiter!:string
+
   constructor(private all:GetAllService, private router:Router) { }
 
   ngOnInit(): void {
+    this.afficherNonInscrits()
+  }
+
+  afficherNonInscrits() {
     this.all.getProspectNonInscrits().subscribe(
       liste => {
         this.lProspects = liste;
       } 
     );
   }
-
+ 
   AInscrire(p:Prospect) {
     p.ainscrire = true;
 
@@ -46,4 +54,18 @@ export class CGestionProspectsComponent implements OnInit {
     this.router.navigateByUrl("commercial-ajout-contact/" + id)
   }
 
+  // ------------------- Ajout prospect fichier CSV -------------------
+  selectEvent(event:any): void {
+    this.selectedFile = event.target.files[0]
+  }
+
+  ajouterProspect() {
+    let formData = new FormData()
+    formData.append("file",this.selectedFile)
+    formData.append("delimiter",this.delimiter)
+    this.all.insererProspectCsvFile(formData).subscribe(
+      response => this.afficherNonInscrits()
+    )
+  }
+  
 }

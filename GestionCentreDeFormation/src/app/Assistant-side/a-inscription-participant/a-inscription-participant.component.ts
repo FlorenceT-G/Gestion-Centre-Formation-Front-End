@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Assistant } from 'src/app/models/Assistant.model';
 import { Prospect } from 'src/app/models/Prospect';
 import { GetAllService } from 'src/app/services/get-all.service';
 
@@ -10,6 +11,9 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class AInscriptionParticipantComponent implements OnInit {
 
   lProspects!:Prospect[]
+  userString!:any
+  userObject!:Assistant
+  validUser=false
 
   constructor(private all:GetAllService) { }
 
@@ -17,8 +21,14 @@ export class AInscriptionParticipantComponent implements OnInit {
     this.all.getProspectAInscrire().subscribe(
       liste => {
         this.lProspects = liste;
-      }
-    )
+      })
+
+    this.userString = sessionStorage.getItem('user');
+    if(this.userString != null) {
+      this.userObject = JSON.parse(this.userString);
+      this.validUser=true
+    }
+
     
   }
 

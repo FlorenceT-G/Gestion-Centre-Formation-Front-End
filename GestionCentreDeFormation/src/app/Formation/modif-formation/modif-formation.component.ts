@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Formateur } from 'src/app/models/Formateur';
 import { Formation } from 'src/app/models/Formation';
+import { Utilisateur } from 'src/app/models/Utilisateur.model';
 import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class ModifFormationComponent implements OnInit {
 
   formation!:Formation;
   formateurs!: Formateur[];
+  uti!: Utilisateur
 
   idFormateur!:number
 
@@ -29,7 +31,15 @@ export class ModifFormationComponent implements OnInit {
     if (this.idFormateur==null){
       this.Service.modifierFormation(this.formation).subscribe(
         response=>{
-          this.router.navigateByUrl('afficherFormations');
+          var obj = JSON.parse(sessionStorage['user']);
+          if (obj) {
+            this.uti = obj;
+            if (this.uti.role.libRole === "admin") {
+              this.router.navigateByUrl('admin');
+            }
+            else{
+              this.router.navigateByUrl('afficherFormations'); } 
+         }
         }
       )
     }
@@ -38,13 +48,21 @@ export class ModifFormationComponent implements OnInit {
       response=>{this.formation.formateur=response;
       this.Service.modifierFormation(this.formation).subscribe(
       response=>{
-        this.router.navigateByUrl('afficherFormations');
+        var obj = JSON.parse(sessionStorage['user']);
+        if (obj) {
+          this.uti = obj;
+          if (this.uti.role.libRole === "admin") {
+            this.router.navigateByUrl('admin');
+          }
+          else{
+            this.router.navigateByUrl('afficherFormations'); } 
+       }
       }
     )}
     )
   }
   }
-  
+ 
   recupererFormateursDispo(){
     this.Service.getFormateurDispo().subscribe(
       response => {this.formateurs=response;}

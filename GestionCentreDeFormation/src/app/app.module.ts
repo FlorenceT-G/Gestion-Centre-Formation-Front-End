@@ -24,7 +24,6 @@ import { HeaderComponent } from './header/header.component';
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
-import { FormateurComponent } from './Main/formateur/formateur.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
@@ -48,6 +47,9 @@ import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+//  npm install @angular/material --save
+import {MatExpansionModule} from '@angular/material/expansion';
 
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
@@ -76,7 +78,6 @@ import { AddPaiementParticipantComponent } from './Participant-side/add-paiement
     HeaderComponent,
     FooterComponent,
     AdminComponent,
-    FormateurComponent,
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
@@ -117,6 +118,8 @@ import { AddPaiementParticipantComponent } from './Participant-side/add-paiement
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
     //testgraph
     NgChartsModule
   ],

@@ -18,6 +18,8 @@ import 'chart.js';
 })
 export class AdminComponent implements OnInit {
 
+  panelOpenState = false;
+
   formation !: Formation[];
   date !: Date;
   compteur!: number[]
@@ -30,6 +32,7 @@ export class AdminComponent implements OnInit {
   Participants !: Participant[]
   Utilisateurs !: Utilisateur[]
   Paiements !: Paiement[]
+  formationfutur !: Formation[];
 
   recette!: number[];
 
@@ -43,7 +46,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router, private Service: GetAllService) { }
 
 
-
+ 
 
 
 
@@ -63,11 +66,13 @@ export class AdminComponent implements OnInit {
     this.graphique();
 
 
-
-
-
-
   }
+
+
+
+
+
+
 
   formationencours() {
     this.Service.getAllFormationEnCours().subscribe(
@@ -111,7 +116,14 @@ export class AdminComponent implements OnInit {
     this.Service.getAllParticipant().subscribe
       (reponse => { this.Participants = reponse })
 
+      this.Service.getProchainesFormations().subscribe
+      (reponse => { this.formationfutur = reponse })
 
+
+
+
+
+      
   }
 
   barChartData2 !: any[]
@@ -121,7 +133,8 @@ export class AdminComponent implements OnInit {
       (reponse => {
         this.paiem = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         for (let i = 0; i < reponse.length; i = i + 1) {
-          this.d = new Date(Date.parse(reponse[i].datePaiement.toString()));
+          //this.d = new Date(Date.parse(reponse[i].datePaiement.toString()));
+          this.d = new Date(reponse[i].datePaiement)
           this.m = this.d.getMonth()
           this.paiem[this.m] = this.paiem[this.m] + reponse[i].montant
           this.Paiements = reponse
