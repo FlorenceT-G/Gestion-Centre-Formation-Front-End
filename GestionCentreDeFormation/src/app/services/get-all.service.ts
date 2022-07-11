@@ -126,7 +126,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/assistant/participants/'+id);
   }
   modifierParticipant(c: Participant) {
-    return this.http.put('http://localhost:9090/assistant/participants', c);
+    return this.http.put('http://localhost:9090/participant', c);
   }
   insererParticipant(p: Participant) {
     return this.http.post('http://localhost:9090/assistant/participants', p)
@@ -214,7 +214,7 @@ export class GetAllService {
     return this.http.put('http://localhost:9090/assistant/paiement', p);
   }
   insererPaiement(p:Paiement) {
-    return this.http.post('http://localhost:9090/assistant/paiement', p)
+    return this.http.post('http://localhost:9090/paiement', p)
   }
 
 

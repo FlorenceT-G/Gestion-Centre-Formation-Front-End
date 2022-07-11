@@ -20,8 +20,10 @@ export class AddPaiementComponent implements OnInit {
   formations!: Formation[];
   participants!: Participant[];
   bool=false
-  tamp=0
-  errorMsg="Ce participant n'est pas inscrit à cette formation"
+  montantIncorrect=false
+  tamp!:number
+  errorMsg="Ce participant n'est pas inscrit à cette formation ou a déjà réglé cette formation"
+  errorMontant="Le montant saisi est incorrect"
 
 
   constructor(private Service : GetAllService,  private route:ActivatedRoute, 
@@ -29,6 +31,7 @@ export class AddPaiementComponent implements OnInit {
 
   ngOnInit(): void {
     this.paiement = new Paiement();
+    this.tamp=0
 
     this.Service.getParticipantByPaiementNok().subscribe(
       response => {this.participants =response;}
@@ -49,20 +52,24 @@ export class AddPaiementComponent implements OnInit {
       this.Service.getByIdFormation(this.idFormation).subscribe(
         res=>{
           for (let i=0; i<response.length; i=i+1){
-            console.log(response[0])
-            console.log(res)
+
             if(res.idFormation === response[i].idFormation){
               
               this.paiement.formation=res;
               this.Service.getRestePaiement(this.idUtilisateur,this.idFormation).subscribe(
                 resteRep=>{
-                  console.log(resteRep)
-                  console.log(resteRep-this.paiement.montant)
+                  if (resteRep-this.paiement.montant<0){
+                      this.montantIncorrect=true;
+                      this.router.navigateByUrl('addPaiement');
+                  }
+                  else{
                   this.paiement.reste=resteRep-this.paiement.montant;
                   this.paiement.datePaiement=new Date();
                   this.Service.insererPaiement(this.paiement).subscribe(
-                  insererOk=>{this.router.navigateByUrl('a-gestion-paiements')});
-                  }
+                  insererOk=>{
+                    this.router.navigateByUrl('a-gestion-paiements')});
+                  };
+                }
               )
               this.tamp=1;
               break;

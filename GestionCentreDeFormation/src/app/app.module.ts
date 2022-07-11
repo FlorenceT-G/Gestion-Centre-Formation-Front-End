@@ -54,6 +54,11 @@ import { NgChartsModule } from 'ng2-charts';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
+import { ParticipantAccueilComponent } from './Participant-side/participant-accueil/participant-accueil.component';
+import { PartcipantCompteComponent } from './Participant-side/partcipant-compte/partcipant-compte.component';
+import { ParticipantPaiementsComponent } from './Participant-side/participant-paiements/participant-paiements.component';
+import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
+import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +103,12 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     PaiementsComponent,
     AddPaiementComponent,
     ModifPaiementComponent,
-    CCompteComponent
+    CCompteComponent,
+    ParticipantAccueilComponent,
+    PartcipantCompteComponent,
+    ParticipantPaiementsComponent,
+    ParticipantFormationsComponent,
+    AddPaiementParticipantComponent
   ],
   imports: [
     BrowserModule,

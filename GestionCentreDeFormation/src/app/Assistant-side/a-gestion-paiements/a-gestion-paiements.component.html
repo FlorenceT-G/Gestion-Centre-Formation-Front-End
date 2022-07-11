@@ -7,7 +7,7 @@
                         <br>
 
 
-                        <h2 class="pb-2"> Paiements effectués</h2>
+                        <h2 class="pb-2"> Tous les paiements effectués</h2>
                         <br>
                         
                                 <table width="100%">
@@ -16,7 +16,6 @@
                                             <th> ID </th>
                                             <th> Date du paiement </th>
                                             <th> Montant</th> 
-                                            <th> Reste à régler </th>
                                             <th> Participant </th>
                                             <th> ID Formation </th>
                                             <td></td>
@@ -29,7 +28,6 @@
                                             <td> {{p.idPaiement}} </td>
                                             <td> {{p.datePaiement}} </td>
                                             <td> {{p.montant}} </td>
-                                            <td> {{p.reste}} </td>
                                             <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
                                             <td> {{p.formation.idFormation}} </td>
                                             <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
@@ -63,7 +61,7 @@
     <th>Date de fin</th>
     <th>Tarif</th>
     <th>Montant payé</th>
-    <th>Montant à régler</th>
+    <th>Reste à régler</th>
     <th></th>
 
 
@@ -81,7 +79,7 @@
         <td>{{f.cout}}</td>
         <td>{{f.cout - p.restePaiements[i]}}</td>
         <td >{{p.restePaiements[i]}}</td>
-        <td><button (click)="relancer(p.idUtilisateur)">Relancer</button></td>
+        <td *ngIf="p.restePaiements[i]!=0"><button (click)="relancer(p.idUtilisateur)">Relancer</button></td>
     </tr>
 
     
