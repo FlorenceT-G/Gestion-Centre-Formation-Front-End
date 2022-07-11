@@ -1,105 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Gestion Centre de Formation</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="">Accueil</a>
-                
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="formateur-formations">Consulter les formations</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="formateur-compte">Compte </a></li>
-                    </ul>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Clean Blog - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="">Accueil</a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="formateur-formations">Consulter
+                            les formations</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="formateur-compte">Compte </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div *ngIf="validUser" class="site-heading"> Vos formations </div>
+                    <div class="site-heading">
+                        <h1>Inti Formation</h1>
+                        <span class="subheading">Projet de fin de Formation</span>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                       <h1>Formations en cours</h1>
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom de la formation</th>
-                                <th>Description</th>
-                                <th>Date de début</th>
-                                <th>Date de fin</th>
-                                <th>Coût</th>
-                            </tr>
-                            <tr *ngFor="let fc of FEnCours">
-                                <td>{{fc.idFormation}}</td>
-                                <td>{{fc.libFormation}}</td>
-                                <td>{{fc.description}}</td>
-                                <td>{{fc.dateDebut}}</td>
-                                <td>{{fc.dateFin}}</td>
-                                <td>{{fc.cout}}</td>
-                            </tr>
-                        </table>
+        </div>
+    </header>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 
-                        <h1>Formations à venir prochainement</h1>
+    <h1 class="titreCenter" style="font-weight: normal;">Formations en cours</h1>
+    <div *ngIf="pasDeFeC; else FeCPresentes">
+        <h4 class="h4Center"> Vous ne donnez pas de formation en ce moment </h4>
+    </div>
+    <ng-template #FeCPresentes>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nom de la formation</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Coût</th>
+            </tr>
+            <tr *ngFor="let fc of FEnCours">
+                <td>{{fc.idFormation}}</td>
+                <td>{{fc.libFormation}}</td>
+                <td>{{fc.description}}</td>
+                <td>{{fc.dateDebut}}</td>
+                <td>{{fc.dateFin}}</td>
+                <td>{{fc.cout}}</td>
+            </tr>
+        </table>
+    </ng-template>
 
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom de la formation</th>
-                                <th>Description</th>
-                                <th>Date de début</th>
-                                <th>Date de fin</th>
-                                <th>Coût</th>
-                            </tr>
-                            <tr *ngFor="let pf of prochainesF">
-                                <td>{{pf.idFormation}}</td>
-                                <td>{{pf.libFormation}}</td>
-                                <td>{{pf.description}}</td>
-                                <td>{{pf.dateDebut}}</td>
-                                <td>{{pf.dateFin}}</td>
-                                <td>{{pf.cout}}</td>
-                            </tr>
-                        </table>
 
-                        <h1>Formations passées</h1>
+    <h1 class="titreCenter" style="font-weight: normal;">Formations à venir prochainement</h1>
 
-                        <table>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nom de la formation</th>
-                                <th>Description</th>
-                                <th>Date de début</th>
-                                <th>Date de fin</th>
-                                <th>Coût</th>
-                            </tr>
-                            <tr *ngFor="let hf of historiqueF">
-                                <td>{{hf.idFormation}}</td>
-                                <td>{{hf.libFormation}}</td>
-                                <td>{{hf.description}}</td>
-                                <td>{{hf.dateDebut}}</td>
-                                <td>{{hf.dateFin}}</td>
-                                <td>{{hf.cout}}</td>
-                            </tr>
-                        </table>
-                        
-                </div>
-            </div>
-        </header>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+    <div *ngIf="pasDePF; else PFPresentes">
+        <h4 class="h4Center"> Vous n'avez pas de formation planifée </h4>
+    </div>
+    <ng-template #PFPresentes>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nom de la formation</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Coût</th>
+            </tr>
+            <tr *ngFor="let pf of prochainesF">
+                <td>{{pf.idFormation}}</td>
+                <td>{{pf.libFormation}}</td>
+                <td>{{pf.description}}</td>
+                <td>{{pf.dateDebut}}</td>
+                <td>{{pf.dateFin}}</td>
+                <td>{{pf.cout}}</td>
+            </tr>
+        </table>
+    </ng-template>
+
+
+    <h1 class="titreCenter" style="font-weight: normal;">Formations passées</h1>
+
+    <div *ngIf="pasDeHF; else HFPresentes">
+        <h4 class="h4Center"> Vous n'avez pas encore fini de formation </h4>
+    </div>
+    <ng-template #HFPresentes>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nom de la formation</th>
+                <th>Description</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Coût</th>
+            </tr>
+            <tr *ngFor="let hf of historiqueF">
+                <td>{{hf.idFormation}}</td>
+                <td>{{hf.libFormation}}</td>
+                <td>{{hf.description}}</td>
+                <td>{{hf.dateDebut}}</td>
+                <td>{{hf.dateFin}}</td>
+                <td>{{hf.cout}}</td>
+            </tr>
+        </table>
+    </ng-template>
+
+</body>
+
 </html>
-

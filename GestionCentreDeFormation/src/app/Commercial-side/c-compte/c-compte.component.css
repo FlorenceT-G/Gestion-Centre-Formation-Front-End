@@ -11249,10 +11249,18 @@ header.masthead .site-heading .h1 {
 
 /* ---------------------------- Custom ---------------------------- */
 
-h1 {
+h2 {
     text-align: center;
+    margin-top: -0.5em;
+    margin-bottom: 0.75em;
 }
 table {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0.5em;
+}
+
+td {
+	padding-left: 20px;
+	padding-right: 20px;
 }

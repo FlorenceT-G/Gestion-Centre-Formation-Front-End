@@ -21,6 +21,10 @@ export class FormateurFormationsComponent implements OnInit {
   FEnCours!:Formation[]
   historiqueF!:Formation[]
   prochainesF!:Formation[]
+  // Affichage ou non des formations
+  pasDePF = false
+  pasDeFeC = false
+  pasDeHF = false
 
   userString!:any
   userObject!:any
@@ -63,21 +67,8 @@ export class FormateurFormationsComponent implements OnInit {
             }
           }
         }
-      }
-    )
-
-    this.service.getHistoriqueFormations().subscribe(
-      response => {
-        this.historiqueFAll=response;
-
-        for(let i=0; i<this.historiqueFAll.length; i++) {
-          for(let j=0; j<this.formationFormateur.length; j++) { 
-            if(this.formationFormateur[j].idFormation==this.historiqueFAll[i].idFormation) {
-              var k = 0;
-              this.historiqueF[k]=this.formationFormateur[j]
-              k++
-            }
-          }
+        if(this.FEnCours[0].idFormation==null) {
+          this.pasDeFeC = true
         }
       }
     )
@@ -88,12 +79,16 @@ export class FormateurFormationsComponent implements OnInit {
         for(let i=0; i<this.prochainesFAll.length; i++) {
           for(let j=0; j<this.formationFormateur.length; j++) {
             if(this.formationFormateur[j].idFormation==this.prochainesFAll[i].idFormation) {
+              this.pasDePF=false
               var k = 0;
               this.prochainesF[k]=this.formationFormateur[j]
               k++
             }
           }
-        }  
+        }
+        if(this.prochainesF[0].idFormation==null) {
+          this.pasDePF = true
+        }
       }
     )
 
@@ -114,6 +109,9 @@ export class FormateurFormationsComponent implements OnInit {
               k++
             }
           }
+        }
+        if(this.historiqueF[0].idFormation==null) {
+          this.pasDeHF = true
         }
       }
     )
