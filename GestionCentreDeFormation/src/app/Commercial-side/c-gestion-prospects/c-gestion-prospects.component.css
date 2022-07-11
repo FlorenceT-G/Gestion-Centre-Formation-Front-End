@@ -11249,13 +11249,9 @@ header.masthead .site-heading .h1 {
 
 /* ---------------------------- Custom ---------------------------- */
 
-h1 {
-    color: #E8E8E8;
-    margin-bottom: 8px;
-}
-
-table { 
- 	color: #E4E4E4;
+.titreCenter   {
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 td {
@@ -11263,20 +11259,38 @@ td {
 	padding-right: 20px;
 	padding-top: 5px;
 	padding-bottom: 5px;
+  background-color:#eee;    
 }
 
-.tabcenter {
-    margin-left: auto;
-    margin-right: auto;
+.tabProspects {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+  border-collapse: separate;
+  border-spacing: .25em 0.25em;
 }
+
+.tabCSV {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.5em;
+}
+
 
 .txtcenter {
-	text-align:center;
+	text-align: center;
+}
+
+th {
+	font-weight: 550;
+  padding-left: 20px;
+	padding-right: 20px;
 }
 
 thead {
 	text-align: center;
-	font-weight:bold;
+	font-weight: normal;
 	background-color: rgb( 86, 86, 86);
-	color: rgb(204, 204, 204);
+  color: white;
+	/*color: rgb(204, 204, 204);*/
 }

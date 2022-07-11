@@ -19,6 +19,7 @@ export class AGestionPaiementsComponent implements OnInit {
 
   userString!:any
   userObject!:Assistant
+  validUser=false
 
   constructor(private allService: GetAllService, private router:Router) { }
 
@@ -26,6 +27,7 @@ export class AGestionPaiementsComponent implements OnInit {
     this.userString = sessionStorage.getItem('user')
     if(this.userString != null) {
       this.userObject = JSON.parse(this.userString)
+      this.validUser=true
     }
     this.recupererParticipants();
     this.recupererPaiements();
@@ -46,7 +48,6 @@ export class AGestionPaiementsComponent implements OnInit {
                           }
                       )
                     };})
-      
         };
       }
     )

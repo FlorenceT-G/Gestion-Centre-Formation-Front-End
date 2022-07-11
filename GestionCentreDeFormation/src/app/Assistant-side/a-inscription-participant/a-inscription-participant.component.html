@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Gestion Centre de Formation</title>
+    <title>Clean Blog - Start Bootstrap Theme</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -26,9 +26,12 @@
 
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-inscription-participant">Inscription des Participants</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Gestion des Paiements</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-compte">Compte </a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="a-inscription-participant">Inscription des Participants</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Gestion des
+                            Paiements</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-compte">Compte </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -38,37 +41,11 @@
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
-
-                    <h1>Liste des prospects à inscrire</h1>
-
-                    <ng-container *ngIf="lProspects">
-                        <thead>
-                            <td>Nom</td>
-                            <td>Prénom</td>
-                            <td>Adresse Mail</td>
-                            <td>Numéro de téléphone</td>
-                        </thead>
-                        <div *ngIf="lProspects.length != 0; else empty"> </div>
-                        <table>
-
-                            <tr *ngFor="let p of lProspects">
-                                <td>{{p.nom}}</td>
-                                <td>{{p.prenom}}</td>
-                                <td>{{p.email}}</td>
-                                <td>{{p.numTel}}</td>
-                            </tr>
-                            <tr>
-                                <td colspan="4"><button (click)="inscrire()">Inscrire</button></td>
-                            </tr>
-                            <ng-template #empty>
-                                <tr>
-                                    <td colspan="4" class="txtcenter">Aucuns participants à inscrire</td>
-                                </tr>
-                            </ng-template>
-                        </table>
-
-                    </ng-container>
-
+                    <div *ngIf="validUser" class="site-heading">Bonjour {{userObject.nom}} {{userObject.prenom}}</div>
+                    <div class="site-heading">
+                        <h1>Inti Formation</h1>
+                        <span class="subheading">Projet de fin de Formation</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,6 +54,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+
+    <h1 class="h1">Liste des prospects à inscrire</h1>
+
+    <table *ngIf="lProspects">
+        <thead>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Adresse Mail</th>
+            <th>Numéro de téléphone</th>
+        </thead>
+        <div *ngIf="lProspects.length != 0; else empty"> </div>
+
+        <tr *ngFor="let p of lProspects">
+            <td>{{p.nom}}</td>
+            <td>{{p.prenom}}</td>
+            <td>{{p.email}}</td>
+            <td>{{p.numTel}}</td>
+        </tr>
+        <tr>
+            <td colspan="4"><button (click)="inscrire()"> Inscrire </button></td>
+        </tr>
+        <ng-template #empty>
+            <tr>
+                <td colspan="4" class="txtcenter"> Aucun participant à inscrire </td>
+            </tr>
+        </ng-template>
+    </table>
+
 </body>
 
 </html>

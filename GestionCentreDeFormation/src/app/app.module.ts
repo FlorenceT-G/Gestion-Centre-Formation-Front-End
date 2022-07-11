@@ -24,7 +24,6 @@ import { HeaderComponent } from './header/header.component';
 
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './Main/admin/admin.component';
-import { FormateurComponent } from './Main/formateur/formateur.component';
 import { ParticipantsComponent } from './Participant/participants/participants.component';
 import { ProspectsComponent } from './Prospect/prospects/prospects.component';
 import { RelancesComponent } from './Relance/relances/relances.component';
@@ -48,12 +47,21 @@ import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+//  npm install @angular/material --save
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
 import { FormateurFormationsComponent } from './Formateur-side/formateur-formations/formateur-formations.component';
 import { CCompteComponent } from './Commercial-side/c-compte/c-compte.component';
 import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher-cr.component';
+import { ParticipantAccueilComponent } from './Participant-side/participant-accueil/participant-accueil.component';
+import { PartcipantCompteComponent } from './Participant-side/partcipant-compte/partcipant-compte.component';
+import { ParticipantPaiementsComponent } from './Participant-side/participant-paiements/participant-paiements.component';
+import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
+import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +79,6 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     HeaderComponent,
     FooterComponent,
     AdminComponent,
-    FormateurComponent,
     AddAssistantComponent,
     ModifAssistantComponent,
     AddCommercialComponent,
@@ -98,7 +105,12 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     PaiementsComponent,
     AddPaiementComponent,
     ModifPaiementComponent,
-    CCompteComponent
+    CCompteComponent,
+    ParticipantAccueilComponent,
+    PartcipantCompteComponent,
+    ParticipantPaiementsComponent,
+    ParticipantFormationsComponent,
+    AddPaiementParticipantComponent
   ],
   imports: [
     BrowserModule,
@@ -107,8 +119,11 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     HttpClientModule,
     CommonModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
     //testgraph
-    NgChartsModule
+    NgChartsModule,
+    MatMenuModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }

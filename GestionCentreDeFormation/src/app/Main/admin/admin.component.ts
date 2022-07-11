@@ -18,6 +18,8 @@ import 'chart.js';
 })
 export class AdminComponent implements OnInit {
 
+  panelOpenState = false;
+
   formation !: Formation[];
   date !: Date;
   compteur!: number[]
@@ -30,6 +32,7 @@ export class AdminComponent implements OnInit {
   Participants !: Participant[]
   Utilisateurs !: Utilisateur[]
   Paiements !: Paiement[]
+  formationfutur !: Formation[];
 
   recette!: number[];
 
@@ -43,7 +46,7 @@ export class AdminComponent implements OnInit {
   constructor(private router: Router, private Service: GetAllService) { }
 
 
-
+ 
 
 
 
@@ -62,12 +65,13 @@ export class AdminComponent implements OnInit {
 
     this.graphique();
 
-
-
-
-
-
   }
+
+
+
+
+
+
 
   formationencours() {
     this.Service.getAllFormationEnCours().subscribe(
@@ -111,7 +115,14 @@ export class AdminComponent implements OnInit {
     this.Service.getAllParticipant().subscribe
       (reponse => { this.Participants = reponse })
 
+      this.Service.getProchainesFormations().subscribe
+      (reponse => { this.formationfutur = reponse })
 
+
+
+
+
+      
   }
 
   barChartData2 !: any[]
@@ -137,12 +148,6 @@ export class AdminComponent implements OnInit {
 
       }
       )
-    /*
-      barChartData: any[] = [
-  { data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A' },
-  { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
-];
-*/
   }
 
   barChartOptions2: any = {
@@ -238,18 +243,16 @@ export class AdminComponent implements OnInit {
   /*
   ################################################################################################################################################################################
   ################################################################################################################################################################################
-  ################################################################################################################################################################################
-  ################################################################################################################################################################################
-                    <div style="display: block">
-                        <canvas baseChart
-                            [datasets]="barChartData"
-                            [labels]="barChartLabels"
-                            [options]="barChartOptions"
-                            [legend]="barChartLegend"
-                            
-                            (chartHover)="chartHovered($event)"
-                            (chartClick)="chartClicked($event)"></canvas>
-                      </div>
+  <div style="display: block">
+      <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+    </div>
   ################################################################################################################################################################################
   barChartOptions: any = {
     scaleShowVerticalLines: false,
@@ -272,12 +275,6 @@ export class AdminComponent implements OnInit {
   chartHovered(e: any): void {
     console.log(e);
   }
-  */
-
-  /*
-  ################################################################################################################################################################################
-  ################################################################################################################################################################################
-  ################################################################################################################################################################################
   ################################################################################################################################################################################
   ################################################################################################################################################################################
   */
@@ -293,5 +290,7 @@ export class AdminComponent implements OnInit {
   accueil() {
     this.router.navigateByUrl('');
   }
-}
 
+
+
+}

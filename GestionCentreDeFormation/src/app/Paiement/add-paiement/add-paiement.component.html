@@ -2,6 +2,7 @@
 
 <form (ngSubmit)="SavePaiement()">
     <p *ngIf="bool">{{errorMsg}}</p><br>
+    <p *ngIf="montantIncorrect">{{errorMontant}}</p><br>
 
 
     Participant : <select name="idUtilisateur" id="idUtilisateur" [(ngModel)]="idUtilisateur">
@@ -14,5 +15,5 @@
 
     Montant : <input type="number"  name="montant" [(ngModel)]="paiement.montant" /><br>
     
-    <input type="submit" value="Ajouter">
+    <input type="submit" value="Enregistrer">
 </form>

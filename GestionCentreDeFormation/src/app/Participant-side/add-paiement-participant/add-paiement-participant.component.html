@@ -1,0 +1,12 @@
+<h4>Nouveau paiement</h4>
+
+<form (ngSubmit)="SavePaiement()">
+    <p *ngIf="bool">{{errorMsg}}</p><br>
+
+
+    <strong> Formation {{formation.idFormation}}</strong> : {{formation.libFormation}} {{formation.description}} <br> <br>
+        
+    Montant : <input type="number"  name="montant" [(ngModel)]="paiement.montant" /><br>
+    
+    <input type="submit" value="Payer">
+</form>

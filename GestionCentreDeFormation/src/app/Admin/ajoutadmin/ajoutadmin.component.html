@@ -1,1 +1,13 @@
-<p>ajoutadmin works!</p>
+
+
+
+<form (ngSubmit)="Save()">
+
+    Nom : <input type="text" name="nom" [(ngModel)]="utilisateur.nom" /><br>
+    Prenom : <input type="text" name="prenom" [(ngModel)]="utilisateur.prenom" /><br>
+    Username : <input type="text" name="username" [(ngModel)]="utilisateur.username" /><br>
+    Password : <input type="password" name="password" [(ngModel)]="utilisateur.password" /><br>
+    Adresse mail : <input type="text" name="adresseMail" [(ngModel)]="utilisateur.adresseMail" /><br>
+    
+    <input type="submit" value="Ajouter">
+</form>
