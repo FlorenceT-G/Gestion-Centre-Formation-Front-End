@@ -33,9 +33,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherFormations">Menu Formations</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherPaiements">Menu Paiement</a></li>
                 </ul>
             </div>
         </div>
@@ -100,6 +100,7 @@
                                     <h6>Formateur: {{formation[c].formateur.prenom}}
                                         {{formation[c].formateur.nom}}
                                     </h6>
+                                    <h6>Nb de participant: {{formation[c].listeParticipants.length}} </h6>
                                 </div>
                                 <br>
                             </div>
@@ -414,18 +415,10 @@
                                                 <button class="accordion-button4"
                                                     (click)="modifieru(c.idUtilisateur)">Modifier</button>
                                             </td>
-
                                         </tr>
 
                                     </tbody>
-
-
-
-
                                 </table>
-
-
-
 
                             </mat-expansion-panel>
                         </mat-accordion>
@@ -540,6 +533,7 @@
                                     <h6>Formateur: {{f.formateur.prenom}}
                                         {{f.formateur.nom}}
                                     </h6>
+                                    <h6>Nb de participant: {{f.listeParticipants.length}} </h6>
                                 </div>
                             </div>
                         </div>
@@ -561,21 +555,21 @@
                 </div>
                 <!-- Divider-->
                 <hr class="my-4" />
-                
-        <!-- Post preview-->
-        <div class="post-preview">
-            <a href="post.html">
-                <h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend
-                    to waste any of mine.</h2>
-            </a>
-            <p class="post-meta">
-                Posted by
-                <a href="#!">Start Bootstrap</a>
-                on September 18, 2022
-            </p>
-        </div>
-        <!-- Divider-->
-        <hr class="my-4" />
+
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <a href="post.html">
+                        <h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend
+                            to waste any of mine.</h2>
+                    </a>
+                    <p class="post-meta">
+                        Posted by
+                        <a href="#!">Start Bootstrap</a>
+                        on September 18, 2022
+                    </p>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
 
             </div>
 

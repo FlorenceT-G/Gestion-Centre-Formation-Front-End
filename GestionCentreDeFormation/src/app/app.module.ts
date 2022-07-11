@@ -50,6 +50,7 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //  npm install @angular/material --save
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatMenuModule} from '@angular/material/menu';
 
 //testgrap    npm install ng2-charts --save
 import { NgChartsModule } from 'ng2-charts';
@@ -111,7 +112,8 @@ import { CAfficherCrComponent } from './Commercial-side/c-afficher-cr/c-afficher
     BrowserAnimationsModule,
     MatExpansionModule,
     //testgraph
-    NgChartsModule
+    NgChartsModule,
+    MatMenuModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorBasicAuthService, multi: true }
