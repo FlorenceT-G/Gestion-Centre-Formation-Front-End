@@ -119,7 +119,7 @@
 
                         <div class="col-xl-12 col-md-6 mb-4 card-header py-3 ">
                             <mat-panel-title>
-                                <h3 style="text-align: left ;">Tous nos Utilisateurs</h3>
+                                <h3 style="text-align: left ;">Tous nos utilisateurs</h3>
                             </mat-panel-title>
                         </div>
 
@@ -366,7 +366,7 @@
                                             <div class="col-xl-6 ">
                                                 <mat-panel-title>
 
-                                                    <h3 style="text-align: left ;">Nos Admins</h3>
+                                                    <h3 style="text-align: left ;">Nos admins</h3>
 
                                                 </mat-panel-title>
                                             </div>
@@ -387,7 +387,6 @@
                                             <th>ID</th>
                                             <th>Nom</th>
                                             <th>Prenom</th>
-                                            <th>Username</th>
                                             <th>Adresse mail</th>
                                             <td></td>
                                             <td></td>
@@ -402,10 +401,9 @@
 
                                             <td>{{c.idUtilisateur}}</td>
 
+                                            <td>{{c.nom}}</td>
 
                                             <td>{{c.prenom}}</td>
-
-                                            <td>{{c.username}}</td>
 
                                             <td>{{c.adresseMail}}</td>
 
@@ -438,7 +436,7 @@
                                             <div class="col-xl-6 ">
                                                 <mat-panel-title>
 
-                                                    <h3 style="text-align: left ;">Ajouter un Utilisateurs
+                                                    <h3 style="text-align: left ;">Ajouter un utilisateur
                                                     </h3>
 
                                                 </mat-panel-title>
@@ -471,7 +469,7 @@
                                 </button>
                                 <br><br>
                                 <button class="accordion-button2" (click)="ajouterutil()">
-                                    <h6>Ajouter un Admin</h6>
+                                    <h6>Ajouter un admin</h6>
                                 </button>
 
                             </mat-expansion-panel>

@@ -77,10 +77,35 @@
         </tr>
         <ng-template #empty>
             <tr>
-                <td colspan="4" class="txtcenter"> Aucun participant à inscrire </td>
+                <td colspan="4" class="txtcenter"> Aucun prospect à inscrire </td>
             </tr>
         </ng-template>
     </table>
+
+    <br> <br> <br>
+
+    <div align="center">
+
+    <h1 class="h1" >Inscrire un participant à une formation</h1>
+
+    <form (ngSubmit)="SaveInscription()">
+
+    Participant : <select name="idUtilisateur" id="idUtilisateur" [(ngModel)]="idUtilisateur">
+        <option *ngFor="let p of participants" [ngValue] ="p.idUtilisateur">{{p.nom}} {{p.prenom}}</option>
+        </select>              
+
+    Formation : <select name="idFormation" id="idFormation" [(ngModel)]="idFormation">
+            <option *ngFor="let f of formationsAVenir" [ngValue] ="f.idFormation">{{f.libFormation}} {{f.description}}</option>
+            </select><br>
+
+            <br>
+         
+            <p *ngIf="error">{{msgError}}</p>
+    <input type="submit" value="Inscrire">
+        </form>
+
+    </div>
+
 
 </body>
 

@@ -91,6 +91,9 @@ export class GetAllService {
   insererAssistant(a: Assistant) {
     return this.http.post('http://localhost:9090/admin/assistants', a)
   }
+  inscrireParticipantAFormation(idUtilisateur: number, idFormation:number) {
+    return this.http.get<any>('http://localhost:9090/assistant/inscrireParticipantFormation/'+idUtilisateur+'/'+idFormation);
+  }
 
 
 

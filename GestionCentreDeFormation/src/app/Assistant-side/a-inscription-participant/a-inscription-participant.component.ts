@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Assistant } from 'src/app/models/Assistant.model';
+import { Formation } from 'src/app/models/Formation';
+import { Participant } from 'src/app/models/Participant.model';
 import { Prospect } from 'src/app/models/Prospect';
 import { GetAllService } from 'src/app/services/get-all.service';
 
@@ -15,7 +18,14 @@ export class AInscriptionParticipantComponent implements OnInit {
   userObject!:Assistant
   validUser=false
 
-  constructor(private all:GetAllService) { }
+  participants!: Participant[];
+  formationsAVenir!: Formation[];
+  idFormation!:number;
+  idUtilisateur!:number
+  msgError="Ce participant est déjà inscrit à cette formation"
+  error=false;
+
+  constructor(private all:GetAllService,  private router : Router) { }
 
   ngOnInit(): void {
     this.all.getProspectAInscrire().subscribe(
@@ -28,6 +38,16 @@ export class AInscriptionParticipantComponent implements OnInit {
       this.userObject = JSON.parse(this.userString);
       this.validUser=true
     }
+
+    this.all.getAllParticipant().subscribe(
+      response => {this.participants =response;}
+    )
+
+    this.all.getProchainesFormations().subscribe(
+      response => {this.formationsAVenir =response;}
+    )
+
+    this.error=false;
 
     
   }
@@ -55,6 +75,26 @@ export class AInscriptionParticipantComponent implements OnInit {
         this.lProspects = liste
       }
     )
+  }
+
+  SaveInscription(){
+    this.all.getByIdFormation(this.idFormation).subscribe(
+      formationReponse=>{
+            this.all.getFormationByParticipant(this.idUtilisateur).subscribe(
+            response=>{
+            for(let i=0; i<response.length; i=i+1){
+                if (response[i].idFormation==formationReponse.idFormation){
+                  this.error=true;
+                  this.router.navigateByUrl('a-inscription-participant')
+                }
+            };
+            if(this.error==false){
+            this.all.inscrireParticipantAFormation(this.idUtilisateur, this.idFormation).subscribe(
+            response=>{
+            this.router.navigateByUrl('a-gestion-paiements');}  )   }
+        }
+    )
+  })
   }
 
 }
