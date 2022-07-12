@@ -126,6 +126,15 @@ export class AdminComponent implements OnInit {
   }
 
   barChartData2 !: any[]
+  forma!: Formation[]
+
+  d1!:Date
+  d2!:Date
+
+  m1!:number
+  m2!:number
+
+  paiem2!:number[]
 
   graphique() {
     this.Service.getAllPaiement().subscribe
@@ -138,16 +147,52 @@ export class AdminComponent implements OnInit {
           this.paiem[this.m] = this.paiem[this.m] + reponse[i].montant
           this.Paiements = reponse
         }
-       // console.log("this.paiem")
-       // console.log("this.paiem")
-       // console.log(this.paiem)
+      this.Service.getAllFormations().subscribe(
+        reponse=>{
+          this.paiem2 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+          for (let i = 0; i < reponse.length; i = i + 1) {
+            this.d1 = new Date(reponse[i].dateDebut)
+            this.d2 = new Date(reponse[i].dateFin)
+
+            console.log(this.d1.getFullYear() ===2022)
+            if (this.d1.getFullYear() ===2022) {
+              console.log(reponse[i].cout*reponse[i].listeParticipants.length)
+
+              for (let j = this.d1.getMonth(); j < this.d2.getMonth(); j = j + 1) {
+                this.paiem2[j] = this.paiem2[j] + (reponse[i].cout*reponse[i].listeParticipants.length/(this.d2.getMonth()-this.d1.getMonth())
+                - reponse[i].cout*reponse[i].listeParticipants.length/(this.d2.getMonth()-this.d1.getMonth())%1)
+
+              }
+            }
+          }
+        console.log(this.paiem2)
         this.barChartData2 = [
-          { data: this.paiem, label: 'recette' },
+          { data: this.paiem, label: 'Paiement' },
+          { data: this.paiem2, label: 'recette' }
+             ];
+
+
+        }
+      )
+
+       // console.log("this.paiem")
+       // console.log("this.paiem")
+
           //{ data: [100, 48, this.paiem[1], 19, 86, 27, 90], label: 'Series B' }
-        ];
+     
 
       }
       )
+
+
+
+
+
+
+
+
+
+      
   }
 
   barChartOptions2: any = {
@@ -161,11 +206,11 @@ export class AdminComponent implements OnInit {
 
   // events
   chartClicked2(e: any): void {
-    console.log(e);
+   // console.log(e);
   }
 
   chartHovered2(e: any): void {
-    console.log(e);
+    //console.log(e);
   }
 
 
