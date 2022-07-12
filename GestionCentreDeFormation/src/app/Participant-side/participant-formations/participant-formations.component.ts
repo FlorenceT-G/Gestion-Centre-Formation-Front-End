@@ -80,7 +80,10 @@ export class ParticipantFormationsComponent implements OnInit {
   }
 
   certif(idFormation:number) {
-    this.allService.sendMailDiploma(this.userObject.idUtilisateur, idFormation).subscribe()
+    this.allService.sendMailDiploma(this.userObject.idUtilisateur, idFormation).subscribe(
+      res => alert("Un mail vous a été envoyé ! \nVeuillez vérifier votre boîte de réception")
+    )
+    
   }
 
   accueil(){
