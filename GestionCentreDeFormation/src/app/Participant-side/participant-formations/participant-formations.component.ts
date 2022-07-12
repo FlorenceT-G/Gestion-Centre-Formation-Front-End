@@ -79,6 +79,10 @@ export class ParticipantFormationsComponent implements OnInit {
 
   }
 
+  certif(idFormation:number) {
+    this.allService.sendMailDiploma(this.userObject.idUtilisateur, idFormation).subscribe()
+  }
+
   accueil(){
     this.router.navigateByUrl('participant');
   }

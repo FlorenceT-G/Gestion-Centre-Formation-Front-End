@@ -288,4 +288,7 @@ export class GetAllService {
     console.log("envoie mail relance")
     return this.http.get('http://localhost:9090/assistant/mailrelance/' + idParticipant + '/' + idFormation)
    }
+   sendMailDiploma(idParticipant:number, idFormation:number) {
+    return this.http.get('http://localhost:9090/participant/send-diplome-mail/' + idParticipant + '/' + idFormation)
+   }
 }
