@@ -17,7 +17,7 @@ export class AddFormationComponent implements OnInit {
   idFormateur!:number
   uti!: Utilisateur
 
-  constructor(private Service : GetAllService ,  private route:ActivatedRoute, 
+  constructor(private Service : GetAllService, 
     private router : Router) { }
 
   ngOnInit(): void {
@@ -61,7 +61,9 @@ export class AddFormationComponent implements OnInit {
   
   recuperer(){
     this.Service.getFormateurDispo().subscribe(
-      response => {this.formateurs=response;}
+      response => {
+        console.log(response);
+        this.formateurs=response;}
     )
   }
 

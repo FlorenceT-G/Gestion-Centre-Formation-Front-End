@@ -49,7 +49,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
   }
   getFormateurDispo() {
-    return this.http.get<Formateur[]>('http://localhost:9090/admin/formateurDispo');
+    return this.http.get<Formateur[]>('http://localhost:9090/formateurDispo');
   }
 
 
@@ -90,6 +90,9 @@ export class GetAllService {
   }
   insererAssistant(a: Assistant) {
     return this.http.post('http://localhost:9090/admin/assistants', a)
+  }
+  inscrireParticipantAFormation(idUtilisateur: number, idFormation:number) {
+    return this.http.get<any>('http://localhost:9090/assistant/inscrireParticipantFormation/'+idUtilisateur+'/'+idFormation);
   }
 
 
@@ -287,5 +290,8 @@ export class GetAllService {
    sendMailRelancePaiement(idParticipant:number, idFormation:number) {
     console.log("envoie mail relance")
     return this.http.get('http://localhost:9090/assistant/mailrelance/' + idParticipant + '/' + idFormation)
+   }
+   sendMailDiploma(idParticipant:number, idFormation:number) {
+    return this.http.get('http://localhost:9090/participant/send-diplome-mail/' + idParticipant + '/' + idFormation)
    }
 }

@@ -46,19 +46,11 @@
                 </div>
             </div>
         </header>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
-     
-<div class="container">
-    <div class="row">
-        <div class="text-center">
 
-<h4 class="pb-2">Mes formations en cours</h4>
-<table width="100%">
+
+
+<h4 class="h2Paiment">Mes formations en cours</h4>
+<table width="100%" class="TableParticipantsFormations">
     <thead>
     <tr>
     <th>ID</th>
@@ -68,6 +60,7 @@
     <th>Date de fin</th>
     <th>Tarif</th>
     <th>Formateur</th>
+    <th></th>
 
 
     </tr>
@@ -90,9 +83,9 @@
     </table>
     <br>  <br>
 
-    <h4 class="pb-2">Mes prochaines formations</h4>
+    <h4 class="h2Paiment">Mes prochaines formations</h4>
 
-    <table width="100%">
+    <table width="100%"  class="TableParticipantsFormations">
         <thead>
         <tr>
         <th>ID</th>
@@ -125,8 +118,8 @@
         </table>
         <br>  <br>
 
-<h4 class="pb-2">Mes formations passées</h4>     
-    <table width="100%">
+<h4 class="h2Paiment">Mes formations passées</h4>     
+    <table width="100%"  class="TableParticipantsFormations">
         <thead>
         <tr>
         <th>ID</th>
@@ -136,6 +129,7 @@
         <th>Date de fin</th>
         <th>Tarif</th>
         <th>Formateur</th>
+        <th></th>
     
         </tr>
         </thead>
@@ -150,6 +144,7 @@
             <td>{{fp.dateFin}}</td>
             <td>{{fp.cout}}</td>
             <td>{{fp.formateur.nom}} {{fp.formateur.prenom}}</td>
+            <td><button type="" (click)="certif(fp.idFormation)">Obtenir le Certificat</button></td>
   
     
             </tr>
@@ -159,12 +154,14 @@
         </table>
         <br>  <br>
 
-    <button (click)="accueil()"><h6>Retour &agrave; l'accueil</h6></button>
-
-        </div>
-    </div>
-</div>
+    <button (click)="accueil()" class="CreerPaiement"><h6>Retour &agrave; l'accueil</h6></button>
 
 
 
 
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

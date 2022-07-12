@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="a-inscription-participant">Inscription des Participants</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Gestion des
-                            Paiements</a></li>
+                            paiements</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-compte">Compte </a>
                     </li>
                 </ul>
@@ -60,7 +60,6 @@
                 <th> ID </th>
                 <th> Date du paiement </th>
                 <th> Montant</th>
-                <th> Reste à régler </th>
                 <th> Participant </th>
                 <th> ID Formation </th>
                 <th colspan="2"></th>
@@ -71,7 +70,6 @@
                 <td> {{p.idPaiement}} </td>
                 <td> {{p.datePaiement}} </td>
                 <td> {{p.montant}} </td>
-                <td> {{p.reste}} </td>
                 <td> {{p.participant.nom}} {{p.participant.prenom}} </td>
                 <td> {{p.formation.idFormation}} </td>
                 <td><button (click)="supprimer(p.idPaiement)">Supprimer</button></td>
