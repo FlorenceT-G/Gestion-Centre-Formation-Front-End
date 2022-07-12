@@ -45,23 +45,14 @@
                 </div>
             </div>
         </header>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+      
 
 
-<div class="container">
-    <div class="row">
-        <div class="text-center">
-                    <br>
 
-                    <h4 class="pb-2"> Mes paiements effectués</h4>
+                    <h2 class="h2Paiment"> Mes paiements effectués</h2>
                     <br>
                     
-                            <table width="100%">
+                            <table width="100%" class="TableParticipantsFormations">
                                 <thead>
                                     <tr>
                                         <th> ID </th>
@@ -87,9 +78,9 @@
 
        
 
-        <h4 class="pb-2">Mes formations à payer</h4><br>
+        <h2 class="h2Paiment">Mes formations à payer</h2><br>
 
-        <table width="100%">
+        <table width="100%" class="TableParticipantsFormations">
                             
                               
         <thead>
@@ -128,9 +119,12 @@
                                 <br> <br>
                                 </table>
                             
-                                <button (click)="accueil()"><h6>Retour</h6></button>
-                            
+                                <button (click)="accueil()"  class="CreerPaiement"><h6>Retour</h6></button>
+                     
 
-
-                        </div>
-                        </div>
+                          <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

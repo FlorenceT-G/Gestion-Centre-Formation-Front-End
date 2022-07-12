@@ -62,6 +62,7 @@ import { PartcipantCompteComponent } from './Participant-side/partcipant-compte/
 import { ParticipantPaiementsComponent } from './Participant-side/participant-paiements/participant-paiements.component';
 import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
+import { FormationParticipantComponent } from './Formation/formation-participant/formation-participant.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { AddPaiementParticipantComponent } from './Participant-side/add-paiement
     PartcipantCompteComponent,
     ParticipantPaiementsComponent,
     ParticipantFormationsComponent,
-    AddPaiementParticipantComponent
+    AddPaiementParticipantComponent,
+    FormationParticipantComponent
   ],
   imports: [
     BrowserModule,

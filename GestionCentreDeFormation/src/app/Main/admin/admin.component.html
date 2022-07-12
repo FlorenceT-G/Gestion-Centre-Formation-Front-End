@@ -36,7 +36,7 @@
 
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherFormations">Menu
                             Formations</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherPaiements">Menu
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Menu
                             Paiement</a></li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
 
                 <div class=" card border-left-primary shadow h-100 py-2">
 
-                    <h3>Formation en cours</h3>
+                    <h3>Formations en cours</h3>
                     <div *ngFor="let c of compteur">
                         <div class="col-xl-11 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
@@ -336,9 +336,7 @@
                                             <th>Nom</th>
                                             <th>Prenom </th>
                                             <th>Adresse mail</th>
-                                            <th>Formations</th>
-                                            <td></td>
-                                            <td></td>
+                                            <th colspan="2"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -347,8 +345,6 @@
                                             <td>{{p.nom}}</td>
                                             <td>{{p.prenom}} </td>
                                             <td>{{p.adresseMail}}</td>
-                                            <td></td>
-                                            <td></td>
                                             <td><button class="accordion-button3"
                                                     (click)="supprimerp(p.idUtilisateur)">Supprimer</button>
                                                 <button class="accordion-button4"
@@ -508,9 +504,9 @@
             <!-- formation preview                      <div class="row gx-4 gx-lg-5 justify-content-center">                -->
             <div class="col-xl-3 col-md-6 mb-4">
 
-                <div class=" card border-left-primary shadow h-100 py-2">
+                <div class=" card border-left-primary shadow h-10 py-2">
 
-                    <h3>Formation à venir</h3>
+                    <h3>Formations à venir</h3>
                     <div *ngFor="let f of formationfutur">
                         <div class="col-xl-11 col-md-6 mb-4">
                             <div class="card border-left-info shadow h-100 py-2">
@@ -540,18 +536,21 @@
                     </div>
                 </div>
             </div>
+
+
+
             <div class="col-xl-6 col-md-6 mb-4">
 
                 <div class="post-preview">
                     <a href="post.html">
-                        <h2 class="post-title">Le marché grandit</h2>
+                        <h2 class="post-title">Le marché grandit</h2> </a>
                         <h3 class="post-subtitle">Nous assistons depuis de nombreuses années à un processus accéléré
                             d’informatisation et de numérisation des métiers, des professions et des entreprises de
                             toutes tailles.<br>
                             Dans ce contexte, INTI a mis en place une offre de formation fonctionnelle à destination des
                             publics qui ne maîtrisent pas les usages à visée professionnelle de l’informatique et du
                             numérique.</h3>
-                    </a>
+                    
                     <p class="post-meta">
                         Posted by
                         <a href="#!">F.B.</a>
@@ -564,14 +563,13 @@
                 <!-- Post preview-->
                 <div class="post-preview">
                     <a href="post.html">
-                        <h2 class="post-title">Les formations Java/Jee</h2>
+                        <h2 class="post-title">Les formations Java/Jee</h2></a>
 
                         <h3 class="post-subtitle"> Cette formation permet aux stagiaires de maîtriser les usages de base
                             de l’informatique et du numérique dans le cadre d’une activité professionnelle, <br>
                             de développer leurs compétences et de les adapter aux nouvelles exigences du marché du
                             travail.</h3>
 
-                    </a>
                     <p class="post-meta">
                         Posted by
                         <a href="#!">Inti</a>

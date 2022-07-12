@@ -41,6 +41,7 @@ import { ParticipantPaiementsComponent } from './Participant-side/participant-pa
 import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
 import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
+import { FormationParticipantComponent } from './Formation/formation-participant/formation-participant.component';
 
 const routes: Routes = [
   { path:'afficherAssistants',component:AssistantsComponent},
@@ -84,6 +85,8 @@ const routes: Routes = [
   { path: 'participant-paiements',component: ParticipantPaiementsComponent},
   { path: 'participant-formations',component: ParticipantFormationsComponent},
   { path: 'addPaiementParticipant/:id',component: AddPaiementParticipantComponent},
+  { path: 'afficherParticipantsByFormation/:id',component: FormationParticipantComponent},
+  
   { path: '**', redirectTo: 'login'}
 ];
 

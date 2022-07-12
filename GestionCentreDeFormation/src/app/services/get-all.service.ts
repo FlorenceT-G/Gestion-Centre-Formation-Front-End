@@ -49,7 +49,7 @@ export class GetAllService {
     return this.http.delete('http://localhost:9090/admin/formateur/' + id);
   }
   getFormateurDispo() {
-    return this.http.get<Formateur[]>('http://localhost:9090/admin/formateurDispo');
+    return this.http.get<Formateur[]>('http://localhost:9090/formateurDispo');
   }
 
 
