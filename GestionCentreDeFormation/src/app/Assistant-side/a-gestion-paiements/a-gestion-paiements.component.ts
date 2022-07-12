@@ -18,7 +18,7 @@ export class AGestionPaiementsComponent implements OnInit {
   paiements!:Paiement[]
 
   userString!:any
-  userObject!:Assistant
+  userObject!:any
   validUser=false
 
   constructor(private allService: GetAllService, private router:Router) { }

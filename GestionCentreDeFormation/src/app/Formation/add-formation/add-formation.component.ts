@@ -61,7 +61,9 @@ export class AddFormationComponent implements OnInit {
   
   recuperer(){
     this.Service.getFormateurDispo().subscribe(
-      response => {this.formateurs=response;}
+      response => {
+        console.log(response);
+        this.formateurs=response;}
     )
   }
 

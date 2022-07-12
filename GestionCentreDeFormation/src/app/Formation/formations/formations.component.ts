@@ -14,10 +14,18 @@ export class FormationsComponent implements OnInit {
   formationsVenir!:Formation[]
   formationsPassees!:Formation[]
 
+  userString!:any
+  userObject!:any
+
 
   constructor(private allService: GetAllService, private router:Router) { }
 
   ngOnInit(): void {
+
+    this.userString = sessionStorage.getItem('user')
+    this.userObject = JSON.parse(this.userString)
+     
+    
 
     this.recuperer();
   }

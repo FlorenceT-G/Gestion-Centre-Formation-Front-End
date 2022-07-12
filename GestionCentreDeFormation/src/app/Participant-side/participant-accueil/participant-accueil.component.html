@@ -43,12 +43,7 @@
                 </div>
             </div>
         </header>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+
 
 <div align="left" >Nous assistons depuis de nombreuses années à un processus accéléré d’informatisation et de numérisation des métiers, des professions et des entreprises de toutes tailles.<br>
     Dans ce contexte, INTI a mis en place une offre de formation fonctionnelle à destination des publics qui ne maîtrisent pas les usages à visée professionnelle de l’informatique et du numérique.<br> <br>
@@ -56,13 +51,12 @@
     Cette formation permet aux stagiaires de maîtriser les usages de base de l’informatique et du numérique dans le cadre d’une activité professionnelle, de développer leurs compétences et de les adapter aux nouvelles exigences du marché du travail.</div>
 <br> <br>
 
-<h5>Découvrez nos prochaines formations : </h5>
+<h2 class="h2Paiment">Découvrez nos prochaines formations : </h2>
 <br>
-<div class="container">
-    <div class="row">
-        <div class="text-center">
-<table width="100%" align="center">
+
+<table width="100%" class="TableParticipantsFormations">
     <thead>
+
     <tr>
     <th>ID</th>
     <th>Intitulé</th>
@@ -71,10 +65,8 @@
     <th>Date de fin</th>
     <th>Tarif</th>
     <th>Formateur</th>
-
-    <td></td>
-
     </tr>
+
     </thead>
     
     <tbody>
@@ -87,18 +79,21 @@
         <td>{{fv.dateFin}}</td>
         <td>{{fv.cout}}</td>
         <td>{{fv.formateur.nom}} {{fv.formateur.prenom}}</td>
-
         </tr>
 
     
     </tbody>
     </table>
 
-        </div>
-    </div>
-</div>
-
 <br> <br>
+
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
 
 <section class="text-center py-5">
            
@@ -106,7 +101,7 @@
 
     <div class="row">
         
-        <div class="col-md-4 mb-5">
+        <div class="col-md-4 mb-1">
             <i class="fa fa-camera-retro fa-4x text-secondary"></i>
             <h4 class="my-4 font-weight-bold indigo-text">Des formateurs expérimentés</h4>
             <p class="lead">Profitez des conseils et de l’expertise de nos formateurs pour vous aider à utiliser toutes les fonctionnalités de Sarbacane</p>
@@ -128,3 +123,4 @@
  
 </section>
 
+     
