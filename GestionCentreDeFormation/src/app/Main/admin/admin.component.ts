@@ -138,9 +138,9 @@ export class AdminComponent implements OnInit {
           this.paiem[this.m] = this.paiem[this.m] + reponse[i].montant
           this.Paiements = reponse
         }
-        console.log("this.paiem")
-        console.log("this.paiem")
-        console.log(this.paiem)
+       // console.log("this.paiem")
+       // console.log("this.paiem")
+       // console.log(this.paiem)
         this.barChartData2 = [
           { data: this.paiem, label: 'recette' },
           //{ data: [100, 48, this.paiem[1], 19, 86, 27, 90], label: 'Series B' }
