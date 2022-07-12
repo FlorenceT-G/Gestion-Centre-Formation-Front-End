@@ -153,46 +153,26 @@ export class AdminComponent implements OnInit {
           for (let i = 0; i < reponse.length; i = i + 1) {
             this.d1 = new Date(reponse[i].dateDebut)
             this.d2 = new Date(reponse[i].dateFin)
-
-            console.log(this.d1.getFullYear() ===2022)
             if (this.d1.getFullYear() ===2022) {
-              console.log(reponse[i].cout*reponse[i].listeParticipants.length)
-
+              //console.log(reponse[i].cout*reponse[i].listeParticipants.length)
               for (let j = this.d1.getMonth(); j < this.d2.getMonth(); j = j + 1) {
                 this.paiem2[j] = this.paiem2[j] + (reponse[i].cout*reponse[i].listeParticipants.length/(this.d2.getMonth()-this.d1.getMonth())
                 - reponse[i].cout*reponse[i].listeParticipants.length/(this.d2.getMonth()-this.d1.getMonth())%1)
-
               }
             }
           }
-        console.log(this.paiem2)
+        //console.log(this.paiem2)
         this.barChartData2 = [
           { data: this.paiem, label: 'Paiement' },
           { data: this.paiem2, label: 'recette' }
+          //{ data: [100, 48, this.paiem[1], 19, 86, 27, 90], label: 'Series B' }
              ];
-
-
         }
       )
-
        // console.log("this.paiem")
-       // console.log("this.paiem")
-
-          //{ data: [100, 48, this.paiem[1], 19, 86, 27, 90], label: 'Series B' }
-     
-
+       // console.log("this.paiem")          
       }
       )
-
-
-
-
-
-
-
-
-
-      
   }
 
   barChartOptions2: any = {
@@ -202,8 +182,6 @@ export class AdminComponent implements OnInit {
   barChartLabels2: string[] = ['Janvier', 'Fevrier', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'];
   barChartLegend2: boolean = true;
 
-
-
   // events
   chartClicked2(e: any): void {
    // console.log(e);
@@ -212,10 +190,6 @@ export class AdminComponent implements OnInit {
   chartHovered2(e: any): void {
     //console.log(e);
   }
-
-
-
-
 
 
   // gestion des utilisateur
