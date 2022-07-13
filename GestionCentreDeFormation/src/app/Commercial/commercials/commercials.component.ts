@@ -12,7 +12,6 @@ export class CommercialsComponent implements OnInit {
 
   commerciaux!:Commercial[]
 
-
   constructor(private allService: GetAllService, private router:Router) { }
 
   ngOnInit(): void {

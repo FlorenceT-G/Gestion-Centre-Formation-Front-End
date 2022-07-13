@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Assistant } from 'src/app/models/Assistant.model';
 import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({

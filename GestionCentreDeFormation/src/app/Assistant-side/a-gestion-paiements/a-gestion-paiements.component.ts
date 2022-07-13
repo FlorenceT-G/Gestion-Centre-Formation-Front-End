@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Assistant } from 'src/app/models/Assistant.model';
-import { Formation } from 'src/app/models/Formation';
 import { Paiement } from 'src/app/models/Paiement';
 import { Participant } from 'src/app/models/Participant.model';
 import { Relance } from 'src/app/models/Relance';
@@ -14,8 +12,8 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class AGestionPaiementsComponent implements OnInit {
 
-  participants!:Participant[]
   paiements!:Paiement[]
+  participants!:Participant[]
 
   userString!:any
   userObject!:any
