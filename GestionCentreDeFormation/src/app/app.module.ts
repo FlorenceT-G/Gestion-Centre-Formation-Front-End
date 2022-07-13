@@ -66,6 +66,7 @@ import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 import { ModifquizComponent } from './Quiz/modifquiz/modifquiz.component';
+import { FaireQuizComponent } from './Participant-side/faire-quiz/faire-quiz.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { ModifquizComponent } from './Quiz/modifquiz/modifquiz.component';
     AddPaiementParticipantComponent,
     FormationParticipantComponent,
     QuizComponent,
-    ModifquizComponent
+    ModifquizComponent,
+    FaireQuizComponent
   ],
   imports: [
     BrowserModule,

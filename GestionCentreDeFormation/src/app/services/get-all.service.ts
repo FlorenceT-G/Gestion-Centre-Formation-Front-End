@@ -57,6 +57,7 @@ export class GetAllService {
 
 
    // ------------------------------- Question ------------------------------------
+   
    getAllQuestion() {
     return this.http.get<Question[]>('http://localhost:9090/formateur/questions');
   }
