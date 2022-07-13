@@ -65,6 +65,7 @@ import { QuizComponent } from './Formateur-side/quiz/quiz.component';
 import { PaiementsComponent } from './Paiement/paiements/paiements.component';
 import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
 import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
+import { ModifquizComponent } from './Quiz/modifquiz/modifquiz.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement
     ParticipantFormationsComponent,
     AddPaiementParticipantComponent,
     FormationParticipantComponent,
-    QuizComponent
+    QuizComponent,
+    ModifquizComponent
   ],
   imports: [
     BrowserModule,

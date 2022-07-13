@@ -58,16 +58,16 @@ export class GetAllService {
 
    // ------------------------------- Question ------------------------------------
    getAllQuestion() {
-    return this.http.get<Quiz[]>('');
+    return this.http.get<Question[]>('');
   }
   getByIdQuestion(id: number) {
-    return this.http.get<Quiz>('/' + id);
+    return this.http.get<Question>('/' + id);
   }
   deleteQuestion(id: number) {
     return this.http.delete('/' + id);
   }
   modifierQuestion(a: Question) {
-    return this.http.put<Quiz>('', a);
+    return this.http.put<Question>('', a);
   }
   insererQuestion(a: Question) {
     return this.http.post('', a)
