@@ -26,4 +26,14 @@ export class QuizComponent implements OnInit {
     )
   }
 
+  supprimer(id!:number) {
+    this.service.deleteQuiz(id).subscribe(
+      response => this.router.navigateByUrl("afficherQuiz")
+    )
+  }
+
+  modifier(id!:number) {
+    this.router.navigateByUrl(""+id)
+  }
+
 }

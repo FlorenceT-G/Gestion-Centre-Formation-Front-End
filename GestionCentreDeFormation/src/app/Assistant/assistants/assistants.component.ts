@@ -12,7 +12,6 @@ export class AssistantsComponent implements OnInit {
 
   assistants!:Assistant[]
 
-
   constructor(private allService: GetAllService, private router:Router) { }
 
   ngOnInit(): void {

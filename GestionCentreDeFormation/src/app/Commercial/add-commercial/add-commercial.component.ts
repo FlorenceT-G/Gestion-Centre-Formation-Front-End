@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Commercial } from 'src/app/models/Commercial.model';
 import { Utilisateur } from 'src/app/models/Utilisateur.model';
-import { Commercial } from '../../models/Commercial.model';
 import { GetAllService } from '../../services/get-all.service';
-
 
 @Component({
   selector: 'app-add-commercial',
@@ -12,8 +11,8 @@ import { GetAllService } from '../../services/get-all.service';
 })
 export class AddCommercialComponent implements OnInit {
 
-  commercial!:Commercial;
   uti!: Utilisateur
+  commercial!:Commercial;
 
   constructor(private CommService : GetAllService ,  private route:ActivatedRoute, 
     private router : Router) { }

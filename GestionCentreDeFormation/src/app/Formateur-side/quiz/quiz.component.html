@@ -1,1 +1,22 @@
-<p>quiz works!</p>
+<table class="TableParticipantsFormations">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre de questions</th>
+            <th>Pourcentage de réussite</th>
+
+            <th colspan="2"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let quiz of quizs">
+            <td>{{quiz.idQuiz}}</td>
+            <td>{{quiz.nbQuestion}}</td>
+            <td>{{quiz.pourcentage}}</td>
+
+            <td><button (click)="supprimer(quiz.idQuiz)">Supprimer</button></td>
+            <td><button (click)="modifier(quiz.idQuiz)">Modifier</button></td>
+        </tr>
+    </tbody>
+</table>
