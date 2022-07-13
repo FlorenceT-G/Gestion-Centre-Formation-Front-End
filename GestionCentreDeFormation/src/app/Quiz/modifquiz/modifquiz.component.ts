@@ -16,6 +16,10 @@ export class ModifquizComponent implements OnInit {
   quiz!:Quiz
 
   //questions!:Question[]
+  question !:Question
+  n!:any
+
+  reponse!:Reponse
 
   //reponses!:any[]
 
@@ -52,29 +56,59 @@ export class ModifquizComponent implements OnInit {
   }
 
 
+
+  ajouterq(){
+
+    this.n = document.getElementById("idq")
+    
+    for (let i = 1; i < this.n ; i = i + 1) {
+      this.question= new Question();
+      this.question.Quiz=this.quiz;
+      this.Service.insererQuestion(this.question).subscribe();
+      }
+      this.router.navigateByUrl('admin')
+  }
+
+
+
+
   SaveQuestion(id:number){
-    this.Service.getByIdQuestion(id).subscribe(
-      reponse2=>
-      this.Service.modifierQuestion(reponse2)
-
-
-
-
-
-
-    )
-
-
-    this.Service.modifierQuestion(this.uti).subscribe();
+    //this.Service.getByIdQuestion(id).subscribe(
+      //reponse=>
+    //  this.Service.modifierQuestion(reponse)
+   // )
+    this.Service.modifierQuestion(this.question).subscribe();
     this.router.navigateByUrl('admin')
   }
 
   SaveReponse(id:number){
-    this.Service.modifierReponse(this.uti).subscribe();
+    this.Service.modifierReponse(this.reponse).subscribe();
     this.router.navigateByUrl('admin')
   }
 
+
+
+
+
+
+
+
   
+  supprimerq(id: number) {
+    this.Service.deleteUtilisateur(id).subscribe()
+    const myTimeout = setTimeout(this.a, 200);
+  }
+
+  supprimerr(id: number) {
+    this.Service.deleteUtilisateur(id).subscribe()
+    const myTimeout = setTimeout(this.a, 200);
+  }
+
+
+
+  a() {
+    location.reload();
+  }
 }
 
 
