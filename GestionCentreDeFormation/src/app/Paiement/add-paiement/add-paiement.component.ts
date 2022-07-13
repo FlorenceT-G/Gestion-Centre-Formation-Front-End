@@ -35,7 +35,7 @@ export class AddPaiementComponent implements OnInit {
     this.tamp=0
 
     this.Service.getParticipantByPaiementNok().subscribe(
-      response => {this.participants =response;}
+      response => {this.participants =response}
     )
     this.Service.getAllFormations().subscribe(
       response => {this.formations =response;}
