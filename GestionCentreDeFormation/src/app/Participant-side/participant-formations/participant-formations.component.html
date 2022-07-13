@@ -144,8 +144,24 @@
             <td>{{fp.dateFin}}</td>
             <td>{{fp.cout}}</td>
             <td>{{fp.formateur.nom}} {{fp.formateur.prenom}}</td>
-            <td ngIf=""></td>
-            <td><button type="" (click)="certif(fp.idFormation)">Obtenir le Certificat</button></td>
+            <td ngFor="let s of userObject.scores">
+            <div ngIf="s.quiz.formation.idFormation == fp.idFormation;then ok else noTest"></div>
+                <ng-template #ok>
+                    <div ngIf="s.pourcentageVal >= s.quiz.pourcentage;then val else notVal"></div>
+                    <ng-template #val>
+                        Score : {{s.pourcentageVal}}
+                        <button type="" (click)="certif(fp.idFormation)">Obtenir le Certificat</button>
+                    </ng-template>
+                    <ng-template #notVal>
+                        Score : {{s.pourcentageVal}}
+                        <button type="" (click)="test()">Passer le test</button>
+                    </ng-template>
+                    
+                </ng-template>
+                <ng-template #noTest>
+                    <button type="" (click)="test()">Passer le test</button>
+                </ng-template>
+            </td>
   
     
             </tr>

@@ -13,5 +13,7 @@ export class Participant {
     //Ignorés dans le back
     listeFormations!:Formation[]
     restePaiements!:number[]
+
+    scores!:Score[]
     
 }

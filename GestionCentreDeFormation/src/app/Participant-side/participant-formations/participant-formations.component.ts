@@ -90,5 +90,9 @@ export class ParticipantFormationsComponent implements OnInit {
     this.router.navigateByUrl('participant');
   }
 
+  test() {
+    
+  }
+
 
 }
