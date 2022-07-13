@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Formation } from 'src/app/models/Formation';
-import { Utilisateur } from 'src/app/models/Utilisateur.model';
 import { GetAllService } from 'src/app/services/get-all.service';
 
 @Component({

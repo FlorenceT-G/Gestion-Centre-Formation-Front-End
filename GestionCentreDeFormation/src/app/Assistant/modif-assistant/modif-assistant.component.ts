@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Assistant } from 'src/app/models/Assistant.model';
 import { Utilisateur } from 'src/app/models/Utilisateur.model';
-import { Assistant } from '../../models/Assistant.model';
 import { GetAllService } from '../../services/get-all.service';
-
 
 @Component({
   selector: 'app-modif-assistant',
@@ -12,8 +11,8 @@ import { GetAllService } from '../../services/get-all.service';
 })
 export class ModifAssistantComponent implements OnInit {
 
+  uti!: Utilisateur;
   assistant!:Assistant;
-  uti!: Utilisateur
 
   constructor(private router: Router, private AssService: GetAllService, private route:ActivatedRoute) { }
 

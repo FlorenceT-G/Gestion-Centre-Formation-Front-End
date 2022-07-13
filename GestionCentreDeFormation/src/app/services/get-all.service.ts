@@ -1,17 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Formateur } from '../models/Formateur';
 import { Assistant } from '../models/Assistant.model';
 import { Commercial } from '../models/Commercial.model';
-import { Contact } from '../models/Contact';
-import { Formateur } from '../models/Formateur';
 import { Participant } from '../models/Participant.model';
+import { Contact } from '../models/Contact';
 import { Formation } from '../models/Formation';
 import { Paiement } from '../models/Paiement';
 import { Prospect } from '../models/Prospect';
 import { Relance } from '../models/Relance';
 import { Utilisateur } from '../models/Utilisateur.model';
-import { NumberValueAccessor } from '@angular/forms';
+//import { NumberValueAccessor } from '@angular/forms';
+import { Quiz } from '../models/Quiz.model';
+import { Question } from '../models/Question.model';
+import { Reponse } from '../models/Reponse.model';
+import { Score } from '../models/Score.model';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +35,84 @@ export class GetAllService {
     sessionStorage.removeItem('t')
     sessionStorage.removeItem('user');
     this.router.navigateByUrl('login');
+  }
+
+
+  // ------------------------------- Quiz ------------------------------------
+  getAllQuiz() {
+    return this.http.get<Quiz[]>('http://localhost:9090/formateur/quiz');
+  }
+  getByIdQuiz(id: number) {
+    return this.http.get<Quiz>('http://localhost:9090/formateur/quiz/' + id);
+  }
+  deleteQuiz(id: number) {
+    return this.http.delete('http://localhost:9090/formateur/quiz/' + id);
+  }
+  modifierQuiz(a: Quiz) {
+    return this.http.put<Quiz>('http://localhost:9090/formateur/quiz', a);
+  }
+  insererQuiz(a: Quiz) {
+    return this.http.post('http://localhost:9090/formateur/quiz', a)
+  }
+
+
+   // ------------------------------- Question ------------------------------------
+   getAllQuestion() {
+    return this.http.get<Question[]>('http://localhost:9090/formateur/questions');
+  }
+  getByIdQuestion(id: number) {
+    return this.http.get<Question>('http://localhost:9090/formateur/questions/' + id);
+  }
+  deleteQuestion(id: number) {
+    return this.http.delete('http://localhost:9090/formateur/questions/' + id);
+  }
+  modifierQuestion(a: Question) {
+    return this.http.put<Question>('http://localhost:9090/formateur/questions', a);
+  }
+  insererQuestion(a: Question) {
+    return this.http.post('http://localhost:9090/formateur/questions', a)
+  }
+  getQuestionByIdQuiz(id: number) {
+    return this.http.get<Question[]>('');
+  }
+
+  
+   // ------------------------------- Reponse ------------------------------------
+ 
+  getByIdReponse(id: number) {
+    return this.http.get<Reponse>('http://localhost:9090/reponses/' + id);
+  }
+  deleteReponse(id: number) {
+    return this.http.delete('http://localhost:9090/formation/reponses/' + id);
+  }
+  modifierReponse(a: Reponse) {
+    return this.http.put<Reponse>('http://localhost:9090/formateur/reponses', a);
+  }
+  insererReponse(a: Reponse) {
+    return this.http.post('http://localhost:9090/formateur/reponses', a)
+  }
+  getReponseByIdQuestion(id: number) {
+    return this.http.get<Reponse[]>('http://localhost:9090/reponsesByQuestion/'+id);
+  }
+
+
+   // ------------------------------- Score ------------------------------------
+ 
+  deleteScore(id: number) {
+    return this.http.delete('http://localhost:9090/formateur/scores/' + id);
+  }
+  modifierScore(a: Score) {
+    return this.http.put<Score>('http://localhost:9090/formateur/scores', a);
+  }
+  insererScore(a: Score) {
+    return this.http.post('http://localhost:9090/scores', a)
+  }
+  getScoreByIdParticipant(id: number) {
+    return this.http.get<Score[]>('http://localhost:9090/participant/scores/'+id);
+  }
+
+  getScoreByIdFormation(id: number) {
+    return this.http.get<Score[]>('http://localhost:9090/scores/'+id);
   }
 
 

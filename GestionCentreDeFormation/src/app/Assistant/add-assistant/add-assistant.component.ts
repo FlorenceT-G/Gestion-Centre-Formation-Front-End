@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Assistant } from 'src/app/models/Assistant.model';
 import { Utilisateur } from 'src/app/models/Utilisateur.model';
-import { Assistant } from '../../models/Assistant.model';
 import { GetAllService } from '../../services/get-all.service';
 
 
@@ -13,9 +13,7 @@ import { GetAllService } from '../../services/get-all.service';
 export class AddAssistantComponent implements OnInit {
 
   assistant!:Assistant;
-
-  
-  uti!: Utilisateur
+  uti!: Utilisateur;
 
   constructor(private AssService : GetAllService,  private route:ActivatedRoute, 
     private router : Router) { }
