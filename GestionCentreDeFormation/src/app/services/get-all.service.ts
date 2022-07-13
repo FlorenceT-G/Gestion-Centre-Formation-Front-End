@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Formateur } from '../models/Formateur';
 import { Assistant } from '../models/Assistant.model';
 import { Commercial } from '../models/Commercial.model';
-import { Contact } from '../models/Contact';
-import { Formateur } from '../models/Formateur';
 import { Participant } from '../models/Participant.model';
+import { Contact } from '../models/Contact';
 import { Formation } from '../models/Formation';
 import { Paiement } from '../models/Paiement';
 import { Prospect } from '../models/Prospect';
@@ -16,6 +16,8 @@ import { Quiz } from '../models/Quiz.model';
 import { Question } from '../models/Question.model';
 import { Reponse } from '../models/Reponse.model';
 import { Score } from '../models/Score.model';
+
+
 
 @Injectable({
   providedIn: 'root'

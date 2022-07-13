@@ -43,9 +43,7 @@ import { ModifFormationComponent } from './Formation/modif-formation/modif-forma
 import { FormateurAccueilComponent } from './Formateur-side/formateur-accueil/formateur-accueil.component';
 import { FormateurCompteComponent } from './Formateur-side/formateur-compte/formateur-compte.component';
 import { CAjoutContactComponent } from './Commercial-side/c-ajout-contact/c-ajout-contact.component';
-import { PaiementsComponent } from './Paiement/paiements/paiements.component';
-import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
-import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
+
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 //  npm install @angular/material --save
@@ -63,6 +61,10 @@ import { ParticipantPaiementsComponent } from './Participant-side/participant-pa
 import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AddPaiementParticipantComponent } from './Participant-side/add-paiement-participant/add-paiement-participant.component';
 import { FormationParticipantComponent } from './Formation/formation-participant/formation-participant.component';
+import { QuizComponent } from './Formateur-side/quiz/quiz.component';
+import { PaiementsComponent } from './Paiement/paiements/paiements.component';
+import { AddPaiementComponent } from './Paiement/add-paiement/add-paiement.component';
+import { ModifPaiementComponent } from './Paiement/modif-paiement/modif-paiement.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +114,8 @@ import { FormationParticipantComponent } from './Formation/formation-participant
     ParticipantPaiementsComponent,
     ParticipantFormationsComponent,
     AddPaiementParticipantComponent,
-    FormationParticipantComponent
+    FormationParticipantComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,
