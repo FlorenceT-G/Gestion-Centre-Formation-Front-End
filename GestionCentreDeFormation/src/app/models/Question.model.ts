@@ -1,3 +1,4 @@
+import { Quiz } from "./Quiz.model"
 import { Reponse } from "./Reponse.model"
 
 export class Question {
@@ -8,4 +9,6 @@ export class Question {
     explication!:string
 
     reponses!:Reponse[]
+
+    Quiz!:Quiz
 }
