@@ -11,7 +11,11 @@ import { Paiement } from '../models/Paiement';
 import { Prospect } from '../models/Prospect';
 import { Relance } from '../models/Relance';
 import { Utilisateur } from '../models/Utilisateur.model';
-import { NumberValueAccessor } from '@angular/forms';
+//import { NumberValueAccessor } from '@angular/forms';
+import { Quiz } from '../models/Quiz.model';
+import { Question } from '../models/Question.model';
+import { Reponse } from '../models/Reponse.model';
+import { Score } from '../models/Score.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +33,87 @@ export class GetAllService {
     sessionStorage.removeItem('t')
     sessionStorage.removeItem('user');
     this.router.navigateByUrl('login');
+  }
+
+
+  // ------------------------------- Quiz ------------------------------------
+  getAllQuiz() {
+    return this.http.get<Quiz[]>('');
+  }
+  getByIdQuiz(id: number) {
+    return this.http.get<Quiz>('/' + id);
+  }
+  deleteQuiz(id: number) {
+    return this.http.delete('/' + id);
+  }
+  modifierQuiz(a: Quiz) {
+    return this.http.put<Quiz>('', a);
+  }
+  insererQuiz(a: Quiz) {
+    return this.http.post('', a)
+  }
+
+
+   // ------------------------------- Question ------------------------------------
+   getAllQuestion() {
+    return this.http.get<Quiz[]>('');
+  }
+  getByIdQuestion(id: number) {
+    return this.http.get<Quiz>('/' + id);
+  }
+  deleteQuestion(id: number) {
+    return this.http.delete('/' + id);
+  }
+  modifierQuestion(a: Question) {
+    return this.http.put<Quiz>('', a);
+  }
+  insererQuestion(a: Question) {
+    return this.http.post('', a)
+  }
+  getQuestionByIdQuiz(id: number) {
+    return this.http.get<Question[]>('');
+  }
+
+  
+   // ------------------------------- Reponse ------------------------------------
+   getAllReponse() {
+    return this.http.get<Reponse[]>('');
+  }
+  getByIdReponse(id: number) {
+    return this.http.get<Reponse>('/' + id);
+  }
+  deleteReponse(id: number) {
+    return this.http.delete('/' + id);
+  }
+  modifierReponse(a: Reponse) {
+    return this.http.put<Reponse>('', a);
+  }
+  insererReponse(a: Reponse) {
+    return this.http.post('', a)
+  }
+  getReponseByIdQuestion(id: number) {
+    return this.http.get<Reponse[]>('');
+  }
+
+
+   // ------------------------------- Score ------------------------------------
+   getAllScore() {
+    return this.http.get<Score[]>('');
+  }
+  getByIdScore(id: number) {
+    return this.http.get<Score>('/' + id);
+  }
+  deleteScore(id: number) {
+    return this.http.delete('/' + id);
+  }
+  modifierScore(a: Score) {
+    return this.http.put<Score>('', a);
+  }
+  insererScore(a: Score) {
+    return this.http.post('', a)
+  }
+  getScoreByIdParticipant(id: number) {
+    return this.http.get<Score[]>('');
   }
 
 
