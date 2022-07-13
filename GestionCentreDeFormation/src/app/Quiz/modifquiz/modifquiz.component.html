@@ -81,14 +81,18 @@
                                 <input type="text" name="pourcentage" [(ngModel)]="quiz.pourcentage" />
                                 <input type="text" name="libFormation" [(ngModel)]="quiz.formation.libFormation" />
                         </mat-panel-title>
+                        <mat-panel-description>
+                        <input  id="idq" type="number" name="ajout" />
+                        <button class="accordion-button4" (click)="ajouterq()">
+                            Ajouter
+                        </button>
+                        </mat-panel-description>
                     </div>
 
-                    <div *ngFor="let q of quiz.question">
-
+                    <div *ngFor="let q of quiz.questions">
                         <mat-accordion>
                             <mat-expansion-panel hideToggle>
                                 <mat-expansion-panel-header class="card-header py-3 justify-content-between">
-
                                     <div class="col-xl-12">
                                         <div class="row">
                                             <div class="col-xl-6 ">
@@ -100,8 +104,8 @@
                                                 <mat-panel-description>
                                                     <button class="accordion-button3"
                                                         (click)="supprimerq(q.idQuestion)">supprimer</button>
-                                                        <input  id="idq" type="number" name="ajout" />
-                                                        <button class="accordion-button4" (click)="ajouterq()">
+                                                        <input  id="idr" type="number" name="ajout" />
+                                                        <button class="accordion-button4" (click)="ajouterr(q.idQuestion)">
                                                             Ajouter
                                                         </button>
                                                 </mat-panel-description>

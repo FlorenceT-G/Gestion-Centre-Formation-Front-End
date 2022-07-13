@@ -13,19 +13,19 @@ import { GetAllService } from 'src/app/services/get-all.service';
 export class ModifquizComponent implements OnInit {
 
 
-  quiz!:Quiz
+  quiz!: Quiz
 
   //questions!:Question[]
-  question !:Question
-  n!:any
+  question !: Question
+  n!: any
 
-  reponse!:Reponse
+  reponse!: Reponse
 
   //reponses!:any[]
 
   //reponse!:Reponse[]
- 
-  constructor(private router: Router, private Service: GetAllService, private route:ActivatedRoute) { }
+
+  constructor(private router: Router, private Service: GetAllService, private route: ActivatedRoute) { }
 
 
 
@@ -33,7 +33,7 @@ export class ModifquizComponent implements OnInit {
 
 
 
-    this.quiz=new Quiz();
+    this.quiz = new Quiz();
     this.recuperer();
 
 
@@ -43,45 +43,58 @@ export class ModifquizComponent implements OnInit {
 
 
   recuperer() {
-    const id=+this.route.snapshot.params['id'];
+    const id = +this.route.snapshot.params['id'];
     this.Service.getByIdQuiz(id).subscribe(
-    response => {
-      this.quiz=response});
+      response => {
+        this.quiz = response
+      });
   }
 
 
-  Savequiz(){
+  Savequiz() {
     this.Service.modifierQuiz(this.quiz).subscribe();
     this.router.navigateByUrl('admin')
   }
 
 
 
-  ajouterq(){
-
+  ajouterq() {
     this.n = document.getElementById("idq")
-    
-    for (let i = 1; i < this.n ; i = i + 1) {
-      this.question= new Question();
-      this.question.Quiz=this.quiz;
+    for (let i = 1; i < this.n; i = i + 1) {
+      this.question = new Question();
+      this.question.Quiz = this.quiz;
       this.Service.insererQuestion(this.question).subscribe();
+    }
+    this.router.navigateByUrl('admin')
+  }
+
+  
+  ajouterr(id: number) {
+    this.n = document.getElementById("idr")
+    this.Service.getByIdQuestion(id).subscribe(
+      quest => {
+        for (let i = 1; i < this.n; i = i + 1) {
+          this.reponse = new Reponse();
+          this.reponse.question = quest;
+          this.Service.insererReponse(this.reponse).subscribe();
+        }
+        this.router.navigateByUrl('admin')
       }
-      this.router.navigateByUrl('admin')
+    )
   }
 
 
 
-
-  SaveQuestion(id:number){
+  SaveQuestion(id: number) {
     //this.Service.getByIdQuestion(id).subscribe(
-      //reponse=>
+    //reponse=>
     //  this.Service.modifierQuestion(reponse)
-   // )
+    // )
     this.Service.modifierQuestion(this.question).subscribe();
     this.router.navigateByUrl('admin')
   }
 
-  SaveReponse(id:number){
+  SaveReponse(id: number) {
     this.Service.modifierReponse(this.reponse).subscribe();
     this.router.navigateByUrl('admin')
   }
@@ -93,7 +106,7 @@ export class ModifquizComponent implements OnInit {
 
 
 
-  
+
   supprimerq(id: number) {
     this.Service.deleteUtilisateur(id).subscribe()
     const myTimeout = setTimeout(this.a, 200);
