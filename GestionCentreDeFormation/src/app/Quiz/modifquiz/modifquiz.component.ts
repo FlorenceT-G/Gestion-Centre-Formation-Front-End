@@ -44,19 +44,19 @@ export class ModifquizComponent implements OnInit {
 
   recuperer() {
     const id = +this.route.snapshot.params['id'];
+    console.log("bouh")
     this.Service.getByIdQuiz(id).subscribe(
       response => {
+        console.log("bouh")
         this.quiz = response
       });
   }
 
 
-  Savequiz() {
+  SaveQuiz() {
     this.Service.modifierQuiz(this.quiz).subscribe();
     this.router.navigateByUrl('admin')
   }
-
-
 
   ajouterq() {
     this.n = document.getElementById("idq")
@@ -68,12 +68,12 @@ export class ModifquizComponent implements OnInit {
     this.router.navigateByUrl('admin')
   }
 
-  
+
   ajouterr(id: number) {
     this.n = document.getElementById("idr")
     this.Service.getByIdQuestion(id).subscribe(
       quest => {
-        for (let i = 1; i < this.n; i = i + 1) {
+        for (let i = 0; i < this.n; i = i + 1) {
           this.reponse = new Reponse();
           this.reponse.question = quest;
           this.Service.insererReponse(this.reponse).subscribe();
@@ -83,20 +83,25 @@ export class ModifquizComponent implements OnInit {
     )
   }
 
-
-
   SaveQuestion(id: number) {
+    for (let i = 0; i < this.quiz.questions.length; i = i + 1) {
+
+
+
     //this.Service.getByIdQuestion(id).subscribe(
     //reponse=>
     //  this.Service.modifierQuestion(reponse)
     // )
     this.Service.modifierQuestion(this.question).subscribe();
-    this.router.navigateByUrl('admin')
+    this.router.navigateByUrl('afficherQuiz')
   }
+  }
+
+
 
   SaveReponse(id: number) {
     this.Service.modifierReponse(this.reponse).subscribe();
-    this.router.navigateByUrl('admin')
+    this.router.navigateByUrl('afficherQuiz')
   }
 
 
@@ -108,12 +113,12 @@ export class ModifquizComponent implements OnInit {
 
 
   supprimerq(id: number) {
-    this.Service.deleteUtilisateur(id).subscribe()
+    this.Service.deleteQuestion(id).subscribe()
     const myTimeout = setTimeout(this.a, 200);
   }
 
   supprimerr(id: number) {
-    this.Service.deleteUtilisateur(id).subscribe()
+    this.Service.deleteReponse(id).subscribe()
     const myTimeout = setTimeout(this.a, 200);
   }
 
