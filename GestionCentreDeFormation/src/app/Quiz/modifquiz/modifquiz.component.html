@@ -1,1 +1,189 @@
-<p>modifquiz works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html">Centre de Formation</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherFormations">Menu
+                            Formations</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Menu
+                            Paiement</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-prospects">Menu
+                            Prospects</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header-->
+    <header class="masthead"
+        style="background-image: url('https://eveilhomme.com/wp-content/uploads/2021/03/838_gettyimages-1134722319.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-8 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Quiz </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content-->
+    <!-- Main Content-->
+    <!-- Main Content-->
+    <!-- Main Content-->
+    <!-- Main Content-->
+    <!-- Main Content-->
+
+
+    <div class="container-fluid">
+
+        <div class="col-xl-6 col-md-6 mb-4">
+
+            <div class="card shadow mb-4 border-top-primary">
+                <div class="text-center">
+
+                    <div class="col-xl-12 col-md-6 mb-4 card-header py-3 ">
+                        <mat-panel-title>
+                            <h3 style="text-align: left ;">Quiz num: {{quiz.idQuiz}} </h3>
+                                <input type="text" name="pourcentage" [(ngModel)]="quiz.pourcentage" />
+                                <input type="text" name="libFormation" [(ngModel)]="quiz.formation.libFormation" />
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        <input  id="idq" type="number" name="ajout" />
+                        <button class="accordion-button4" (click)="ajouterq()">
+                            Ajouter
+                        </button>
+                        </mat-panel-description>
+                    </div>
+
+                    <div *ngFor="let q of quiz.questions">
+                        <mat-accordion>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                    <div class="col-xl-12">
+                                        <div class="row">
+                                            <div class="col-xl-6 ">
+                                                <mat-panel-title>
+                                                    <input type="text" name="pourcentage" [(ngModel)]="q.question" />
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                <mat-panel-description>
+                                                    <button class="accordion-button3"
+                                                        (click)="supprimerq(q.idQuestion)">supprimer</button>
+                                                        <input  id="idr" type="number" name="ajout" />
+                                                        <button class="accordion-button4" (click)="ajouterr(q.idQuestion)">
+                                                            Ajouter
+                                                        </button>
+                                                </mat-panel-description>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-expansion-panel-header>
+
+                                <table width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Reponse</th>
+                                            <th>Vrai/Faux</th>
+                                        </tr>
+                                        <td></td>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let r of q.reponses">
+                                            <td>
+                                                <input type="text" name="pourcentage" [(ngModel)]="r.reponse" />
+                                            </td>
+                                            <td> <input type="checkbox" id="Vrai" name="vrai" checked="{{r.vrai}}">
+                                            </td>
+                                            <td>
+                                                <button class="accordion-button3"
+                                                    (click)="supprimerr(r.idReponse)">supprimer</button>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>
