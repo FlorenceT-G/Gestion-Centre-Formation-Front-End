@@ -42,27 +42,29 @@ import { AddPaiementParticipantComponent } from './Participant-side/add-paiement
 import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
 import { FormationParticipantComponent } from './Formation/formation-participant/formation-participant.component';
+import { QuizComponent } from './Formateur-side/quiz/quiz.component';
+
 
 const routes: Routes = [
-  { path:'afficherAssistants',component:AssistantsComponent},
-  { path:'addUtilisateur',component:AjoutadminComponent},
-  { path: 'addAssistant',component: AddAssistantComponent},
-  { path: 'afficherFormateurs', component: FormateursComponent},
-  { path: 'modifu/:id', component: AccueiladminComponent},
   { path: 'login', component: LoginComponent},
   { path: 'admin',component: AdminComponent},
+  { path: 'afficherAssistants',component:AssistantsComponent},
+  { path: 'addAssistant',component: AddAssistantComponent},
+  { path: 'modifierAssistant/:id',component: ModifAssistantComponent},
+  { path: 'addUtilisateur',component:AjoutadminComponent},
+  { path: 'afficherFormateurs', component: FormateursComponent},
+  { path: 'addFormateur',component: AddFormateurComponent},
+  { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
+  { path: 'modifu/:id', component: AccueiladminComponent},
   { path: 'commercial',component: CAccueilComponent},
   { path: 'participant',component: ParticipantAccueilComponent},
   { path: 'participant',component: AdminComponent},
-  { path: 'modifierAssistant/:id',component: ModifAssistantComponent},
   { path: 'afficherCommerciaux',component: CommercialsComponent},
   { path: 'addCommercial',component: AddCommercialComponent},
   { path: 'modifierCommercial/:id',component: ModifCommercialComponent},
   { path: 'afficherParticipants',component: ParticipantsComponent},
   { path: 'addParticipant',component: AddParticipantComponent},
   { path: 'modifierParticipant/:id',component: ModifParticipantComponent},
-  { path: 'addFormateur',component: AddFormateurComponent},
-  { path: 'modifierFormateur/:id',component: ModifFormateurComponent},
   { path: 'assistant', component: AAccueilComponent},
   { path: 'a-gestion-paiements', component:AGestionPaiementsComponent},
   { path: 'a-inscription-participant', component:AInscriptionParticipantComponent},
@@ -86,6 +88,8 @@ const routes: Routes = [
   { path: 'participant-formations',component: ParticipantFormationsComponent},
   { path: 'addPaiementParticipant/:id',component: AddPaiementParticipantComponent},
   { path: 'afficherParticipantsByFormation/:id',component: FormationParticipantComponent},
+
+  { path: 'afficherQuiz',component: QuizComponent},
   
   { path: '**', redirectTo: 'login'}
 ];
