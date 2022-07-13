@@ -1,0 +1,8 @@
+<h4>Nouveau quiz</h4>
+
+<form (ngSubmit)="SaveQuiz()">
+
+    Nombre de questions : <input type="number" name="nbQuestion" [(ngModel)]="quiz.nbQuestion" /><br>
+
+    <input type="submit" value="Ajouter">
+</form>

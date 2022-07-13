@@ -42,7 +42,9 @@ import { AddPaiementParticipantComponent } from './Participant-side/add-paiement
 import { ParticipantFormationsComponent } from './Participant-side/participant-formations/participant-formations.component';
 import { AjoutadminComponent } from './Admin/ajoutadmin/ajoutadmin.component';
 import { FormationParticipantComponent } from './Formation/formation-participant/formation-participant.component';
-import { QuizComponent } from './Formateur-side/quiz/quiz.component';
+import { QuizComponent } from './Quiz/quiz/quiz.component';
+import { AddQuizComponent } from './Quiz/add-quiz/add-quiz.component';
+import { ModifquizComponent } from './Quiz/modifquiz/modifquiz.component';
 
 
 const routes: Routes = [
@@ -90,6 +92,8 @@ const routes: Routes = [
   { path: 'afficherParticipantsByFormation/:id',component: FormationParticipantComponent},
 
   { path: 'afficherQuiz',component: QuizComponent},
+  { path: 'addQuiz',component: AddQuizComponent},
+  { path: 'modifierQuiz/:id',component: ModifquizComponent},
   
   { path: '**', redirectTo: 'login'}
 ];

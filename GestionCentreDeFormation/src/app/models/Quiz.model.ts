@@ -7,7 +7,7 @@ export class Quiz {
     nbQuestion!:number
     pourcentage!:number
 
-    question!:Question[]
+    questions!:Question[]
 
     formation!:Formation
 }

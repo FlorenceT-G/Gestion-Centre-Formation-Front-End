@@ -10,7 +10,7 @@ import { GetAllService } from 'src/app/services/get-all.service';
 })
 export class QuizComponent implements OnInit {
 
-  quizs!:Quiz
+  quizs!:Quiz[]
 
   constructor(private service:GetAllService, private router:Router) { }
 
@@ -21,19 +21,23 @@ export class QuizComponent implements OnInit {
   selectAll() {
     this.service.getAllQuiz().subscribe(
       response => {
-        this.quizs = response
+        this.quizs = response;
       }
     )
   }
 
-  supprimer(id!:number) {
+  redirectionAjout() {
+    this.router.navigateByUrl("addQuiz")
+  }
+
+  supprimer(id:number) {
     this.service.deleteQuiz(id).subscribe(
       response => this.router.navigateByUrl("afficherQuiz")
     )
   }
 
-  modifier(id!:number) {
-    this.router.navigateByUrl(""+id)
+  modifier(id:number) {
+    this.router.navigateByUrl("modifierQuiz/"+id)
   }
 
 }
