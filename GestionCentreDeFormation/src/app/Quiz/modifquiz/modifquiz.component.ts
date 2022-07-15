@@ -18,6 +18,7 @@ export class ModifquizComponent implements OnInit {
   //questions!:Question[]
   question !: Question
   n!: any
+  cpt!: number
 
 
   reponse!: Reponse
@@ -32,19 +33,15 @@ export class ModifquizComponent implements OnInit {
 
   ngOnInit(): void {
 
-
-
     this.quiz = new Quiz();
     this.recuperer();
-
-
 
   }
 
 
   recuperer() {
     const id = +this.route.snapshot.params['id'];
-    
+
     this.Service.getByIdQuiz(id).subscribe(
       response => {
         console.log("bouh")
@@ -59,57 +56,68 @@ export class ModifquizComponent implements OnInit {
   }
 
   SaveQuestion(id: number) {
-    console.log("modq")
+    //console.log("modq")
     for (let i = 0; i < this.quiz.questions.length; i = i + 1) {
-        if(this.quiz.questions[i].idQuestion==id)
-        {
-          this.Service.modifierQuestion(this.quiz.questions[i],this.quiz.idQuiz).subscribe();
-          const myTimeout = setTimeout(this.a, 300);
-        }
-  }
+      if (this.quiz.questions[i].idQuestion == id) {
+        this.Service.modifierQuestion(this.quiz.questions[i], this.quiz.idQuiz).subscribe();
+        const myTimeout = setTimeout(this.a, 300);
+      }
+    }
   }
 
   SaveReponse(id: number) {
     for (let i = 0; i < this.quiz.questions.length; i = i + 1) {
       for (let j = 0; j < this.quiz.questions[i].reponses.length; j = j + 1) {
-        if(this.quiz.questions[i].reponses[j].idReponse==id)
-        {
-          console.log(this.quiz.questions[i].reponses[j].idReponse)
-          console.log(""+this.quiz.questions[i].reponses[j].idReponse)
-          this.n = document.getElementById(""+this.quiz.questions[i].reponses[j].idReponse);
-          this.quiz.questions[i].reponses[j].vrai= this.n.checked;
+        if (this.quiz.questions[i].reponses[j].idReponse == id) {
+          //console.log(this.quiz.questions[i].reponses[j].idReponse)
+          this.n = document.getElementById("" + this.quiz.questions[i].reponses[j].idReponse);
+          this.quiz.questions[i].reponses[j].vrai = this.n.checked;
           this.Service.modifierReponse(this.quiz.questions[i].reponses[j], this.quiz.questions[i].idQuestion).subscribe();
-          const myTimeout = setTimeout(this.a, 300);
+          this.cpt = 0;
+          for (let k = 0; k < this.quiz.questions[i].reponses.length; k = k + 1) {
+            console.log(this.quiz.questions[i].reponses[k].vrai)
+            if (this.quiz.questions[i].reponses[k].vrai) {
+              this.cpt = this.cpt + 1;
+            }
+            console.log(this.cpt)
+            this.quiz.questions[i].nbBonnesReponses = this.cpt;
+            this.Service.modifierQuestion(this.quiz.questions[i], this.quiz.idQuiz).subscribe();
+          }
         }
       }
-  }
+    }
+    const myTimeout = setTimeout(this.a, 300);
   }
 
 
   ajouterq() {
     console.log("ajoq")
     this.n = document.getElementById("idq")
-    for (let i = 1; i < this.n; i = i + 1) {
+    console.log(this.n.value)
+    for (let i = 0; i < this.n.value; i = i + 1) {
       this.question = new Question();
-      this.question.Quiz = this.quiz;
-      this.Service.insererQuestion(this.question).subscribe();
+      this.question.question = "inserer votre question"
+      this.question.nbBonnesReponses = 0
+      this.question.explication = "inserer votre explication"
+      console.log(this.question)
+      this.Service.insererQuestion(this.question, this.quiz.idQuiz).subscribe();
     }
-    const myTimeout = setTimeout(this.a, 200);
+    const myTimeout = setTimeout(this.a, 300);
   }
 
   ajouterr(id: number) {
     console.log("ajor")
-    this.n = document.getElementById("idr")
-    this.Service.getByIdQuestion(id).subscribe(
-      quest => {
-        for (let i = 0; i < this.n; i = i + 1) {
-          this.reponse = new Reponse();
-          this.reponse.question = quest;
-          this.Service.insererReponse(this.reponse).subscribe();
-        }
-        const myTimeout = setTimeout(this.a, 200);
-      }
-    )
+    this.n = document.getElementById("q" + id)
+    console.log(this.n.value)
+    for (let i = 0; i < this.n.value; i = i + 1) {
+      this.reponse = new Reponse();
+      this.reponse.reponse = "inserer votre nouvel reponse";
+      this.reponse.vrai = false;
+      console.log(this.reponse)
+      this.Service.insererReponse(this.reponse, this.quiz.questions[i].idQuestion).subscribe();
+    }
+    console.log("ajor")
+    const myTimeout = setTimeout(this.a, 10000);
   }
 
 
