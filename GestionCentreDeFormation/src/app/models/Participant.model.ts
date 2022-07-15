@@ -1,5 +1,6 @@
 import { Formateur } from "./Formateur";
 import { Formation } from "./Formation";
+import { Score } from "./Score.model";
 
 export class Participant {
 

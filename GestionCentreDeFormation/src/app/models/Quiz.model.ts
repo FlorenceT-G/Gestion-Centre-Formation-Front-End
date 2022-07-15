@@ -9,6 +9,7 @@ export class Quiz {
 
     questions!:Question[]
 
+    // ignoré en back
     formation!:Formation
 }
 
