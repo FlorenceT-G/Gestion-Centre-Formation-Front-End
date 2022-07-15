@@ -1,62 +1,137 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Gestion Centre de Formation</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="">Accueil</a>
-                
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="participant-formations">Consulter mes formations</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="participant-paiements">Consulter mes paiements</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="participant-compte">Compte </a></li>
-                    </ul>
-                </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestion Centre de Formation</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+        rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="">Accueil</a>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+
+                </ul>
             </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg'); height:1px;">
-            <div class="container position-relative px-2 px-lg-2">
-                <div class="row gx-2 gx-lg-2 justify-content-center">
-                        
-                    <div class="col-md-10 col-lg-8 col-xl-7" >
-                        
-                        <div class="site-heading">
-                            <h1>Inti Formation</h1>
-                            <div class="site-heading">Bonjour {{userObject.nom}} {{userObject.prenom}}</div>
-                            
+        </div>
+    </nav>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg'); height:1px;">
+        <div class="container position-relative px-2 px-lg-2">
+            <div class="row gx-2 gx-lg-2 justify-content-center">
+
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+                    <div class="site-heading">
+                        <h1>Inti Formation</h1>
+                        <div class="site-heading">Bonjour {{userObject.nom}} {{userObject.prenom}}</div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="container-fluid">
+
+        <div class="col-xl-12 col-md-6 mb-4">
+
+            <div class="card shadow mb-4 border-top-primary">
+                <div class="text-center">
+
+                    <div *ngFor="let quiz of listeQuiz">
+
+
+                        <div class="col-xl-12 col-md-6 mb-4 card-header py-3 ">
+                            <div class="row">
+                                <div class="col-xl-4">
+                                    <h3 style="text-align: left ;">Quiz numéro: {{quiz.idQuiz}} </h3>
+                                    <h3> Pourcentage de réussite: {{quiz.pourcentage}} </h3>
+                                </div>
+                                <div class="col-xl-4">
+                                </div>
+                                <div class="col-xl-4">
+                                    <br>
+                                </div>
+                            </div>
                         </div>
+
+                        <div *ngFor="let q of quiz.questions">
+                            <mat-accordion>
+                                <mat-expansion-panel hideToggle>
+                                    <mat-expansion-panel-header class="card-header py-3 justify-content-between">
+                                        <div class="col-xl-12">
+                                            <div class="row">
+                                                <div class="col-xl-6 ">
+                                                    <mat-panel-title>
+                                                        <h5>Question</h5>
+                                                        <br>
+                                                        <h6>{{q.question}}</h6>
+                                                    </mat-panel-title>
+
+                                                </div>
+                                                <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
+                                                    <br>
+                                                    <!--
+                                                    <button class="accordion-button5"
+                                                    (click)="SaveQuestion(q.idQuestion)">valider</button>
+
+                                                -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-expansion-panel-header>
+
+                                    <table width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th>Reponse</th>
+                                                <th>V/F</th>
+                                            </tr>
+                                            <td></td>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let r of q.reponses">
+                                                <td>
+                                                    {{r.reponse}}
+                                                </td>
+                                                <td> <input type="checkbox" id="{{r.idReponse}}">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+
+                        </div>
+                        <button class="accordion-button5"
+                        (click)="savequiz(quiz.idQuiz)">Valider le quiz</button>
                     </div>
 
                 </div>
             </div>
-        </header>
+        </div>
 
+    </div>
+</body>
 
-
-<div class="h2Paiment" *ngFor="let quiz of listeQuiz">
-    <h2>Formation {{formation.idFormation}} {{formation.libFormation}} : Quiz {{quiz.idQuiz}} </h2><br>
-<div class="site-heading" *ngFor="let q of quiz.questions">
-      <h6> {{q.question}}</h6>
-
-      <form *ngFor="let reponse of q.reponses">
-    <input type="radio" value="reponse" [(ngModel)]="reponseChoisie">{{reponse.reponse}}<br>
-</form>
-
-</div>
-</div>
+</html>

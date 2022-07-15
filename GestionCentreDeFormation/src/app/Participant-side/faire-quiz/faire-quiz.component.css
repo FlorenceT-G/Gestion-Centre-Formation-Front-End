@@ -109,6 +109,32 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+
+
+.accordion-button5 {
+
+  align-items: center;
+  width: 30%;
+  height: .8cm;
+  
+  color: #f1eede;
+  text-align: center;
+  background-color: #fff;
+ 
+  border: 0;
+  overflow-anchor: none;
+  
+}
+
+.accordion-button5:not(.collapsed) {
+  align-items: center;
+  color: #000000;
+  background-color: #beffbb;
+  
+}
+
+
+
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
