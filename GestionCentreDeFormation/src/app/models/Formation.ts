@@ -1,5 +1,6 @@
 import { Formateur } from "./Formateur"
 import { Participant } from "./Participant.model"
+import { Quiz } from "./Quiz.model"
 
 export class Formation {
 
@@ -11,7 +12,7 @@ export class Formation {
 	cout!:number
 	formateur!:Formateur
 
-
 	listeParticipants!:Participant[]
+	listeQuiz!:Quiz[]
 
 }

@@ -5,6 +5,7 @@ export class Score {
 
     idScore!:number
     score!: number
+    pourcentageVal!:number;
 
     quiz!:Quiz
     participant!:Participant

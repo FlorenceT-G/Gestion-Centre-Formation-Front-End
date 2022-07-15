@@ -1,5 +1,6 @@
 import { Formateur } from "./Formateur";
 import { Formation } from "./Formation";
+import { Score } from "./Score.model";
 
 export class Participant {
 
@@ -13,5 +14,7 @@ export class Participant {
     //Ignorés dans le back
     listeFormations!:Formation[]
     restePaiements!:number[]
+
+    scores!:Score[]
     
 }
