@@ -45,6 +45,7 @@ import { FormationParticipantComponent } from './Formation/formation-participant
 import { QuizComponent } from './Quiz/quiz/quiz.component';
 import { AddQuizComponent } from './Quiz/add-quiz/add-quiz.component';
 import { ModifquizComponent } from './Quiz/modifquiz/modifquiz.component';
+import { FaireQuizComponent } from './Participant-side/faire-quiz/faire-quiz.component';
 
 
 const routes: Routes = [
@@ -94,6 +95,7 @@ const routes: Routes = [
   { path: 'afficherQuiz',component: QuizComponent},
   { path: 'addQuiz',component: AddQuizComponent},
   { path: 'modifierQuiz/:id',component: ModifquizComponent},
+  { path: 'faireQuiz/:id',component: FaireQuizComponent},
   
   { path: '**', redirectTo: 'login'}
 ];
