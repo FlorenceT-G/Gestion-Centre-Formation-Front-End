@@ -12,7 +12,6 @@ export class Formation {
 	cout!:number
 	formateur!:Formateur
 
-
 	listeParticipants!:Participant[]
 	listeQuiz!:Quiz[]
 

@@ -1,0 +1,88 @@
+.h2 {
+    font-size: 2rem;
+  }
+
+
+
+
+
+  .input2{
+
+
+    width: 100%;
+  }
+
+
+  .input3{
+
+
+    width: 10%;
+  }
+
+
+
+  .accordion-button5 {
+
+    align-items: center;
+    width: 30%;
+    height: .8cm;
+    
+    color: #f1eede;
+    text-align: center;
+    background-color: #fff;
+   
+    border: 0;
+    overflow-anchor: none;
+    
+  }
+  
+  .accordion-button5:not(.collapsed) {
+    align-items: center;
+    color: #000000;
+    background-color: #beffbb;
+    
+  }
+
+  .accordion-button6 {
+
+    align-items: center;
+    width: 60%;
+    height: .8cm;
+    
+    color: #f1eede;
+    text-align: center;
+    background-color: #fff;
+   
+    border: 0;
+    overflow-anchor: none;
+    
+  }
+  
+  .accordion-button6:not(.collapsed) {
+    align-items: center;
+    color: #000000;
+    background-color: #ffbbbb;
+    
+  }
+
+  .accordion-button7 {
+
+    align-items: center;
+    width: 30%;
+    height: .8cm;
+    
+    color: #f1eede;
+    text-align: center;
+    background-color: #fff;
+   
+    border: 0;
+    overflow-anchor: none;
+    
+  }
+  
+  .accordion-button7:not(.collapsed) {
+    align-items: center;
+    color: #000000;
+    background-color:#ffbbbb;
+    
+  }

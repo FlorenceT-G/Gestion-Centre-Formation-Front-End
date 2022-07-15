@@ -67,11 +67,11 @@ export class GetAllService {
   deleteQuestion(id: number) {
     return this.http.delete('http://localhost:9090/formateur/questions/' + id);
   }
-  modifierQuestion(a: Question) {
-    return this.http.put<Question>('http://localhost:9090/formateur/questions', a);
+  modifierQuestion(a: Question, id: number) {
+    return this.http.put<Question>('http://localhost:9090/formateur/questions/'+id, a);
   }
-  insererQuestion(a: Question) {
-    return this.http.post('http://localhost:9090/formateur/questions', a)
+  insererQuestion(a: Question, id: number) {
+    return this.http.post('http://localhost:9090/formateur/questions/'+id, a)
   }
   getQuestionByIdQuiz(id: number) {
     return this.http.get<Question[]>('');
@@ -86,11 +86,11 @@ export class GetAllService {
   deleteReponse(id: number) {
     return this.http.delete('http://localhost:9090/formation/reponses/' + id);
   }
-  modifierReponse(a: Reponse) {
-    return this.http.put<Reponse>('http://localhost:9090/formateur/reponses', a);
+  modifierReponse(a: Reponse, id: number) {
+    return this.http.put<Reponse>('http://localhost:9090/formateur/reponses/'+id, a );
   }
-  insererReponse(a: Reponse) {
-    return this.http.post('http://localhost:9090/formateur/reponses', a)
+  insererReponse(a: Reponse, id: number) {
+    return this.http.post('http://localhost:9090/formateur/reponses/'+id, a)
   }
   getReponseByIdQuestion(id: number) {
     return this.http.get<Reponse[]>('http://localhost:9090/reponsesByQuestion/'+id);

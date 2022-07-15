@@ -36,10 +36,7 @@
 
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="afficherFormations">Menu
                             Formations</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="a-gestion-paiements">Menu
-                            Paiement</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="c-gestion-prospects">Menu
-                            Prospects</a></li>
+
                 </ul>
             </div>
         </div>
@@ -47,7 +44,7 @@
 
     <!-- Page Header-->
     <header class="masthead"
-        style="background-image: url('https://eveilhomme.com/wp-content/uploads/2021/03/838_gettyimages-1134722319.jpg')">
+        style="background-image: url('https://us.123rf.com/450wm/beholdereye/beholdereye1601/beholdereye160100098/50711421-retour-au-fond-de-l-%C3%A9cole-10-fichier-vectoriel-eps-inclus.jpg?ver=6')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-8 col-lg-8 col-xl-7">
@@ -70,23 +67,32 @@
 
     <div class="container-fluid">
 
-        <div class="col-xl-6 col-md-6 mb-4">
+        <div class="col-xl-12 col-md-6 mb-4">
 
             <div class="card shadow mb-4 border-top-primary">
                 <div class="text-center">
 
                     <div class="col-xl-12 col-md-6 mb-4 card-header py-3 ">
-                        <mat-panel-title>
-                            <h3 style="text-align: left ;">Quiz num: {{quiz.idQuiz}} </h3>
-                                <input type="text" name="pourcentage" [(ngModel)]="quiz.pourcentage" />
-                                <input type="text" name="libFormation" [(ngModel)]="quiz.formation.libFormation" />
-                        </mat-panel-title>
-                        <mat-panel-description>
-                        <input  id="idq" type="number" name="ajout" />
-                        <button class="accordion-button4" (click)="ajouterq()">
-                            Ajouter
-                        </button>
-                        </mat-panel-description>
+                        <div class="row">
+                            <div class="col-xl-4">
+                                <h3 style="text-align: left ;">Quiz numéro: {{quiz.idQuiz}} </h3> 
+                               Pourcentage de réussite  <input class="input3" type="number" name="pourcentage" [(ngModel)]="quiz.pourcentage"
+                                    min="0" max="100" />
+                            </div>
+                            <div class="col-xl-4">
+                            </div>
+                            <div class="col-xl-4">
+                               <br>
+                               <input class="input3" id="idq" type="number" name="ajout" min="1" />
+                                <button class="accordion-button4" (click)="ajouterq()">
+                                    Ajouter question
+                                </button>
+                                <button class="accordion-button5"
+                                (click)="SaveQuiz()">modifier Quiz</button>
+                            </div>
+
+
+                        </div>
                     </div>
 
                     <div *ngFor="let q of quiz.questions">
@@ -97,18 +103,34 @@
                                         <div class="row">
                                             <div class="col-xl-6 ">
                                                 <mat-panel-title>
-                                                    <input type="text" name="pourcentage" [(ngModel)]="q.question" />
+                                                    <h5>Question</h5>
+                                                    <br>
                                                 </mat-panel-title>
+                                                <mat-panel-description>
+                                                    <h6>Nombre de bonne reponse:  {{q.nbBonnesReponses}}</h6> <h6> </h6>
+
+                                                </mat-panel-description>
+                                                <input class="input2" type="text" name="question"
+                                                [(ngModel)]="q.question" />
+                                                <mat-panel-title>
+                                                    <h6>Explication</h6>
+                                                    <br>
+                                                </mat-panel-title>
+                                            <input class="input2" type="text" name="explication"
+                                            [(ngModel)]="q.explication" />
                                             </div>
                                             <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
-                                                <mat-panel-description>
-                                                    <button class="accordion-button3"
+                                                <br>
+                                
+                                                    <input class="input3" id="q{{q.idQuestion}}" type="number" name="ajout" min="1" />
+                                                    <button class="accordion-button4" (click)="ajouterr(q.idQuestion)">
+                                                        Ajouter reponse
+                                                    </button>
+                                                    <button class="accordion-button5"
+                                                    (click)="SaveQuestion(q.idQuestion)">modifier</button>
+                                                    <button class="accordion-button6"
                                                         (click)="supprimerq(q.idQuestion)">supprimer</button>
-                                                        <input  id="idr" type="number" name="ajout" />
-                                                        <button class="accordion-button4" (click)="ajouterr(q.idQuestion)">
-                                                            Ajouter
-                                                        </button>
-                                                </mat-panel-description>
+                                        
                                             </div>
                                         </div>
                                     </div>
@@ -127,10 +149,12 @@
                                             <td>
                                                 <input type="text" name="pourcentage" [(ngModel)]="r.reponse" />
                                             </td>
-                                            <td> <input type="checkbox" id="Vrai" name="vrai" checked="{{r.vrai}}">
+                                            <td> <input type="checkbox" id="{{r.idReponse}}" name="vrai" [checked]="r.vrai" >  
                                             </td>
                                             <td>
-                                                <button class="accordion-button3"
+                                                <button class="accordion-button5"
+                                                (click)="SaveReponse    (r.idReponse)">Modifer</button>
+                                                <button class="accordion-button7"
                                                     (click)="supprimerr(r.idReponse)">supprimer</button>
 
                                             </td>
