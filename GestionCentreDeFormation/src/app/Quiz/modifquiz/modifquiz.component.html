@@ -112,12 +112,12 @@
                                             <div class="col-xl-6 col-md-6 mb-4" style="text-align: right ;">
                                                 <br>
                                 
-                                                    <input id="idr" type="number" name="ajout" min="1" />
+                                                    <input class="input3" id="idr" type="number" name="ajout" min="1" />
                                                     <button class="accordion-button4" (click)="ajouterr(q.idQuestion)">
                                                         Ajouter reponse
                                                     </button>
                                                     <button class="accordion-button5"
-                                                    (click)="supprimerq(q.idQuestion)">modifier</button>
+                                                    (click)="SaveQuestion(q.idQuestion)">modifier</button>
                                                     <button class="accordion-button6"
                                                         (click)="supprimerq(q.idQuestion)">supprimer</button>
                                         
@@ -139,11 +139,11 @@
                                             <td>
                                                 <input type="text" name="pourcentage" [(ngModel)]="r.reponse" />
                                             </td>
-                                            <td> <input type="checkbox" id="Vrai" name="vrai" [checked]="r.vrai" [(ngModel)]="r.vrai">  
+                                            <td> <input type="checkbox" id="{{r.idReponse}}" name="vrai" [checked]="r.vrai" >  
                                             </td>
                                             <td>
                                                 <button class="accordion-button5"
-                                                (click)="supprimerr(r.idReponse)">Modifer</button>
+                                                (click)="SaveReponse    (r.idReponse)">Modifer</button>
                                                 <button class="accordion-button7"
                                                     (click)="supprimerr(r.idReponse)">supprimer</button>
 
